@@ -1,0 +1,3767 @@
+
+MPU6050/MPU6050_9Axis_MotionApps41.h,2691
+#define _MPU6050_9AXIS_MOTIONAPPS41_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS4140,1801
+        #define __PGMSPACE_H_ 51,2110
+        #define PROGMEM54,2173
+        #define PGM_P 55,2197
+        #define PSTR(56,2233
+        #define F(57,2265
+        typedef void prog_void;59,2289
+        typedef char prog_char;60,2321
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(96,3890
+    #define DEBUG_PRINTF(97,3933
+    #define DEBUG_PRINTLN(98,3983
+    #define DEBUG_PRINTLNF(99,4030
+    #define DEBUG_PRINT(101,4090
+    #define DEBUG_PRINTF(102,4117
+    #define DEBUG_PRINTLN(103,4148
+    #define DEBUG_PRINTLNF(104,4177
+#define MPU6050_DMP_CODE_SIZE 107,4218
+#define MPU6050_DMP_CONFIG_SIZE 108,4277
+#define MPU6050_DMP_UPDATES_SIZE 109,4336
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 124,5484
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 265,18055
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21570
+uint8_t MPU6050::dmpInitialize(337,22680
+bool MPU6050::dmpPacketAvailable(653,38462
+uint8_t MPU6050::dmpGetAccel(680,39996
+uint8_t MPU6050::dmpGetAccel(688,40578
+uint8_t MPU6050::dmpGetAccel(696,40938
+uint8_t MPU6050::dmpGetQuaternion(704,41296
+uint8_t MPU6050::dmpGetQuaternion(713,41993
+uint8_t MPU6050::dmpGetQuaternion(722,42406
+uint8_t MPU6050::dmpGetGyro(737,43098
+uint8_t MPU6050::dmpGetGyro(745,43679
+uint8_t MPU6050::dmpGetMag(753,44038
+uint8_t MPU6050::dmpGetLinearAccel(763,44538
+uint8_t MPU6050::dmpGetLinearAccelInWorld(771,44943
+uint8_t MPU6050::dmpGetGravity(783,45613
+uint8_t MPU6050::dmpGetEuler(794,46183
+uint8_t MPU6050::dmpGetYawPitchRoll(800,46560
+uint8_t MPU6050::dmpProcessFIFOPacket(813,47221
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(823,47556
+uint16_t MPU6050::dmpGetFIFOPacketSize(848,48452
+
+MPU6050/MPU6050.h,14876
+#define _MPU6050_H_38,1810
+#define MPU6050_ADDRESS_AD0_LOW 56,2237
+#define MPU6050_ADDRESS_AD0_HIGH 57,2344
+#define MPU6050_DEFAULT_ADDRESS 58,2411
+#define MPU6050_RA_XG_OFFS_TC 60,2472
+#define MPU6050_RA_YG_OFFS_TC 61,2563
+#define MPU6050_RA_ZG_OFFS_TC 62,2654
+#define MPU6050_RA_X_FINE_GAIN 63,2745
+#define MPU6050_RA_Y_FINE_GAIN 64,2806
+#define MPU6050_RA_Z_FINE_GAIN 65,2867
+#define MPU6050_RA_XA_OFFS_H 66,2928
+#define MPU6050_RA_XA_OFFS_L_TC 67,2986
+#define MPU6050_RA_YA_OFFS_H 68,3027
+#define MPU6050_RA_YA_OFFS_L_TC 69,3085
+#define MPU6050_RA_ZA_OFFS_H 70,3126
+#define MPU6050_RA_ZA_OFFS_L_TC 71,3184
+#define MPU6050_RA_SELF_TEST_X 72,3225
+#define MPU6050_RA_SELF_TEST_Y 73,3307
+#define MPU6050_RA_SELF_TEST_Z 74,3389
+#define MPU6050_RA_SELF_TEST_A 75,3471
+#define MPU6050_RA_XG_OFFS_USRH 76,3573
+#define MPU6050_RA_XG_OFFS_USRL 77,3635
+#define MPU6050_RA_YG_OFFS_USRH 78,3676
+#define MPU6050_RA_YG_OFFS_USRL 79,3738
+#define MPU6050_RA_ZG_OFFS_USRH 80,3779
+#define MPU6050_RA_ZG_OFFS_USRL 81,3841
+#define MPU6050_RA_SMPLRT_DIV 82,3882
+#define MPU6050_RA_CONFIG 83,3923
+#define MPU6050_RA_GYRO_CONFIG 84,3964
+#define MPU6050_RA_ACCEL_CONFIG 85,4005
+#define MPU6050_RA_FF_THR 86,4046
+#define MPU6050_RA_FF_DUR 87,4087
+#define MPU6050_RA_MOT_THR 88,4128
+#define MPU6050_RA_MOT_DUR 89,4169
+#define MPU6050_RA_ZRMOT_THR 90,4210
+#define MPU6050_RA_ZRMOT_DUR 91,4251
+#define MPU6050_RA_FIFO_EN 92,4292
+#define MPU6050_RA_I2C_MST_CTRL 93,4333
+#define MPU6050_RA_I2C_SLV0_ADDR 94,4374
+#define MPU6050_RA_I2C_SLV0_REG 95,4415
+#define MPU6050_RA_I2C_SLV0_CTRL 96,4456
+#define MPU6050_RA_I2C_SLV1_ADDR 97,4497
+#define MPU6050_RA_I2C_SLV1_REG 98,4538
+#define MPU6050_RA_I2C_SLV1_CTRL 99,4579
+#define MPU6050_RA_I2C_SLV2_ADDR 100,4620
+#define MPU6050_RA_I2C_SLV2_REG 101,4661
+#define MPU6050_RA_I2C_SLV2_CTRL 102,4702
+#define MPU6050_RA_I2C_SLV3_ADDR 103,4743
+#define MPU6050_RA_I2C_SLV3_REG 104,4784
+#define MPU6050_RA_I2C_SLV3_CTRL 105,4825
+#define MPU6050_RA_I2C_SLV4_ADDR 106,4866
+#define MPU6050_RA_I2C_SLV4_REG 107,4907
+#define MPU6050_RA_I2C_SLV4_DO 108,4948
+#define MPU6050_RA_I2C_SLV4_CTRL 109,4989
+#define MPU6050_RA_I2C_SLV4_DI 110,5030
+#define MPU6050_RA_I2C_MST_STATUS 111,5071
+#define MPU6050_RA_INT_PIN_CFG 112,5112
+#define MPU6050_RA_INT_ENABLE 113,5153
+#define MPU6050_RA_DMP_INT_STATUS 114,5194
+#define MPU6050_RA_INT_STATUS 115,5235
+#define MPU6050_RA_ACCEL_XOUT_H 116,5276
+#define MPU6050_RA_ACCEL_XOUT_L 117,5317
+#define MPU6050_RA_ACCEL_YOUT_H 118,5358
+#define MPU6050_RA_ACCEL_YOUT_L 119,5399
+#define MPU6050_RA_ACCEL_ZOUT_H 120,5440
+#define MPU6050_RA_ACCEL_ZOUT_L 121,5481
+#define MPU6050_RA_TEMP_OUT_H 122,5522
+#define MPU6050_RA_TEMP_OUT_L 123,5563
+#define MPU6050_RA_GYRO_XOUT_H 124,5604
+#define MPU6050_RA_GYRO_XOUT_L 125,5645
+#define MPU6050_RA_GYRO_YOUT_H 126,5686
+#define MPU6050_RA_GYRO_YOUT_L 127,5727
+#define MPU6050_RA_GYRO_ZOUT_H 128,5768
+#define MPU6050_RA_GYRO_ZOUT_L 129,5809
+#define MPU6050_RA_EXT_SENS_DATA_00 130,5850
+#define MPU6050_RA_EXT_SENS_DATA_01 131,5891
+#define MPU6050_RA_EXT_SENS_DATA_02 132,5932
+#define MPU6050_RA_EXT_SENS_DATA_03 133,5973
+#define MPU6050_RA_EXT_SENS_DATA_04 134,6014
+#define MPU6050_RA_EXT_SENS_DATA_05 135,6055
+#define MPU6050_RA_EXT_SENS_DATA_06 136,6096
+#define MPU6050_RA_EXT_SENS_DATA_07 137,6137
+#define MPU6050_RA_EXT_SENS_DATA_08 138,6178
+#define MPU6050_RA_EXT_SENS_DATA_09 139,6219
+#define MPU6050_RA_EXT_SENS_DATA_10 140,6260
+#define MPU6050_RA_EXT_SENS_DATA_11 141,6301
+#define MPU6050_RA_EXT_SENS_DATA_12 142,6342
+#define MPU6050_RA_EXT_SENS_DATA_13 143,6383
+#define MPU6050_RA_EXT_SENS_DATA_14 144,6424
+#define MPU6050_RA_EXT_SENS_DATA_15 145,6465
+#define MPU6050_RA_EXT_SENS_DATA_16 146,6506
+#define MPU6050_RA_EXT_SENS_DATA_17 147,6547
+#define MPU6050_RA_EXT_SENS_DATA_18 148,6588
+#define MPU6050_RA_EXT_SENS_DATA_19 149,6629
+#define MPU6050_RA_EXT_SENS_DATA_20 150,6670
+#define MPU6050_RA_EXT_SENS_DATA_21 151,6711
+#define MPU6050_RA_EXT_SENS_DATA_22 152,6752
+#define MPU6050_RA_EXT_SENS_DATA_23 153,6793
+#define MPU6050_RA_MOT_DETECT_STATUS 154,6834
+#define MPU6050_RA_I2C_SLV0_DO 155,6879
+#define MPU6050_RA_I2C_SLV1_DO 156,6920
+#define MPU6050_RA_I2C_SLV2_DO 157,6961
+#define MPU6050_RA_I2C_SLV3_DO 158,7002
+#define MPU6050_RA_I2C_MST_DELAY_CTRL 159,7043
+#define MPU6050_RA_SIGNAL_PATH_RESET 160,7088
+#define MPU6050_RA_MOT_DETECT_CTRL 161,7133
+#define MPU6050_RA_USER_CTRL 162,7178
+#define MPU6050_RA_PWR_MGMT_1 163,7219
+#define MPU6050_RA_PWR_MGMT_2 164,7260
+#define MPU6050_RA_BANK_SEL 165,7301
+#define MPU6050_RA_MEM_START_ADDR 166,7342
+#define MPU6050_RA_MEM_R_W 167,7383
+#define MPU6050_RA_DMP_CFG_1 168,7424
+#define MPU6050_RA_DMP_CFG_2 169,7465
+#define MPU6050_RA_FIFO_COUNTH 170,7506
+#define MPU6050_RA_FIFO_COUNTL 171,7547
+#define MPU6050_RA_FIFO_R_W 172,7588
+#define MPU6050_RA_WHO_AM_I 173,7629
+#define MPU6050_SELF_TEST_XA_1_BIT 175,7671
+#define MPU6050_SELF_TEST_XA_1_LENGTH 176,7715
+#define MPU6050_SELF_TEST_XA_2_BIT 177,7759
+#define MPU6050_SELF_TEST_XA_2_LENGTH 178,7803
+#define MPU6050_SELF_TEST_YA_1_BIT 179,7847
+#define MPU6050_SELF_TEST_YA_1_LENGTH 180,7891
+#define MPU6050_SELF_TEST_YA_2_BIT 181,7935
+#define MPU6050_SELF_TEST_YA_2_LENGTH 182,7979
+#define MPU6050_SELF_TEST_ZA_1_BIT 183,8023
+#define MPU6050_SELF_TEST_ZA_1_LENGTH 184,8067
+#define MPU6050_SELF_TEST_ZA_2_BIT 185,8111
+#define MPU6050_SELF_TEST_ZA_2_LENGTH 186,8155
+#define MPU6050_SELF_TEST_XG_1_BIT 188,8200
+#define MPU6050_SELF_TEST_XG_1_LENGTH 189,8244
+#define MPU6050_SELF_TEST_YG_1_BIT 190,8288
+#define MPU6050_SELF_TEST_YG_1_LENGTH 191,8332
+#define MPU6050_SELF_TEST_ZG_1_BIT 192,8376
+#define MPU6050_SELF_TEST_ZG_1_LENGTH 193,8420
+#define MPU6050_TC_PWR_MODE_BIT 195,8465
+#define MPU6050_TC_OFFSET_BIT 196,8503
+#define MPU6050_TC_OFFSET_LENGTH 197,8541
+#define MPU6050_TC_OTP_BNK_VLD_BIT 198,8579
+#define MPU6050_VDDIO_LEVEL_VLOGIC 200,8618
+#define MPU6050_VDDIO_LEVEL_VDD 201,8656
+#define MPU6050_CFG_EXT_SYNC_SET_BIT 203,8695
+#define MPU6050_CFG_EXT_SYNC_SET_LENGTH 204,8737
+#define MPU6050_CFG_DLPF_CFG_BIT 205,8779
+#define MPU6050_CFG_DLPF_CFG_LENGTH 206,8817
+#define MPU6050_EXT_SYNC_DISABLED 208,8856
+#define MPU6050_EXT_SYNC_TEMP_OUT_L 209,8900
+#define MPU6050_EXT_SYNC_GYRO_XOUT_L 210,8944
+#define MPU6050_EXT_SYNC_GYRO_YOUT_L 211,8988
+#define MPU6050_EXT_SYNC_GYRO_ZOUT_L 212,9032
+#define MPU6050_EXT_SYNC_ACCEL_XOUT_L 213,9076
+#define MPU6050_EXT_SYNC_ACCEL_YOUT_L 214,9120
+#define MPU6050_EXT_SYNC_ACCEL_ZOUT_L 215,9164
+#define MPU6050_DLPF_BW_256 217,9209
+#define MPU6050_DLPF_BW_188 218,9250
+#define MPU6050_DLPF_BW_98 219,9291
+#define MPU6050_DLPF_BW_42 220,9332
+#define MPU6050_DLPF_BW_20 221,9373
+#define MPU6050_DLPF_BW_10 222,9414
+#define MPU6050_DLPF_BW_5 223,9455
+#define MPU6050_GCONFIG_FS_SEL_BIT 225,9497
+#define MPU6050_GCONFIG_FS_SEL_LENGTH 226,9539
+#define MPU6050_GYRO_FS_250 228,9582
+#define MPU6050_GYRO_FS_500 229,9623
+#define MPU6050_GYRO_FS_1000 230,9664
+#define MPU6050_GYRO_FS_2000 231,9705
+#define MPU6050_ACONFIG_XA_ST_BIT 233,9747
+#define MPU6050_ACONFIG_YA_ST_BIT 234,9793
+#define MPU6050_ACONFIG_ZA_ST_BIT 235,9839
+#define MPU6050_ACONFIG_AFS_SEL_BIT 236,9885
+#define MPU6050_ACONFIG_AFS_SEL_LENGTH 237,9931
+#define MPU6050_ACONFIG_ACCEL_HPF_BIT 238,9977
+#define MPU6050_ACONFIG_ACCEL_HPF_LENGTH 239,10023
+#define MPU6050_ACCEL_FS_2 241,10070
+#define MPU6050_ACCEL_FS_4 242,10111
+#define MPU6050_ACCEL_FS_8 243,10152
+#define MPU6050_ACCEL_FS_16 244,10193
+#define MPU6050_DHPF_RESET 246,10235
+#define MPU6050_DHPF_5 247,10276
+#define MPU6050_DHPF_2P5 248,10317
+#define MPU6050_DHPF_1P25 249,10358
+#define MPU6050_DHPF_0P63 250,10399
+#define MPU6050_DHPF_HOLD 251,10440
+#define MPU6050_TEMP_FIFO_EN_BIT 253,10482
+#define MPU6050_XG_FIFO_EN_BIT 254,10520
+#define MPU6050_YG_FIFO_EN_BIT 255,10558
+#define MPU6050_ZG_FIFO_EN_BIT 256,10596
+#define MPU6050_ACCEL_FIFO_EN_BIT 257,10634
+#define MPU6050_SLV2_FIFO_EN_BIT 258,10672
+#define MPU6050_SLV1_FIFO_EN_BIT 259,10710
+#define MPU6050_SLV0_FIFO_EN_BIT 260,10748
+#define MPU6050_MULT_MST_EN_BIT 262,10787
+#define MPU6050_WAIT_FOR_ES_BIT 263,10825
+#define MPU6050_SLV_3_FIFO_EN_BIT 264,10863
+#define MPU6050_I2C_MST_P_NSR_BIT 265,10901
+#define MPU6050_I2C_MST_CLK_BIT 266,10939
+#define MPU6050_I2C_MST_CLK_LENGTH 267,10977
+#define MPU6050_CLOCK_DIV_348 269,11016
+#define MPU6050_CLOCK_DIV_333 270,11056
+#define MPU6050_CLOCK_DIV_320 271,11096
+#define MPU6050_CLOCK_DIV_308 272,11136
+#define MPU6050_CLOCK_DIV_296 273,11176
+#define MPU6050_CLOCK_DIV_286 274,11216
+#define MPU6050_CLOCK_DIV_276 275,11256
+#define MPU6050_CLOCK_DIV_267 276,11296
+#define MPU6050_CLOCK_DIV_258 277,11336
+#define MPU6050_CLOCK_DIV_500 278,11376
+#define MPU6050_CLOCK_DIV_471 279,11416
+#define MPU6050_CLOCK_DIV_444 280,11456
+#define MPU6050_CLOCK_DIV_421 281,11496
+#define MPU6050_CLOCK_DIV_400 282,11536
+#define MPU6050_CLOCK_DIV_381 283,11576
+#define MPU6050_CLOCK_DIV_364 284,11616
+#define MPU6050_I2C_SLV_RW_BIT 286,11657
+#define MPU6050_I2C_SLV_ADDR_BIT 287,11695
+#define MPU6050_I2C_SLV_ADDR_LENGTH 288,11733
+#define MPU6050_I2C_SLV_EN_BIT 289,11771
+#define MPU6050_I2C_SLV_BYTE_SW_BIT 290,11809
+#define MPU6050_I2C_SLV_REG_DIS_BIT 291,11847
+#define MPU6050_I2C_SLV_GRP_BIT 292,11885
+#define MPU6050_I2C_SLV_LEN_BIT 293,11923
+#define MPU6050_I2C_SLV_LEN_LENGTH 294,11961
+#define MPU6050_I2C_SLV4_RW_BIT 296,12000
+#define MPU6050_I2C_SLV4_ADDR_BIT 297,12042
+#define MPU6050_I2C_SLV4_ADDR_LENGTH 298,12084
+#define MPU6050_I2C_SLV4_EN_BIT 299,12126
+#define MPU6050_I2C_SLV4_INT_EN_BIT 300,12168
+#define MPU6050_I2C_SLV4_REG_DIS_BIT 301,12210
+#define MPU6050_I2C_SLV4_MST_DLY_BIT 302,12252
+#define MPU6050_I2C_SLV4_MST_DLY_LENGTH 303,12294
+#define MPU6050_MST_PASS_THROUGH_BIT 305,12337
+#define MPU6050_MST_I2C_SLV4_DONE_BIT 306,12379
+#define MPU6050_MST_I2C_LOST_ARB_BIT 307,12421
+#define MPU6050_MST_I2C_SLV4_NACK_BIT 308,12463
+#define MPU6050_MST_I2C_SLV3_NACK_BIT 309,12505
+#define MPU6050_MST_I2C_SLV2_NACK_BIT 310,12547
+#define MPU6050_MST_I2C_SLV1_NACK_BIT 311,12589
+#define MPU6050_MST_I2C_SLV0_NACK_BIT 312,12631
+#define MPU6050_INTCFG_INT_LEVEL_BIT 314,12674
+#define MPU6050_INTCFG_INT_OPEN_BIT 315,12720
+#define MPU6050_INTCFG_LATCH_INT_EN_BIT 316,12766
+#define MPU6050_INTCFG_INT_RD_CLEAR_BIT 317,12812
+#define MPU6050_INTCFG_FSYNC_INT_LEVEL_BIT 318,12858
+#define MPU6050_INTCFG_FSYNC_INT_EN_BIT 319,12904
+#define MPU6050_INTCFG_I2C_BYPASS_EN_BIT 320,12950
+#define MPU6050_INTCFG_CLKOUT_EN_BIT 321,12996
+#define MPU6050_INTMODE_ACTIVEHIGH 323,13043
+#define MPU6050_INTMODE_ACTIVELOW 324,13084
+#define MPU6050_INTDRV_PUSHPULL 326,13126
+#define MPU6050_INTDRV_OPENDRAIN 327,13167
+#define MPU6050_INTLATCH_50USPULSE 329,13209
+#define MPU6050_INTLATCH_WAITCLEAR 330,13250
+#define MPU6050_INTCLEAR_STATUSREAD 332,13292
+#define MPU6050_INTCLEAR_ANYREAD 333,13333
+#define MPU6050_INTERRUPT_FF_BIT 335,13375
+#define MPU6050_INTERRUPT_MOT_BIT 336,13421
+#define MPU6050_INTERRUPT_ZMOT_BIT 337,13467
+#define MPU6050_INTERRUPT_FIFO_OFLOW_BIT 338,13513
+#define MPU6050_INTERRUPT_I2C_MST_INT_BIT 339,13559
+#define MPU6050_INTERRUPT_PLL_RDY_INT_BIT 340,13605
+#define MPU6050_INTERRUPT_DMP_INT_BIT 341,13651
+#define MPU6050_INTERRUPT_DATA_RDY_BIT 342,13697
+#define MPU6050_DMPINT_5_BIT 346,13827
+#define MPU6050_DMPINT_4_BIT 347,13869
+#define MPU6050_DMPINT_3_BIT 348,13911
+#define MPU6050_DMPINT_2_BIT 349,13953
+#define MPU6050_DMPINT_1_BIT 350,13995
+#define MPU6050_DMPINT_0_BIT 351,14037
+#define MPU6050_MOTION_MOT_XNEG_BIT 353,14080
+#define MPU6050_MOTION_MOT_XPOS_BIT 354,14122
+#define MPU6050_MOTION_MOT_YNEG_BIT 355,14164
+#define MPU6050_MOTION_MOT_YPOS_BIT 356,14206
+#define MPU6050_MOTION_MOT_ZNEG_BIT 357,14248
+#define MPU6050_MOTION_MOT_ZPOS_BIT 358,14290
+#define MPU6050_MOTION_MOT_ZRMOT_BIT 359,14332
+#define MPU6050_DELAYCTRL_DELAY_ES_SHADOW_BIT 361,14375
+#define MPU6050_DELAYCTRL_I2C_SLV4_DLY_EN_BIT 362,14425
+#define MPU6050_DELAYCTRL_I2C_SLV3_DLY_EN_BIT 363,14475
+#define MPU6050_DELAYCTRL_I2C_SLV2_DLY_EN_BIT 364,14525
+#define MPU6050_DELAYCTRL_I2C_SLV1_DLY_EN_BIT 365,14575
+#define MPU6050_DELAYCTRL_I2C_SLV0_DLY_EN_BIT 366,14625
+#define MPU6050_PATHRESET_GYRO_RESET_BIT 368,14676
+#define MPU6050_PATHRESET_ACCEL_RESET_BIT 369,14722
+#define MPU6050_PATHRESET_TEMP_RESET_BIT 370,14768
+#define MPU6050_DETECT_ACCEL_ON_DELAY_BIT 372,14815
+#define MPU6050_DETECT_ACCEL_ON_DELAY_LENGTH 373,14865
+#define MPU6050_DETECT_FF_COUNT_BIT 374,14915
+#define MPU6050_DETECT_FF_COUNT_LENGTH 375,14965
+#define MPU6050_DETECT_MOT_COUNT_BIT 376,15015
+#define MPU6050_DETECT_MOT_COUNT_LENGTH 377,15065
+#define MPU6050_DETECT_DECREMENT_RESET 379,15116
+#define MPU6050_DETECT_DECREMENT_1 380,15160
+#define MPU6050_DETECT_DECREMENT_2 381,15204
+#define MPU6050_DETECT_DECREMENT_4 382,15248
+#define MPU6050_USERCTRL_DMP_EN_BIT 384,15293
+#define MPU6050_USERCTRL_FIFO_EN_BIT 385,15343
+#define MPU6050_USERCTRL_I2C_MST_EN_BIT 386,15393
+#define MPU6050_USERCTRL_I2C_IF_DIS_BIT 387,15443
+#define MPU6050_USERCTRL_DMP_RESET_BIT 388,15493
+#define MPU6050_USERCTRL_FIFO_RESET_BIT 389,15543
+#define MPU6050_USERCTRL_I2C_MST_RESET_BIT 390,15593
+#define MPU6050_USERCTRL_SIG_COND_RESET_BIT 391,15643
+#define MPU6050_PWR1_DEVICE_RESET_BIT 393,15694
+#define MPU6050_PWR1_SLEEP_BIT 394,15736
+#define MPU6050_PWR1_CYCLE_BIT 395,15778
+#define MPU6050_PWR1_TEMP_DIS_BIT 396,15820
+#define MPU6050_PWR1_CLKSEL_BIT 397,15862
+#define MPU6050_PWR1_CLKSEL_LENGTH 398,15904
+#define MPU6050_CLOCK_INTERNAL 400,15947
+#define MPU6050_CLOCK_PLL_XGYRO 401,15992
+#define MPU6050_CLOCK_PLL_YGYRO 402,16037
+#define MPU6050_CLOCK_PLL_ZGYRO 403,16082
+#define MPU6050_CLOCK_PLL_EXT32K 404,16127
+#define MPU6050_CLOCK_PLL_EXT19M 405,16172
+#define MPU6050_CLOCK_KEEP_RESET 406,16217
+#define MPU6050_PWR2_LP_WAKE_CTRL_BIT 408,16263
+#define MPU6050_PWR2_LP_WAKE_CTRL_LENGTH 409,16309
+#define MPU6050_PWR2_STBY_XA_BIT 410,16355
+#define MPU6050_PWR2_STBY_YA_BIT 411,16401
+#define MPU6050_PWR2_STBY_ZA_BIT 412,16447
+#define MPU6050_PWR2_STBY_XG_BIT 413,16493
+#define MPU6050_PWR2_STBY_YG_BIT 414,16539
+#define MPU6050_PWR2_STBY_ZG_BIT 415,16585
+#define MPU6050_WAKE_FREQ_1P25 417,16632
+#define MPU6050_WAKE_FREQ_2P5 418,16672
+#define MPU6050_WAKE_FREQ_5 419,16712
+#define MPU6050_WAKE_FREQ_10 420,16752
+#define MPU6050_BANKSEL_PRFTCH_EN_BIT 422,16793
+#define MPU6050_BANKSEL_CFG_USER_BANK_BIT 423,16839
+#define MPU6050_BANKSEL_MEM_SEL_BIT 424,16885
+#define MPU6050_BANKSEL_MEM_SEL_LENGTH 425,16931
+#define MPU6050_WHO_AM_I_BIT 427,16978
+#define MPU6050_WHO_AM_I_LENGTH 428,17016
+#define MPU6050_DMP_MEMORY_BANKS 430,17055
+#define MPU6050_DMP_MEMORY_BANK_SIZE 431,17097
+#define MPU6050_DMP_MEMORY_CHUNK_SIZE 432,17141
+class MPU6050 436,17248
+
+MPU6050/MPU6050.cpp,12422
+MPU6050::MPU6050(42,1899
+MPU6050::MPU6050(52,2127
+void MPU6050::initialize(63,2611
+bool MPU6050::testConnection(74,3018
+uint8_t MPU6050::getAuxVDDIOLevel(86,3476
+void MPU6050::setAuxVDDIOLevel(96,3946
+uint8_t MPU6050::getRate(123,5019
+void MPU6050::setRate(132,5264
+uint8_t MPU6050::getExternalFrameSync(165,6436
+void MPU6050::setExternalFrameSync(174,6767
+uint8_t MPU6050::getDLPFMode(205,8208
+void MPU6050::setDLPFMode(217,8625
+uint8_t MPU6050::getFullScaleGyroRange(240,9285
+void MPU6050::setFullScaleGyroRange(252,9727
+uint8_t MPU6050::getAccelXSelfTestFactoryTrim(262,10067
+uint8_t MPU6050::getAccelYSelfTestFactoryTrim(272,10433
+uint8_t MPU6050::getAccelZSelfTestFactoryTrim(282,10799
+uint8_t MPU6050::getGyroXSelfTestFactoryTrim(291,11087
+uint8_t MPU6050::getGyroYSelfTestFactoryTrim(300,11353
+uint8_t MPU6050::getGyroZSelfTestFactoryTrim(309,11619
+bool MPU6050::getAccelXSelfTest(320,11923
+void MPU6050::setAccelXSelfTest(328,12211
+bool MPU6050::getAccelYSelfTest(335,12482
+void MPU6050::setAccelYSelfTest(343,12768
+bool MPU6050::getAccelZSelfTest(350,13039
+void MPU6050::setAccelZSelfTest(358,13325
+uint8_t MPU6050::getFullScaleAccelRange(378,13911
+void MPU6050::setFullScaleAccelRange(386,14240
+uint8_t MPU6050::getDHPFMode(424,15711
+void MPU6050::setDHPFMode(434,16081
+uint8_t MPU6050::getFreefallDetectionThreshold(455,17081
+void MPU6050::setFreefallDetectionThreshold(464,17407
+uint8_t MPU6050::getFreefallDetectionDuration(487,18357
+void MPU6050::setFreefallDetectionDuration(496,18672
+uint8_t MPU6050::getMotionDetectionThreshold(521,19771
+void MPU6050::setMotionDetectionThreshold(530,20109
+uint8_t MPU6050::getMotionDetectionDuration(551,21039
+void MPU6050::setMotionDetectionDuration(560,21366
+uint8_t MPU6050::getZeroMotionDetectionThreshold(591,22861
+void MPU6050::setZeroMotionDetectionThreshold(600,23221
+uint8_t MPU6050::getZeroMotionDetectionDuration(622,24231
+void MPU6050::setZeroMotionDetectionDuration(631,24580
+bool MPU6050::getTempFIFOEnabled(643,24976
+void MPU6050::setTempFIFOEnabled(652,25274
+bool MPU6050::getXGyroFIFOEnabled(661,25666
+void MPU6050::setXGyroFIFOEnabled(670,25974
+bool MPU6050::getYGyroFIFOEnabled(679,26365
+void MPU6050::setYGyroFIFOEnabled(688,26673
+bool MPU6050::getZGyroFIFOEnabled(697,27064
+void MPU6050::setZGyroFIFOEnabled(706,27372
+bool MPU6050::getAccelFIFOEnabled(716,27818
+void MPU6050::setAccelFIFOEnabled(725,28123
+bool MPU6050::getSlave2FIFOEnabled(734,28518
+void MPU6050::setSlave2FIFOEnabled(743,28812
+bool MPU6050::getSlave1FIFOEnabled(752,29207
+void MPU6050::setSlave1FIFOEnabled(761,29501
+bool MPU6050::getSlave0FIFOEnabled(770,29896
+void MPU6050::setSlave0FIFOEnabled(779,30190
+bool MPU6050::getMultiMasterEnabled(800,31125
+void MPU6050::setMultiMasterEnabled(809,31430
+bool MPU6050::getWaitForExternalSensorEnabled(823,32153
+void MPU6050::setWaitForExternalSensorEnabled(832,32512
+bool MPU6050::getSlave3FIFOEnabled(841,32923
+void MPU6050::setSlave3FIFOEnabled(850,33224
+bool MPU6050::getSlaveReadWriteTransitionEnabled(863,33912
+void MPU6050::setSlaveReadWriteTransitionEnabled(872,34275
+uint8_t MPU6050::getMasterClockSpeed(904,35591
+void MPU6050::setMasterClockSpeed(912,35890
+uint8_t MPU6050::getSlaveAddress(959,38296
+void MPU6050::setSlaveAddress(970,38668
+uint8_t MPU6050::getSlaveRegister(985,39281
+void MPU6050::setSlaveRegister(996,39671
+bool MPU6050::getSlaveEnabled(1007,40159
+void MPU6050::setSlaveEnabled(1018,40560
+bool MPU6050::getSlaveWordByteSwap(1033,41320
+void MPU6050::setSlaveWordByteSwap(1044,41774
+bool MPU6050::getSlaveWriteMode(1058,42499
+void MPU6050::setSlaveWriteMode(1069,42941
+bool MPU6050::getSlaveWordGroupOffset(1084,43710
+void MPU6050::setSlaveWordGroupOffset(1095,44160
+uint8_t MPU6050::getSlaveDataLength(1106,44702
+void MPU6050::setSlaveDataLength(1117,45153
+uint8_t MPU6050::getSlave4Address(1133,45769
+void MPU6050::setSlave4Address(1142,46038
+uint8_t MPU6050::getSlave4Register(1152,46423
+void MPU6050::setSlave4Register(1161,46710
+void MPU6050::setSlave4OutputByte(1170,47074
+bool MPU6050::getSlave4Enabled(1179,47465
+void MPU6050::setSlave4Enabled(1188,47764
+bool MPU6050::getSlave4InterruptEnabled(1200,48369
+void MPU6050::setSlave4InterruptEnabled(1209,48737
+bool MPU6050::getSlave4WriteMode(1221,49362
+void MPU6050::setSlave4WriteMode(1230,49706
+uint8_t MPU6050::getSlave4MasterDelay(1248,50515
+void MPU6050::setSlave4MasterDelay(1257,50860
+uint8_t MPU6050::getSlate4InputByte(1266,51281
+bool MPU6050::getPassthroughStatus(1282,51865
+bool MPU6050::getSlave4IsDone(1294,52416
+bool MPU6050::getLostArbitration(1305,52927
+bool MPU6050::getSlave4Nack(1316,53407
+bool MPU6050::getSlave3Nack(1327,53883
+bool MPU6050::getSlave2Nack(1338,54359
+bool MPU6050::getSlave1Nack(1349,54835
+bool MPU6050::getSlave0Nack(1360,55311
+bool MPU6050::getInterruptMode(1373,55713
+void MPU6050::setInterruptMode(1383,56063
+bool MPU6050::getInterruptDrive(1392,56418
+void MPU6050::setInterruptDrive(1402,56767
+bool MPU6050::getInterruptLatch(1411,57147
+void MPU6050::setInterruptLatch(1421,57508
+bool MPU6050::getInterruptLatchClear(1430,57904
+void MPU6050::setInterruptLatchClear(1440,58287
+bool MPU6050::getFSyncInterruptLevel(1449,58657
+void MPU6050::setFSyncInterruptLevel(1459,59042
+bool MPU6050::getFSyncInterruptEnabled(1468,59404
+void MPU6050::setFSyncInterruptEnabled(1478,59779
+bool MPU6050::getI2CBypassEnabled(1492,60484
+void MPU6050::setI2CBypassEnabled(1507,61196
+bool MPU6050::getClockOutputEnabled(1519,61781
+void MPU6050::setClockOutputEnabled(1532,62375
+uint8_t MPU6050::getIntEnabled(1545,62815
+void MPU6050::setIntEnabled(1557,63240
+bool MPU6050::getIntFreefallEnabled(1566,63555
+void MPU6050::setIntFreefallEnabled(1576,63897
+bool MPU6050::getIntMotionEnabled(1585,64250
+void MPU6050::setIntMotionEnabled(1595,64597
+bool MPU6050::getIntZeroMotionEnabled(1604,64955
+void MPU6050::setIntZeroMotionEnabled(1614,65317
+bool MPU6050::getIntFIFOBufferOverflowEnabled(1623,65685
+void MPU6050::setIntFIFOBufferOverflowEnabled(1633,66074
+bool MPU6050::getIntI2CMasterEnabled(1643,66529
+void MPU6050::setIntI2CMasterEnabled(1653,66892
+bool MPU6050::getIntDataReadyEnabled(1663,67354
+void MPU6050::setIntDataReadyEnabled(1673,67707
+uint8_t MPU6050::getIntStatus(1686,68192
+bool MPU6050::getIntFreefallStatus(1697,68591
+bool MPU6050::getIntMotionStatus(1708,69035
+bool MPU6050::getIntZeroMotionStatus(1719,69489
+bool MPU6050::getIntFIFOBufferOverflowStatus(1730,69941
+bool MPU6050::getIntI2CMasterStatus(1742,70469
+bool MPU6050::getIntDataReadyStatus(1753,70916
+void MPU6050::getMotion9(1776,71978
+void MPU6050::getMotion6(1792,72845
+void MPU6050::getAcceleration(1837,75127
+int16_t MPU6050::getAccelerationX(1848,75585
+int16_t MPU6050::getAccelerationY(1857,75915
+int16_t MPU6050::getAccelerationZ(1866,76245
+int16_t MPU6050::getTemperature(1877,76566
+void MPU6050::getRotation(1916,78369
+int16_t MPU6050::getRotationX(1927,78813
+int16_t MPU6050::getRotationY(1936,79129
+int16_t MPU6050::getRotationZ(1945,79445
+uint8_t MPU6050::getExternalSensorByte(2026,83782
+uint16_t MPU6050::getExternalSensorWord(2035,84116
+uint32_t MPU6050::getExternalSensorDWord(2044,84501
+uint8_t MPU6050::getMotionStatus(2055,84939
+bool MPU6050::getXNegMotionDetected(2064,85240
+bool MPU6050::getXPosMotionDetected(2073,85572
+bool MPU6050::getYNegMotionDetected(2082,85904
+bool MPU6050::getYPosMotionDetected(2091,86236
+bool MPU6050::getZNegMotionDetected(2100,86568
+bool MPU6050::getZPosMotionDetected(2109,86900
+bool MPU6050::getZeroMotionDetected(2118,87222
+void MPU6050::setSlaveOutputByte(2133,87776
+bool MPU6050::getExternalShadowDelayEnabled(2148,88368
+void MPU6050::setExternalShadowDelayEnabled(2158,88792
+bool MPU6050::getSlaveDelayEnabled(2179,89694
+void MPU6050::setSlaveDelayEnabled(2191,90143
+void MPU6050::resetGyroscopePath(2203,90551
+void MPU6050::resetAccelerometerPath(2212,90930
+void MPU6050::resetTemperaturePath(2221,91318
+uint8_t MPU6050::getAccelerometerPowerOnDelay(2241,92326
+void MPU6050::setAccelerometerPowerOnDelay(2251,92753
+uint8_t MPU6050::getFreefallDetectionCounterDecrement(2280,93968
+void MPU6050::setFreefallDetectionCounterDecrement(2290,94415
+uint8_t MPU6050::getMotionDetectionCounterDecrement(2316,95519
+void MPU6050::setMotionDetectionCounterDecrement(2326,95962
+bool MPU6050::getFIFOEnabled(2340,96538
+void MPU6050::setFIFOEnabled(2350,96851
+bool MPU6050::getI2CMasterModeEnabled(2364,97559
+void MPU6050::setI2CMasterModeEnabled(2374,97918
+void MPU6050::switchSPIEnabled(2381,98233
+void MPU6050::resetFIFO(2390,98617
+void MPU6050::resetI2CMaster(2399,98990
+void MPU6050::resetSensors(2414,99624
+void MPU6050::reset(2425,99952
+bool MPU6050::getSleepEnabled(2439,100621
+void MPU6050::setSleepEnabled(2449,100930
+bool MPU6050::getWakeCycleEnabled(2460,101430
+void MPU6050::setWakeCycleEnabled(2470,101755
+bool MPU6050::getTempSensorEnabled(2484,102358
+void MPU6050::setTempSensorEnabled(2498,102983
+uint8_t MPU6050::getClockSource(2508,103333
+void MPU6050::setClockSource(2542,104771
+uint8_t MPU6050::getWakeFrequency(2571,105781
+void MPU6050::setWakeFrequency(2579,106096
+bool MPU6050::getStandbyXAccelEnabled(2589,106524
+void MPU6050::setStandbyXAccelEnabled(2599,106875
+bool MPU6050::getStandbyYAccelEnabled(2608,107262
+void MPU6050::setStandbyYAccelEnabled(2618,107613
+bool MPU6050::getStandbyZAccelEnabled(2627,108000
+void MPU6050::setStandbyZAccelEnabled(2637,108351
+bool MPU6050::getStandbyXGyroEnabled(2646,108734
+void MPU6050::setStandbyXGyroEnabled(2656,109079
+bool MPU6050::getStandbyYGyroEnabled(2665,109461
+void MPU6050::setStandbyYGyroEnabled(2675,109806
+bool MPU6050::getStandbyZGyroEnabled(2684,110188
+void MPU6050::setStandbyZGyroEnabled(2694,110533
+uint16_t MPU6050::getFIFOCount(2707,111088
+uint8_t MPU6050::getFIFOByte(2739,112566
+void MPU6050::getFIFOBytes(2743,112683
+void MPU6050::setFIFOByte(2754,112956
+uint8_t MPU6050::getDeviceID(2767,113325
+void MPU6050::setDeviceID(2780,113758
+uint8_t MPU6050::getOTPBankValid(2788,113986
+void MPU6050::setOTPBankValid(2792,114136
+int8_t MPU6050::getXGyroOffsetTC(2795,114275
+void MPU6050::setXGyroOffsetTC(2799,114447
+int8_t MPU6050::getYGyroOffsetTC(2805,114634
+void MPU6050::setYGyroOffsetTC(2809,114806
+int8_t MPU6050::getZGyroOffsetTC(2815,114993
+void MPU6050::setZGyroOffsetTC(2819,115165
+int8_t MPU6050::getXFineGain(2825,115353
+void MPU6050::setXFineGain(2829,115473
+int8_t MPU6050::getYFineGain(2835,115605
+void MPU6050::setYFineGain(2839,115725
+int8_t MPU6050::getZFineGain(2845,115857
+void MPU6050::setZFineGain(2849,115977
+int16_t MPU6050::getXAccelOffset(2855,116108
+void MPU6050::setXAccelOffset(2859,116264
+int16_t MPU6050::getYAccelOffset(2865,116400
+void MPU6050::setYAccelOffset(2869,116556
+int16_t MPU6050::getZAccelOffset(2875,116692
+void MPU6050::setZAccelOffset(2879,116848
+int16_t MPU6050::getXGyroOffset(2885,116988
+void MPU6050::setXGyroOffset(2889,117146
+int16_t MPU6050::getYGyroOffset(2895,117287
+void MPU6050::setYGyroOffset(2899,117445
+int16_t MPU6050::getZGyroOffset(2905,117586
+void MPU6050::setZGyroOffset(2909,117744
+bool MPU6050::getIntPLLReadyEnabled(2915,117899
+void MPU6050::setIntPLLReadyEnabled(2919,118059
+bool MPU6050::getIntDMPEnabled(2922,118211
+void MPU6050::setIntDMPEnabled(2926,118362
+bool MPU6050::getDMPInt5Status(2932,118525
+bool MPU6050::getDMPInt4Status(2936,118671
+bool MPU6050::getDMPInt3Status(2940,118817
+bool MPU6050::getDMPInt2Status(2944,118963
+bool MPU6050::getDMPInt1Status(2948,119109
+bool MPU6050::getDMPInt0Status(2952,119255
+bool MPU6050::getIntPLLReadyStatus(2959,119442
+bool MPU6050::getIntDMPStatus(2963,119601
+bool MPU6050::getDMPEnabled(2970,119791
+void MPU6050::setDMPEnabled(2974,119936
+void MPU6050::resetDMP(2977,120073
+void MPU6050::setMemoryBank(2983,120216
+void MPU6050::setMemoryStartAddress(2992,120476
+uint8_t MPU6050::readMemoryByte(2998,120623
+void MPU6050::writeMemoryByte(3002,120742
+void MPU6050::readMemoryBlock(3005,120848
+bool MPU6050::writeMemoryBlock(3036,121982
+bool MPU6050::writeProgMemoryBlock(3112,124988
+bool MPU6050::writeDMPConfigurationSet(3115,125185
+bool MPU6050::writeProgDMPConfigurationSet(3191,128075
+uint8_t MPU6050::getDMPConfig1(3197,128245
+void MPU6050::setDMPConfig1(3201,128365
+uint8_t MPU6050::getDMPConfig2(3207,128499
+void MPU6050::setDMPConfig2(3211,128619
+
+MPU6050/helper_3dmath.h,1357
+#define _HELPER_3DMATH_H_33,1556
+class Quaternion 35,1583
+        Quaternion(Quaternion::Quaternion42,1691
+        Quaternion(Quaternion::Quaternion49,1821
+        Quaternion getProduct(Quaternion::getProduct56,1973
+        Quaternion getConjugate(Quaternion::getConjugate69,2588
+        float getMagnitude(Quaternion::getMagnitude73,2689
+        void normalize(Quaternion::normalize77,2787
+        Quaternion getNormalized(Quaternion::getNormalized85,2951
+class VectorInt16 92,3089
+        VectorInt16(VectorInt16::VectorInt1698,3179
+        VectorInt16(VectorInt16::VectorInt16104,3279
+        float getMagnitude(VectorInt16::getMagnitude110,3408
+        void normalize(VectorInt16::normalize114,3492
+        VectorInt16 getNormalized(VectorInt16::getNormalized121,3636
+        void rotate(VectorInt16::rotate127,3778
+        VectorInt16 getRotated(VectorInt16::getRotated152,4988
+class VectorFloat 159,5133
+        VectorFloat(VectorFloat::VectorFloat165,5217
+        VectorFloat(VectorFloat::VectorFloat171,5317
+        float getMagnitude(VectorFloat::getMagnitude177,5440
+        void normalize(VectorFloat::normalize181,5524
+        VectorFloat getNormalized(VectorFloat::getNormalized188,5668
+        void rotate(VectorFloat::rotate194,5810
+        VectorFloat getRotated(VectorFloat::getRotated209,6238
+
+MPU6050/MPU6050_6Axis_MotionApps20.h,2746
+#define _MPU6050_6AXIS_MOTIONAPPS20_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS2040,1803
+        #define __PGMSPACE_H_ 51,2112
+        #define PROGMEM54,2175
+        #define PGM_P 55,2199
+        #define PSTR(56,2235
+        #define F(57,2267
+        typedef void prog_void;59,2291
+        typedef char prog_char;60,2323
+        typedef unsigned char prog_uchar;61,2355
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(105,4273
+    #define DEBUG_PRINTF(106,4316
+    #define DEBUG_PRINTLN(107,4366
+    #define DEBUG_PRINTLNF(108,4413
+    #define DEBUG_PRINT(110,4473
+    #define DEBUG_PRINTF(111,4500
+    #define DEBUG_PRINTLN(112,4531
+    #define DEBUG_PRINTLNF(113,4560
+#define MPU6050_DMP_CODE_SIZE 116,4601
+#define MPU6050_DMP_CONFIG_SIZE 117,4660
+#define MPU6050_DMP_UPDATES_SIZE 118,4719
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 133,5867
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 273,18270
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21448
+uint8_t MPU6050::dmpInitialize(325,21872
+bool MPU6050::dmpPacketAvailable(546,31048
+uint8_t MPU6050::dmpGetAccel(573,32582
+uint8_t MPU6050::dmpGetAccel(581,33164
+uint8_t MPU6050::dmpGetAccel(589,33524
+uint8_t MPU6050::dmpGetQuaternion(597,33882
+uint8_t MPU6050::dmpGetQuaternion(606,34579
+uint8_t MPU6050::dmpGetQuaternion(615,34992
+uint8_t MPU6050::dmpGetGyro(630,35684
+uint8_t MPU6050::dmpGetGyro(638,36265
+uint8_t MPU6050::dmpGetGyro(646,36624
+uint8_t MPU6050::dmpGetLinearAccel(656,37123
+uint8_t MPU6050::dmpGetLinearAccelInWorld(664,37547
+uint8_t MPU6050::dmpGetGravity(676,38217
+uint8_t MPU6050::dmpGetEuler(687,38787
+uint8_t MPU6050::dmpGetYawPitchRoll(693,39164
+uint8_t MPU6050::dmpProcessFIFOPacket(706,39825
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(716,40160
+uint16_t MPU6050::dmpGetFIFOPacketSize(741,41058
+
+Balancing_Function_v2.cpp,220
+const float offset_a 23,424
+int leftSpeed;26,471
+int rightSpeed;27,486
+float ctrlTurn 28,502
+float ctrlwalk 29,522
+float PID_Balance(39,690
+void PIDSetSpeed(50,918
+void ProcessCommand(63,1267
+void loop(112,2029
+
+TBMotor.cpp,140
+OseppTBMotor::OseppTBMotor(4,43
+void OseppTBMotor::forward(11,206
+void OseppTBMotor::backward(17,343
+void OseppTBMotor::SetSpeed(23,480
+
+I2Cdev/I2Cdev.h,2581
+#define _I2CDEV_H_48,2768
+#define I2CDEV_IMPLEMENTATION 54,3020
+#define I2CDEV_IMPLEMENTATION_WARNINGS60,3294
+#define I2CDEV_ARDUINO_WIRE 65,3536
+#define I2CDEV_BUILTIN_NBWIRE 66,3602
+#define I2CDEV_BUILTIN_FASTWIRE 68,3798
+#define I2CDEV_I2CMASTER_LIBRARY 69,3888
+    #define ARDUINO 92,4648
+#define I2CDEV_DEFAULT_READ_TIMEOUT 97,4756
+class I2Cdev 99,4802
+    #define TW_START 133,7019
+    #define TW_REP_START 134,7060
+    #define TW_MT_SLA_ACK 137,7131
+    #define TW_MT_SLA_NACK 138,7172
+    #define TW_MT_DATA_ACK 139,7213
+    #define TW_MT_DATA_NACK 140,7254
+    #define TW_MT_ARB_LOST 141,7295
+    #define TW_MR_ARB_LOST 144,7363
+    #define TW_MR_SLA_ACK 145,7404
+    #define TW_MR_SLA_NACK 146,7445
+    #define TW_MR_DATA_ACK 147,7486
+    #define TW_MR_DATA_NACK 148,7527
+    #define TW_OK 150,7569
+    #define TW_ERROR 151,7607
+    class Fastwire 153,7646
+    #define NBWIRE_BUFFER_LENGTH 173,8486
+    class TwoWire 175,8523
+    #define TWI_READY 214,9909
+    #define TWI_MRX 215,9935
+    #define TWI_MTX 216,9961
+    #define TWI_SRX 217,9987
+    #define TWI_STX 218,10013
+    #define TW_WRITE 220,10040
+    #define TW_READ 221,10066
+    #define TW_MT_SLA_NACK 223,10093
+    #define TW_MT_DATA_NACK 224,10130
+    #define CPU_FREQ 226,10168
+    #define TWI_FREQ 227,10210
+    #define TWI_BUFFER_LENGTH 228,10250
+    #define TW_STATUS_MASK 232,10351
+    #define TW_STATUS 233,10443
+    #define TW_START 234,10507
+    #define TW_REP_START 235,10552
+    #define TW_MT_SLA_ACK 236,10597
+    #define TW_MT_SLA_NACK 237,10642
+    #define TW_MT_DATA_ACK 238,10687
+    #define TW_MT_DATA_NACK 239,10732
+    #define TW_MT_ARB_LOST 240,10777
+    #define TW_MR_ARB_LOST 241,10822
+    #define TW_MR_SLA_ACK 242,10867
+    #define TW_MR_SLA_NACK 243,10912
+    #define TW_MR_DATA_ACK 244,10957
+    #define TW_MR_DATA_NACK 245,11002
+    #define TW_ST_SLA_ACK 246,11047
+    #define TW_ST_ARB_LOST_SLA_ACK 247,11092
+    #define TW_ST_DATA_ACK 248,11137
+    #define TW_ST_DATA_NACK 249,11182
+    #define TW_ST_LAST_DATA 250,11227
+    #define TW_SR_SLA_ACK 251,11272
+    #define TW_SR_ARB_LOST_SLA_ACK 252,11317
+    #define TW_SR_GCALL_ACK 253,11362
+    #define TW_SR_ARB_LOST_GCALL_ACK 254,11407
+    #define TW_SR_DATA_ACK 255,11452
+    #define TW_SR_DATA_NACK 256,11497
+    #define TW_SR_GCALL_DATA_ACK 257,11542
+    #define TW_SR_GCALL_DATA_NACK 258,11587
+    #define TW_SR_STOP 259,11632
+    #define TW_NO_INFO 260,11677
+    #define TW_BUS_ERROR 261,11722
+        #define sbi(267,11921
+        #define cbi(271,12028
+
+I2Cdev/I2Cdev.cpp,3048
+    TwoWire Wire;86,4764
+I2Cdev::I2Cdev(92,4820
+int8_t I2Cdev::readBit(103,5265
+int8_t I2Cdev::readBitW(118,5925
+int8_t I2Cdev::readBits(134,6718
+int8_t I2Cdev::readBitsW(159,7832
+int8_t I2Cdev::readByte(183,8812
+int8_t I2Cdev::readWord(194,9355
+int8_t I2Cdev::readBytes(206,9938
+int8_t I2Cdev::readWords(326,14864
+bool I2Cdev::writeBit(477,21216
+bool I2Cdev::writeBitW(491,21746
+bool I2Cdev::writeBits(506,22351
+bool I2Cdev::writeBitsW(535,23526
+bool I2Cdev::writeByte(562,24641
+bool I2Cdev::writeWord(572,25000
+bool I2Cdev::writeBytes(583,25416
+bool I2Cdev::writeWords(638,27778
+uint16_t I2Cdev::readTimeout 693,30238
+    boolean Fastwire::waitInt(714,30786
+    void Fastwire::setup(720,30921
+    byte Fastwire::beginTransmission(746,32220
+    byte Fastwire::writeBuf(766,32940
+    byte Fastwire::write(807,34382
+    byte Fastwire::readBuf(818,34689
+    void Fastwire::reset(881,36882
+    byte Fastwire::stop(885,36936
+    uint8_t TwoWire::rxBuffer[TwoWire::rxBuffer930,38979
+    uint8_t TwoWire::rxBufferIndex 931,39032
+    uint8_t TwoWire::rxBufferLength 932,39072
+    uint8_t TwoWire::txAddress 934,39118
+    uint8_t TwoWire::txBuffer[TwoWire::txBuffer935,39154
+    uint8_t TwoWire::txBufferIndex 936,39207
+    uint8_t TwoWire::txBufferLength 937,39247
+    static volatile uint8_t twi_transmitting;943,39424
+    static volatile uint8_t twi_state;944,39470
+    static uint8_t twi_slarw;945,39509
+    static volatile uint8_t twi_error;946,39539
+    static uint8_t twi_masterBuffer[twi_masterBuffer947,39578
+    static volatile uint8_t twi_masterBufferIndex;948,39634
+    static uint8_t twi_masterBufferLength;949,39685
+    static uint8_t twi_rxBuffer[twi_rxBuffer950,39728
+    static volatile uint8_t twi_rxBufferIndex;951,39780
+    static volatile uint8_t twi_Return_Value;953,39889
+    static volatile uint8_t twi_Done;954,39935
+    void twi_init(958,40059
+    } twi_Write_Vars;995,41183
+    twi_Write_Vars *ptwv ptwv997,41206
+    void twi_Finish(1000,41290
+    uint8_t twii_WaitForDone(1010,41510
+    void twii_SetState(1016,41730
+    void twii_SetError(1020,41808
+    void twii_InitBuffer(1024,41887
+    void twii_CopyToBuf(1029,42032
+    void twii_CopyFromBuf(1036,42213
+    void twii_SetSlaRW(1043,42396
+    void twii_SetStart(1047,42474
+    void twi_write01(1051,42584
+    void twi_write00(1067,43186
+    void twi_writeTo(1084,43902
+    void twi_read01(1095,44280
+    void twi_read00(1104,44651
+    void twi_readFrom(1117,45220
+    void twi_reply(1128,45555
+    void twi_stop(1137,45833
+    void twi_releaseBus(1151,46219
+    SIGNAL(1159,46412
+    TwoWire::TwoWire(1331,52932
+    void TwoWire::begin(1333,52964
+    void TwoWire::beginTransmission(1343,53143
+    uint8_t TwoWire::endTransmission(1357,53512
+    void TwoWire::nbendTransmission(1373,53989
+    void TwoWire::send(1379,54184
+    uint8_t TwoWire::receive(1400,54775
+    uint8_t TwoWire::requestFrom(1414,55151
+    void TwoWire::nbrequestFrom(1432,55688
+    uint8_t TwoWire::available(1453,56308
+
+MPU6050_DMP.cpp,411
+MPU6050 mpu;6,80
+bool dmpReady 10,122
+uint8_t mpuIntStatus;11,185
+uint8_t devStatus;12,256
+uint16_t packetSize;13,351
+uint16_t fifoCount;14,425
+uint8_t fifoBuffer[fifoBuffer15,489
+Quaternion q;17,537
+VectorFloat gravity;18,606
+float ypr[ypr19,669
+uint8_t* getMPUBuff(21,762
+int16_t g_dir;70,2920
+float angle;71,2935
+int16_t g_dirOffset=73,2949
+int16_t a_yOffset=74,2972
+bool updateIMU(76,2994
+
+TBMotor.h,24
+class OseppTBMotor2,21
+
+MPU6050/MPU6050_9Axis_MotionApps41.h,2691
+#define _MPU6050_9AXIS_MOTIONAPPS41_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS4140,1801
+        #define __PGMSPACE_H_ 51,2110
+        #define PROGMEM54,2173
+        #define PGM_P 55,2197
+        #define PSTR(56,2233
+        #define F(57,2265
+        typedef void prog_void;59,2289
+        typedef char prog_char;60,2321
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(96,3890
+    #define DEBUG_PRINTF(97,3933
+    #define DEBUG_PRINTLN(98,3983
+    #define DEBUG_PRINTLNF(99,4030
+    #define DEBUG_PRINT(101,4090
+    #define DEBUG_PRINTF(102,4117
+    #define DEBUG_PRINTLN(103,4148
+    #define DEBUG_PRINTLNF(104,4177
+#define MPU6050_DMP_CODE_SIZE 107,4218
+#define MPU6050_DMP_CONFIG_SIZE 108,4277
+#define MPU6050_DMP_UPDATES_SIZE 109,4336
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 124,5484
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 265,18055
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21570
+uint8_t MPU6050::dmpInitialize(337,22680
+bool MPU6050::dmpPacketAvailable(653,38462
+uint8_t MPU6050::dmpGetAccel(680,39996
+uint8_t MPU6050::dmpGetAccel(688,40578
+uint8_t MPU6050::dmpGetAccel(696,40938
+uint8_t MPU6050::dmpGetQuaternion(704,41296
+uint8_t MPU6050::dmpGetQuaternion(713,41993
+uint8_t MPU6050::dmpGetQuaternion(722,42406
+uint8_t MPU6050::dmpGetGyro(737,43098
+uint8_t MPU6050::dmpGetGyro(745,43679
+uint8_t MPU6050::dmpGetMag(753,44038
+uint8_t MPU6050::dmpGetLinearAccel(763,44538
+uint8_t MPU6050::dmpGetLinearAccelInWorld(771,44943
+uint8_t MPU6050::dmpGetGravity(783,45613
+uint8_t MPU6050::dmpGetEuler(794,46183
+uint8_t MPU6050::dmpGetYawPitchRoll(800,46560
+uint8_t MPU6050::dmpProcessFIFOPacket(813,47221
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(823,47556
+uint16_t MPU6050::dmpGetFIFOPacketSize(848,48452
+
+MPU6050/MPU6050.h,14876
+#define _MPU6050_H_38,1810
+#define MPU6050_ADDRESS_AD0_LOW 56,2237
+#define MPU6050_ADDRESS_AD0_HIGH 57,2344
+#define MPU6050_DEFAULT_ADDRESS 58,2411
+#define MPU6050_RA_XG_OFFS_TC 60,2472
+#define MPU6050_RA_YG_OFFS_TC 61,2563
+#define MPU6050_RA_ZG_OFFS_TC 62,2654
+#define MPU6050_RA_X_FINE_GAIN 63,2745
+#define MPU6050_RA_Y_FINE_GAIN 64,2806
+#define MPU6050_RA_Z_FINE_GAIN 65,2867
+#define MPU6050_RA_XA_OFFS_H 66,2928
+#define MPU6050_RA_XA_OFFS_L_TC 67,2986
+#define MPU6050_RA_YA_OFFS_H 68,3027
+#define MPU6050_RA_YA_OFFS_L_TC 69,3085
+#define MPU6050_RA_ZA_OFFS_H 70,3126
+#define MPU6050_RA_ZA_OFFS_L_TC 71,3184
+#define MPU6050_RA_SELF_TEST_X 72,3225
+#define MPU6050_RA_SELF_TEST_Y 73,3307
+#define MPU6050_RA_SELF_TEST_Z 74,3389
+#define MPU6050_RA_SELF_TEST_A 75,3471
+#define MPU6050_RA_XG_OFFS_USRH 76,3573
+#define MPU6050_RA_XG_OFFS_USRL 77,3635
+#define MPU6050_RA_YG_OFFS_USRH 78,3676
+#define MPU6050_RA_YG_OFFS_USRL 79,3738
+#define MPU6050_RA_ZG_OFFS_USRH 80,3779
+#define MPU6050_RA_ZG_OFFS_USRL 81,3841
+#define MPU6050_RA_SMPLRT_DIV 82,3882
+#define MPU6050_RA_CONFIG 83,3923
+#define MPU6050_RA_GYRO_CONFIG 84,3964
+#define MPU6050_RA_ACCEL_CONFIG 85,4005
+#define MPU6050_RA_FF_THR 86,4046
+#define MPU6050_RA_FF_DUR 87,4087
+#define MPU6050_RA_MOT_THR 88,4128
+#define MPU6050_RA_MOT_DUR 89,4169
+#define MPU6050_RA_ZRMOT_THR 90,4210
+#define MPU6050_RA_ZRMOT_DUR 91,4251
+#define MPU6050_RA_FIFO_EN 92,4292
+#define MPU6050_RA_I2C_MST_CTRL 93,4333
+#define MPU6050_RA_I2C_SLV0_ADDR 94,4374
+#define MPU6050_RA_I2C_SLV0_REG 95,4415
+#define MPU6050_RA_I2C_SLV0_CTRL 96,4456
+#define MPU6050_RA_I2C_SLV1_ADDR 97,4497
+#define MPU6050_RA_I2C_SLV1_REG 98,4538
+#define MPU6050_RA_I2C_SLV1_CTRL 99,4579
+#define MPU6050_RA_I2C_SLV2_ADDR 100,4620
+#define MPU6050_RA_I2C_SLV2_REG 101,4661
+#define MPU6050_RA_I2C_SLV2_CTRL 102,4702
+#define MPU6050_RA_I2C_SLV3_ADDR 103,4743
+#define MPU6050_RA_I2C_SLV3_REG 104,4784
+#define MPU6050_RA_I2C_SLV3_CTRL 105,4825
+#define MPU6050_RA_I2C_SLV4_ADDR 106,4866
+#define MPU6050_RA_I2C_SLV4_REG 107,4907
+#define MPU6050_RA_I2C_SLV4_DO 108,4948
+#define MPU6050_RA_I2C_SLV4_CTRL 109,4989
+#define MPU6050_RA_I2C_SLV4_DI 110,5030
+#define MPU6050_RA_I2C_MST_STATUS 111,5071
+#define MPU6050_RA_INT_PIN_CFG 112,5112
+#define MPU6050_RA_INT_ENABLE 113,5153
+#define MPU6050_RA_DMP_INT_STATUS 114,5194
+#define MPU6050_RA_INT_STATUS 115,5235
+#define MPU6050_RA_ACCEL_XOUT_H 116,5276
+#define MPU6050_RA_ACCEL_XOUT_L 117,5317
+#define MPU6050_RA_ACCEL_YOUT_H 118,5358
+#define MPU6050_RA_ACCEL_YOUT_L 119,5399
+#define MPU6050_RA_ACCEL_ZOUT_H 120,5440
+#define MPU6050_RA_ACCEL_ZOUT_L 121,5481
+#define MPU6050_RA_TEMP_OUT_H 122,5522
+#define MPU6050_RA_TEMP_OUT_L 123,5563
+#define MPU6050_RA_GYRO_XOUT_H 124,5604
+#define MPU6050_RA_GYRO_XOUT_L 125,5645
+#define MPU6050_RA_GYRO_YOUT_H 126,5686
+#define MPU6050_RA_GYRO_YOUT_L 127,5727
+#define MPU6050_RA_GYRO_ZOUT_H 128,5768
+#define MPU6050_RA_GYRO_ZOUT_L 129,5809
+#define MPU6050_RA_EXT_SENS_DATA_00 130,5850
+#define MPU6050_RA_EXT_SENS_DATA_01 131,5891
+#define MPU6050_RA_EXT_SENS_DATA_02 132,5932
+#define MPU6050_RA_EXT_SENS_DATA_03 133,5973
+#define MPU6050_RA_EXT_SENS_DATA_04 134,6014
+#define MPU6050_RA_EXT_SENS_DATA_05 135,6055
+#define MPU6050_RA_EXT_SENS_DATA_06 136,6096
+#define MPU6050_RA_EXT_SENS_DATA_07 137,6137
+#define MPU6050_RA_EXT_SENS_DATA_08 138,6178
+#define MPU6050_RA_EXT_SENS_DATA_09 139,6219
+#define MPU6050_RA_EXT_SENS_DATA_10 140,6260
+#define MPU6050_RA_EXT_SENS_DATA_11 141,6301
+#define MPU6050_RA_EXT_SENS_DATA_12 142,6342
+#define MPU6050_RA_EXT_SENS_DATA_13 143,6383
+#define MPU6050_RA_EXT_SENS_DATA_14 144,6424
+#define MPU6050_RA_EXT_SENS_DATA_15 145,6465
+#define MPU6050_RA_EXT_SENS_DATA_16 146,6506
+#define MPU6050_RA_EXT_SENS_DATA_17 147,6547
+#define MPU6050_RA_EXT_SENS_DATA_18 148,6588
+#define MPU6050_RA_EXT_SENS_DATA_19 149,6629
+#define MPU6050_RA_EXT_SENS_DATA_20 150,6670
+#define MPU6050_RA_EXT_SENS_DATA_21 151,6711
+#define MPU6050_RA_EXT_SENS_DATA_22 152,6752
+#define MPU6050_RA_EXT_SENS_DATA_23 153,6793
+#define MPU6050_RA_MOT_DETECT_STATUS 154,6834
+#define MPU6050_RA_I2C_SLV0_DO 155,6879
+#define MPU6050_RA_I2C_SLV1_DO 156,6920
+#define MPU6050_RA_I2C_SLV2_DO 157,6961
+#define MPU6050_RA_I2C_SLV3_DO 158,7002
+#define MPU6050_RA_I2C_MST_DELAY_CTRL 159,7043
+#define MPU6050_RA_SIGNAL_PATH_RESET 160,7088
+#define MPU6050_RA_MOT_DETECT_CTRL 161,7133
+#define MPU6050_RA_USER_CTRL 162,7178
+#define MPU6050_RA_PWR_MGMT_1 163,7219
+#define MPU6050_RA_PWR_MGMT_2 164,7260
+#define MPU6050_RA_BANK_SEL 165,7301
+#define MPU6050_RA_MEM_START_ADDR 166,7342
+#define MPU6050_RA_MEM_R_W 167,7383
+#define MPU6050_RA_DMP_CFG_1 168,7424
+#define MPU6050_RA_DMP_CFG_2 169,7465
+#define MPU6050_RA_FIFO_COUNTH 170,7506
+#define MPU6050_RA_FIFO_COUNTL 171,7547
+#define MPU6050_RA_FIFO_R_W 172,7588
+#define MPU6050_RA_WHO_AM_I 173,7629
+#define MPU6050_SELF_TEST_XA_1_BIT 175,7671
+#define MPU6050_SELF_TEST_XA_1_LENGTH 176,7715
+#define MPU6050_SELF_TEST_XA_2_BIT 177,7759
+#define MPU6050_SELF_TEST_XA_2_LENGTH 178,7803
+#define MPU6050_SELF_TEST_YA_1_BIT 179,7847
+#define MPU6050_SELF_TEST_YA_1_LENGTH 180,7891
+#define MPU6050_SELF_TEST_YA_2_BIT 181,7935
+#define MPU6050_SELF_TEST_YA_2_LENGTH 182,7979
+#define MPU6050_SELF_TEST_ZA_1_BIT 183,8023
+#define MPU6050_SELF_TEST_ZA_1_LENGTH 184,8067
+#define MPU6050_SELF_TEST_ZA_2_BIT 185,8111
+#define MPU6050_SELF_TEST_ZA_2_LENGTH 186,8155
+#define MPU6050_SELF_TEST_XG_1_BIT 188,8200
+#define MPU6050_SELF_TEST_XG_1_LENGTH 189,8244
+#define MPU6050_SELF_TEST_YG_1_BIT 190,8288
+#define MPU6050_SELF_TEST_YG_1_LENGTH 191,8332
+#define MPU6050_SELF_TEST_ZG_1_BIT 192,8376
+#define MPU6050_SELF_TEST_ZG_1_LENGTH 193,8420
+#define MPU6050_TC_PWR_MODE_BIT 195,8465
+#define MPU6050_TC_OFFSET_BIT 196,8503
+#define MPU6050_TC_OFFSET_LENGTH 197,8541
+#define MPU6050_TC_OTP_BNK_VLD_BIT 198,8579
+#define MPU6050_VDDIO_LEVEL_VLOGIC 200,8618
+#define MPU6050_VDDIO_LEVEL_VDD 201,8656
+#define MPU6050_CFG_EXT_SYNC_SET_BIT 203,8695
+#define MPU6050_CFG_EXT_SYNC_SET_LENGTH 204,8737
+#define MPU6050_CFG_DLPF_CFG_BIT 205,8779
+#define MPU6050_CFG_DLPF_CFG_LENGTH 206,8817
+#define MPU6050_EXT_SYNC_DISABLED 208,8856
+#define MPU6050_EXT_SYNC_TEMP_OUT_L 209,8900
+#define MPU6050_EXT_SYNC_GYRO_XOUT_L 210,8944
+#define MPU6050_EXT_SYNC_GYRO_YOUT_L 211,8988
+#define MPU6050_EXT_SYNC_GYRO_ZOUT_L 212,9032
+#define MPU6050_EXT_SYNC_ACCEL_XOUT_L 213,9076
+#define MPU6050_EXT_SYNC_ACCEL_YOUT_L 214,9120
+#define MPU6050_EXT_SYNC_ACCEL_ZOUT_L 215,9164
+#define MPU6050_DLPF_BW_256 217,9209
+#define MPU6050_DLPF_BW_188 218,9250
+#define MPU6050_DLPF_BW_98 219,9291
+#define MPU6050_DLPF_BW_42 220,9332
+#define MPU6050_DLPF_BW_20 221,9373
+#define MPU6050_DLPF_BW_10 222,9414
+#define MPU6050_DLPF_BW_5 223,9455
+#define MPU6050_GCONFIG_FS_SEL_BIT 225,9497
+#define MPU6050_GCONFIG_FS_SEL_LENGTH 226,9539
+#define MPU6050_GYRO_FS_250 228,9582
+#define MPU6050_GYRO_FS_500 229,9623
+#define MPU6050_GYRO_FS_1000 230,9664
+#define MPU6050_GYRO_FS_2000 231,9705
+#define MPU6050_ACONFIG_XA_ST_BIT 233,9747
+#define MPU6050_ACONFIG_YA_ST_BIT 234,9793
+#define MPU6050_ACONFIG_ZA_ST_BIT 235,9839
+#define MPU6050_ACONFIG_AFS_SEL_BIT 236,9885
+#define MPU6050_ACONFIG_AFS_SEL_LENGTH 237,9931
+#define MPU6050_ACONFIG_ACCEL_HPF_BIT 238,9977
+#define MPU6050_ACONFIG_ACCEL_HPF_LENGTH 239,10023
+#define MPU6050_ACCEL_FS_2 241,10070
+#define MPU6050_ACCEL_FS_4 242,10111
+#define MPU6050_ACCEL_FS_8 243,10152
+#define MPU6050_ACCEL_FS_16 244,10193
+#define MPU6050_DHPF_RESET 246,10235
+#define MPU6050_DHPF_5 247,10276
+#define MPU6050_DHPF_2P5 248,10317
+#define MPU6050_DHPF_1P25 249,10358
+#define MPU6050_DHPF_0P63 250,10399
+#define MPU6050_DHPF_HOLD 251,10440
+#define MPU6050_TEMP_FIFO_EN_BIT 253,10482
+#define MPU6050_XG_FIFO_EN_BIT 254,10520
+#define MPU6050_YG_FIFO_EN_BIT 255,10558
+#define MPU6050_ZG_FIFO_EN_BIT 256,10596
+#define MPU6050_ACCEL_FIFO_EN_BIT 257,10634
+#define MPU6050_SLV2_FIFO_EN_BIT 258,10672
+#define MPU6050_SLV1_FIFO_EN_BIT 259,10710
+#define MPU6050_SLV0_FIFO_EN_BIT 260,10748
+#define MPU6050_MULT_MST_EN_BIT 262,10787
+#define MPU6050_WAIT_FOR_ES_BIT 263,10825
+#define MPU6050_SLV_3_FIFO_EN_BIT 264,10863
+#define MPU6050_I2C_MST_P_NSR_BIT 265,10901
+#define MPU6050_I2C_MST_CLK_BIT 266,10939
+#define MPU6050_I2C_MST_CLK_LENGTH 267,10977
+#define MPU6050_CLOCK_DIV_348 269,11016
+#define MPU6050_CLOCK_DIV_333 270,11056
+#define MPU6050_CLOCK_DIV_320 271,11096
+#define MPU6050_CLOCK_DIV_308 272,11136
+#define MPU6050_CLOCK_DIV_296 273,11176
+#define MPU6050_CLOCK_DIV_286 274,11216
+#define MPU6050_CLOCK_DIV_276 275,11256
+#define MPU6050_CLOCK_DIV_267 276,11296
+#define MPU6050_CLOCK_DIV_258 277,11336
+#define MPU6050_CLOCK_DIV_500 278,11376
+#define MPU6050_CLOCK_DIV_471 279,11416
+#define MPU6050_CLOCK_DIV_444 280,11456
+#define MPU6050_CLOCK_DIV_421 281,11496
+#define MPU6050_CLOCK_DIV_400 282,11536
+#define MPU6050_CLOCK_DIV_381 283,11576
+#define MPU6050_CLOCK_DIV_364 284,11616
+#define MPU6050_I2C_SLV_RW_BIT 286,11657
+#define MPU6050_I2C_SLV_ADDR_BIT 287,11695
+#define MPU6050_I2C_SLV_ADDR_LENGTH 288,11733
+#define MPU6050_I2C_SLV_EN_BIT 289,11771
+#define MPU6050_I2C_SLV_BYTE_SW_BIT 290,11809
+#define MPU6050_I2C_SLV_REG_DIS_BIT 291,11847
+#define MPU6050_I2C_SLV_GRP_BIT 292,11885
+#define MPU6050_I2C_SLV_LEN_BIT 293,11923
+#define MPU6050_I2C_SLV_LEN_LENGTH 294,11961
+#define MPU6050_I2C_SLV4_RW_BIT 296,12000
+#define MPU6050_I2C_SLV4_ADDR_BIT 297,12042
+#define MPU6050_I2C_SLV4_ADDR_LENGTH 298,12084
+#define MPU6050_I2C_SLV4_EN_BIT 299,12126
+#define MPU6050_I2C_SLV4_INT_EN_BIT 300,12168
+#define MPU6050_I2C_SLV4_REG_DIS_BIT 301,12210
+#define MPU6050_I2C_SLV4_MST_DLY_BIT 302,12252
+#define MPU6050_I2C_SLV4_MST_DLY_LENGTH 303,12294
+#define MPU6050_MST_PASS_THROUGH_BIT 305,12337
+#define MPU6050_MST_I2C_SLV4_DONE_BIT 306,12379
+#define MPU6050_MST_I2C_LOST_ARB_BIT 307,12421
+#define MPU6050_MST_I2C_SLV4_NACK_BIT 308,12463
+#define MPU6050_MST_I2C_SLV3_NACK_BIT 309,12505
+#define MPU6050_MST_I2C_SLV2_NACK_BIT 310,12547
+#define MPU6050_MST_I2C_SLV1_NACK_BIT 311,12589
+#define MPU6050_MST_I2C_SLV0_NACK_BIT 312,12631
+#define MPU6050_INTCFG_INT_LEVEL_BIT 314,12674
+#define MPU6050_INTCFG_INT_OPEN_BIT 315,12720
+#define MPU6050_INTCFG_LATCH_INT_EN_BIT 316,12766
+#define MPU6050_INTCFG_INT_RD_CLEAR_BIT 317,12812
+#define MPU6050_INTCFG_FSYNC_INT_LEVEL_BIT 318,12858
+#define MPU6050_INTCFG_FSYNC_INT_EN_BIT 319,12904
+#define MPU6050_INTCFG_I2C_BYPASS_EN_BIT 320,12950
+#define MPU6050_INTCFG_CLKOUT_EN_BIT 321,12996
+#define MPU6050_INTMODE_ACTIVEHIGH 323,13043
+#define MPU6050_INTMODE_ACTIVELOW 324,13084
+#define MPU6050_INTDRV_PUSHPULL 326,13126
+#define MPU6050_INTDRV_OPENDRAIN 327,13167
+#define MPU6050_INTLATCH_50USPULSE 329,13209
+#define MPU6050_INTLATCH_WAITCLEAR 330,13250
+#define MPU6050_INTCLEAR_STATUSREAD 332,13292
+#define MPU6050_INTCLEAR_ANYREAD 333,13333
+#define MPU6050_INTERRUPT_FF_BIT 335,13375
+#define MPU6050_INTERRUPT_MOT_BIT 336,13421
+#define MPU6050_INTERRUPT_ZMOT_BIT 337,13467
+#define MPU6050_INTERRUPT_FIFO_OFLOW_BIT 338,13513
+#define MPU6050_INTERRUPT_I2C_MST_INT_BIT 339,13559
+#define MPU6050_INTERRUPT_PLL_RDY_INT_BIT 340,13605
+#define MPU6050_INTERRUPT_DMP_INT_BIT 341,13651
+#define MPU6050_INTERRUPT_DATA_RDY_BIT 342,13697
+#define MPU6050_DMPINT_5_BIT 346,13827
+#define MPU6050_DMPINT_4_BIT 347,13869
+#define MPU6050_DMPINT_3_BIT 348,13911
+#define MPU6050_DMPINT_2_BIT 349,13953
+#define MPU6050_DMPINT_1_BIT 350,13995
+#define MPU6050_DMPINT_0_BIT 351,14037
+#define MPU6050_MOTION_MOT_XNEG_BIT 353,14080
+#define MPU6050_MOTION_MOT_XPOS_BIT 354,14122
+#define MPU6050_MOTION_MOT_YNEG_BIT 355,14164
+#define MPU6050_MOTION_MOT_YPOS_BIT 356,14206
+#define MPU6050_MOTION_MOT_ZNEG_BIT 357,14248
+#define MPU6050_MOTION_MOT_ZPOS_BIT 358,14290
+#define MPU6050_MOTION_MOT_ZRMOT_BIT 359,14332
+#define MPU6050_DELAYCTRL_DELAY_ES_SHADOW_BIT 361,14375
+#define MPU6050_DELAYCTRL_I2C_SLV4_DLY_EN_BIT 362,14425
+#define MPU6050_DELAYCTRL_I2C_SLV3_DLY_EN_BIT 363,14475
+#define MPU6050_DELAYCTRL_I2C_SLV2_DLY_EN_BIT 364,14525
+#define MPU6050_DELAYCTRL_I2C_SLV1_DLY_EN_BIT 365,14575
+#define MPU6050_DELAYCTRL_I2C_SLV0_DLY_EN_BIT 366,14625
+#define MPU6050_PATHRESET_GYRO_RESET_BIT 368,14676
+#define MPU6050_PATHRESET_ACCEL_RESET_BIT 369,14722
+#define MPU6050_PATHRESET_TEMP_RESET_BIT 370,14768
+#define MPU6050_DETECT_ACCEL_ON_DELAY_BIT 372,14815
+#define MPU6050_DETECT_ACCEL_ON_DELAY_LENGTH 373,14865
+#define MPU6050_DETECT_FF_COUNT_BIT 374,14915
+#define MPU6050_DETECT_FF_COUNT_LENGTH 375,14965
+#define MPU6050_DETECT_MOT_COUNT_BIT 376,15015
+#define MPU6050_DETECT_MOT_COUNT_LENGTH 377,15065
+#define MPU6050_DETECT_DECREMENT_RESET 379,15116
+#define MPU6050_DETECT_DECREMENT_1 380,15160
+#define MPU6050_DETECT_DECREMENT_2 381,15204
+#define MPU6050_DETECT_DECREMENT_4 382,15248
+#define MPU6050_USERCTRL_DMP_EN_BIT 384,15293
+#define MPU6050_USERCTRL_FIFO_EN_BIT 385,15343
+#define MPU6050_USERCTRL_I2C_MST_EN_BIT 386,15393
+#define MPU6050_USERCTRL_I2C_IF_DIS_BIT 387,15443
+#define MPU6050_USERCTRL_DMP_RESET_BIT 388,15493
+#define MPU6050_USERCTRL_FIFO_RESET_BIT 389,15543
+#define MPU6050_USERCTRL_I2C_MST_RESET_BIT 390,15593
+#define MPU6050_USERCTRL_SIG_COND_RESET_BIT 391,15643
+#define MPU6050_PWR1_DEVICE_RESET_BIT 393,15694
+#define MPU6050_PWR1_SLEEP_BIT 394,15736
+#define MPU6050_PWR1_CYCLE_BIT 395,15778
+#define MPU6050_PWR1_TEMP_DIS_BIT 396,15820
+#define MPU6050_PWR1_CLKSEL_BIT 397,15862
+#define MPU6050_PWR1_CLKSEL_LENGTH 398,15904
+#define MPU6050_CLOCK_INTERNAL 400,15947
+#define MPU6050_CLOCK_PLL_XGYRO 401,15992
+#define MPU6050_CLOCK_PLL_YGYRO 402,16037
+#define MPU6050_CLOCK_PLL_ZGYRO 403,16082
+#define MPU6050_CLOCK_PLL_EXT32K 404,16127
+#define MPU6050_CLOCK_PLL_EXT19M 405,16172
+#define MPU6050_CLOCK_KEEP_RESET 406,16217
+#define MPU6050_PWR2_LP_WAKE_CTRL_BIT 408,16263
+#define MPU6050_PWR2_LP_WAKE_CTRL_LENGTH 409,16309
+#define MPU6050_PWR2_STBY_XA_BIT 410,16355
+#define MPU6050_PWR2_STBY_YA_BIT 411,16401
+#define MPU6050_PWR2_STBY_ZA_BIT 412,16447
+#define MPU6050_PWR2_STBY_XG_BIT 413,16493
+#define MPU6050_PWR2_STBY_YG_BIT 414,16539
+#define MPU6050_PWR2_STBY_ZG_BIT 415,16585
+#define MPU6050_WAKE_FREQ_1P25 417,16632
+#define MPU6050_WAKE_FREQ_2P5 418,16672
+#define MPU6050_WAKE_FREQ_5 419,16712
+#define MPU6050_WAKE_FREQ_10 420,16752
+#define MPU6050_BANKSEL_PRFTCH_EN_BIT 422,16793
+#define MPU6050_BANKSEL_CFG_USER_BANK_BIT 423,16839
+#define MPU6050_BANKSEL_MEM_SEL_BIT 424,16885
+#define MPU6050_BANKSEL_MEM_SEL_LENGTH 425,16931
+#define MPU6050_WHO_AM_I_BIT 427,16978
+#define MPU6050_WHO_AM_I_LENGTH 428,17016
+#define MPU6050_DMP_MEMORY_BANKS 430,17055
+#define MPU6050_DMP_MEMORY_BANK_SIZE 431,17097
+#define MPU6050_DMP_MEMORY_CHUNK_SIZE 432,17141
+class MPU6050 436,17248
+
+MPU6050/MPU6050.cpp,12422
+MPU6050::MPU6050(42,1899
+MPU6050::MPU6050(52,2127
+void MPU6050::initialize(63,2611
+bool MPU6050::testConnection(74,3018
+uint8_t MPU6050::getAuxVDDIOLevel(86,3476
+void MPU6050::setAuxVDDIOLevel(96,3946
+uint8_t MPU6050::getRate(123,5019
+void MPU6050::setRate(132,5264
+uint8_t MPU6050::getExternalFrameSync(165,6436
+void MPU6050::setExternalFrameSync(174,6767
+uint8_t MPU6050::getDLPFMode(205,8208
+void MPU6050::setDLPFMode(217,8625
+uint8_t MPU6050::getFullScaleGyroRange(240,9285
+void MPU6050::setFullScaleGyroRange(252,9727
+uint8_t MPU6050::getAccelXSelfTestFactoryTrim(262,10067
+uint8_t MPU6050::getAccelYSelfTestFactoryTrim(272,10433
+uint8_t MPU6050::getAccelZSelfTestFactoryTrim(282,10799
+uint8_t MPU6050::getGyroXSelfTestFactoryTrim(291,11087
+uint8_t MPU6050::getGyroYSelfTestFactoryTrim(300,11353
+uint8_t MPU6050::getGyroZSelfTestFactoryTrim(309,11619
+bool MPU6050::getAccelXSelfTest(320,11923
+void MPU6050::setAccelXSelfTest(328,12211
+bool MPU6050::getAccelYSelfTest(335,12482
+void MPU6050::setAccelYSelfTest(343,12768
+bool MPU6050::getAccelZSelfTest(350,13039
+void MPU6050::setAccelZSelfTest(358,13325
+uint8_t MPU6050::getFullScaleAccelRange(378,13911
+void MPU6050::setFullScaleAccelRange(386,14240
+uint8_t MPU6050::getDHPFMode(424,15711
+void MPU6050::setDHPFMode(434,16081
+uint8_t MPU6050::getFreefallDetectionThreshold(455,17081
+void MPU6050::setFreefallDetectionThreshold(464,17407
+uint8_t MPU6050::getFreefallDetectionDuration(487,18357
+void MPU6050::setFreefallDetectionDuration(496,18672
+uint8_t MPU6050::getMotionDetectionThreshold(521,19771
+void MPU6050::setMotionDetectionThreshold(530,20109
+uint8_t MPU6050::getMotionDetectionDuration(551,21039
+void MPU6050::setMotionDetectionDuration(560,21366
+uint8_t MPU6050::getZeroMotionDetectionThreshold(591,22861
+void MPU6050::setZeroMotionDetectionThreshold(600,23221
+uint8_t MPU6050::getZeroMotionDetectionDuration(622,24231
+void MPU6050::setZeroMotionDetectionDuration(631,24580
+bool MPU6050::getTempFIFOEnabled(643,24976
+void MPU6050::setTempFIFOEnabled(652,25274
+bool MPU6050::getXGyroFIFOEnabled(661,25666
+void MPU6050::setXGyroFIFOEnabled(670,25974
+bool MPU6050::getYGyroFIFOEnabled(679,26365
+void MPU6050::setYGyroFIFOEnabled(688,26673
+bool MPU6050::getZGyroFIFOEnabled(697,27064
+void MPU6050::setZGyroFIFOEnabled(706,27372
+bool MPU6050::getAccelFIFOEnabled(716,27818
+void MPU6050::setAccelFIFOEnabled(725,28123
+bool MPU6050::getSlave2FIFOEnabled(734,28518
+void MPU6050::setSlave2FIFOEnabled(743,28812
+bool MPU6050::getSlave1FIFOEnabled(752,29207
+void MPU6050::setSlave1FIFOEnabled(761,29501
+bool MPU6050::getSlave0FIFOEnabled(770,29896
+void MPU6050::setSlave0FIFOEnabled(779,30190
+bool MPU6050::getMultiMasterEnabled(800,31125
+void MPU6050::setMultiMasterEnabled(809,31430
+bool MPU6050::getWaitForExternalSensorEnabled(823,32153
+void MPU6050::setWaitForExternalSensorEnabled(832,32512
+bool MPU6050::getSlave3FIFOEnabled(841,32923
+void MPU6050::setSlave3FIFOEnabled(850,33224
+bool MPU6050::getSlaveReadWriteTransitionEnabled(863,33912
+void MPU6050::setSlaveReadWriteTransitionEnabled(872,34275
+uint8_t MPU6050::getMasterClockSpeed(904,35591
+void MPU6050::setMasterClockSpeed(912,35890
+uint8_t MPU6050::getSlaveAddress(959,38296
+void MPU6050::setSlaveAddress(970,38668
+uint8_t MPU6050::getSlaveRegister(985,39281
+void MPU6050::setSlaveRegister(996,39671
+bool MPU6050::getSlaveEnabled(1007,40159
+void MPU6050::setSlaveEnabled(1018,40560
+bool MPU6050::getSlaveWordByteSwap(1033,41320
+void MPU6050::setSlaveWordByteSwap(1044,41774
+bool MPU6050::getSlaveWriteMode(1058,42499
+void MPU6050::setSlaveWriteMode(1069,42941
+bool MPU6050::getSlaveWordGroupOffset(1084,43710
+void MPU6050::setSlaveWordGroupOffset(1095,44160
+uint8_t MPU6050::getSlaveDataLength(1106,44702
+void MPU6050::setSlaveDataLength(1117,45153
+uint8_t MPU6050::getSlave4Address(1133,45769
+void MPU6050::setSlave4Address(1142,46038
+uint8_t MPU6050::getSlave4Register(1152,46423
+void MPU6050::setSlave4Register(1161,46710
+void MPU6050::setSlave4OutputByte(1170,47074
+bool MPU6050::getSlave4Enabled(1179,47465
+void MPU6050::setSlave4Enabled(1188,47764
+bool MPU6050::getSlave4InterruptEnabled(1200,48369
+void MPU6050::setSlave4InterruptEnabled(1209,48737
+bool MPU6050::getSlave4WriteMode(1221,49362
+void MPU6050::setSlave4WriteMode(1230,49706
+uint8_t MPU6050::getSlave4MasterDelay(1248,50515
+void MPU6050::setSlave4MasterDelay(1257,50860
+uint8_t MPU6050::getSlate4InputByte(1266,51281
+bool MPU6050::getPassthroughStatus(1282,51865
+bool MPU6050::getSlave4IsDone(1294,52416
+bool MPU6050::getLostArbitration(1305,52927
+bool MPU6050::getSlave4Nack(1316,53407
+bool MPU6050::getSlave3Nack(1327,53883
+bool MPU6050::getSlave2Nack(1338,54359
+bool MPU6050::getSlave1Nack(1349,54835
+bool MPU6050::getSlave0Nack(1360,55311
+bool MPU6050::getInterruptMode(1373,55713
+void MPU6050::setInterruptMode(1383,56063
+bool MPU6050::getInterruptDrive(1392,56418
+void MPU6050::setInterruptDrive(1402,56767
+bool MPU6050::getInterruptLatch(1411,57147
+void MPU6050::setInterruptLatch(1421,57508
+bool MPU6050::getInterruptLatchClear(1430,57904
+void MPU6050::setInterruptLatchClear(1440,58287
+bool MPU6050::getFSyncInterruptLevel(1449,58657
+void MPU6050::setFSyncInterruptLevel(1459,59042
+bool MPU6050::getFSyncInterruptEnabled(1468,59404
+void MPU6050::setFSyncInterruptEnabled(1478,59779
+bool MPU6050::getI2CBypassEnabled(1492,60484
+void MPU6050::setI2CBypassEnabled(1507,61196
+bool MPU6050::getClockOutputEnabled(1519,61781
+void MPU6050::setClockOutputEnabled(1532,62375
+uint8_t MPU6050::getIntEnabled(1545,62815
+void MPU6050::setIntEnabled(1557,63240
+bool MPU6050::getIntFreefallEnabled(1566,63555
+void MPU6050::setIntFreefallEnabled(1576,63897
+bool MPU6050::getIntMotionEnabled(1585,64250
+void MPU6050::setIntMotionEnabled(1595,64597
+bool MPU6050::getIntZeroMotionEnabled(1604,64955
+void MPU6050::setIntZeroMotionEnabled(1614,65317
+bool MPU6050::getIntFIFOBufferOverflowEnabled(1623,65685
+void MPU6050::setIntFIFOBufferOverflowEnabled(1633,66074
+bool MPU6050::getIntI2CMasterEnabled(1643,66529
+void MPU6050::setIntI2CMasterEnabled(1653,66892
+bool MPU6050::getIntDataReadyEnabled(1663,67354
+void MPU6050::setIntDataReadyEnabled(1673,67707
+uint8_t MPU6050::getIntStatus(1686,68192
+bool MPU6050::getIntFreefallStatus(1697,68591
+bool MPU6050::getIntMotionStatus(1708,69035
+bool MPU6050::getIntZeroMotionStatus(1719,69489
+bool MPU6050::getIntFIFOBufferOverflowStatus(1730,69941
+bool MPU6050::getIntI2CMasterStatus(1742,70469
+bool MPU6050::getIntDataReadyStatus(1753,70916
+void MPU6050::getMotion9(1776,71978
+void MPU6050::getMotion6(1792,72845
+void MPU6050::getAcceleration(1837,75127
+int16_t MPU6050::getAccelerationX(1848,75585
+int16_t MPU6050::getAccelerationY(1857,75915
+int16_t MPU6050::getAccelerationZ(1866,76245
+int16_t MPU6050::getTemperature(1877,76566
+void MPU6050::getRotation(1916,78369
+int16_t MPU6050::getRotationX(1927,78813
+int16_t MPU6050::getRotationY(1936,79129
+int16_t MPU6050::getRotationZ(1945,79445
+uint8_t MPU6050::getExternalSensorByte(2026,83782
+uint16_t MPU6050::getExternalSensorWord(2035,84116
+uint32_t MPU6050::getExternalSensorDWord(2044,84501
+uint8_t MPU6050::getMotionStatus(2055,84939
+bool MPU6050::getXNegMotionDetected(2064,85240
+bool MPU6050::getXPosMotionDetected(2073,85572
+bool MPU6050::getYNegMotionDetected(2082,85904
+bool MPU6050::getYPosMotionDetected(2091,86236
+bool MPU6050::getZNegMotionDetected(2100,86568
+bool MPU6050::getZPosMotionDetected(2109,86900
+bool MPU6050::getZeroMotionDetected(2118,87222
+void MPU6050::setSlaveOutputByte(2133,87776
+bool MPU6050::getExternalShadowDelayEnabled(2148,88368
+void MPU6050::setExternalShadowDelayEnabled(2158,88792
+bool MPU6050::getSlaveDelayEnabled(2179,89694
+void MPU6050::setSlaveDelayEnabled(2191,90143
+void MPU6050::resetGyroscopePath(2203,90551
+void MPU6050::resetAccelerometerPath(2212,90930
+void MPU6050::resetTemperaturePath(2221,91318
+uint8_t MPU6050::getAccelerometerPowerOnDelay(2241,92326
+void MPU6050::setAccelerometerPowerOnDelay(2251,92753
+uint8_t MPU6050::getFreefallDetectionCounterDecrement(2280,93968
+void MPU6050::setFreefallDetectionCounterDecrement(2290,94415
+uint8_t MPU6050::getMotionDetectionCounterDecrement(2316,95519
+void MPU6050::setMotionDetectionCounterDecrement(2326,95962
+bool MPU6050::getFIFOEnabled(2340,96538
+void MPU6050::setFIFOEnabled(2350,96851
+bool MPU6050::getI2CMasterModeEnabled(2364,97559
+void MPU6050::setI2CMasterModeEnabled(2374,97918
+void MPU6050::switchSPIEnabled(2381,98233
+void MPU6050::resetFIFO(2390,98617
+void MPU6050::resetI2CMaster(2399,98990
+void MPU6050::resetSensors(2414,99624
+void MPU6050::reset(2425,99952
+bool MPU6050::getSleepEnabled(2439,100621
+void MPU6050::setSleepEnabled(2449,100930
+bool MPU6050::getWakeCycleEnabled(2460,101430
+void MPU6050::setWakeCycleEnabled(2470,101755
+bool MPU6050::getTempSensorEnabled(2484,102358
+void MPU6050::setTempSensorEnabled(2498,102983
+uint8_t MPU6050::getClockSource(2508,103333
+void MPU6050::setClockSource(2542,104771
+uint8_t MPU6050::getWakeFrequency(2571,105781
+void MPU6050::setWakeFrequency(2579,106096
+bool MPU6050::getStandbyXAccelEnabled(2589,106524
+void MPU6050::setStandbyXAccelEnabled(2599,106875
+bool MPU6050::getStandbyYAccelEnabled(2608,107262
+void MPU6050::setStandbyYAccelEnabled(2618,107613
+bool MPU6050::getStandbyZAccelEnabled(2627,108000
+void MPU6050::setStandbyZAccelEnabled(2637,108351
+bool MPU6050::getStandbyXGyroEnabled(2646,108734
+void MPU6050::setStandbyXGyroEnabled(2656,109079
+bool MPU6050::getStandbyYGyroEnabled(2665,109461
+void MPU6050::setStandbyYGyroEnabled(2675,109806
+bool MPU6050::getStandbyZGyroEnabled(2684,110188
+void MPU6050::setStandbyZGyroEnabled(2694,110533
+uint16_t MPU6050::getFIFOCount(2707,111088
+uint8_t MPU6050::getFIFOByte(2739,112566
+void MPU6050::getFIFOBytes(2743,112683
+void MPU6050::setFIFOByte(2754,112956
+uint8_t MPU6050::getDeviceID(2767,113325
+void MPU6050::setDeviceID(2780,113758
+uint8_t MPU6050::getOTPBankValid(2788,113986
+void MPU6050::setOTPBankValid(2792,114136
+int8_t MPU6050::getXGyroOffsetTC(2795,114275
+void MPU6050::setXGyroOffsetTC(2799,114447
+int8_t MPU6050::getYGyroOffsetTC(2805,114634
+void MPU6050::setYGyroOffsetTC(2809,114806
+int8_t MPU6050::getZGyroOffsetTC(2815,114993
+void MPU6050::setZGyroOffsetTC(2819,115165
+int8_t MPU6050::getXFineGain(2825,115353
+void MPU6050::setXFineGain(2829,115473
+int8_t MPU6050::getYFineGain(2835,115605
+void MPU6050::setYFineGain(2839,115725
+int8_t MPU6050::getZFineGain(2845,115857
+void MPU6050::setZFineGain(2849,115977
+int16_t MPU6050::getXAccelOffset(2855,116108
+void MPU6050::setXAccelOffset(2859,116264
+int16_t MPU6050::getYAccelOffset(2865,116400
+void MPU6050::setYAccelOffset(2869,116556
+int16_t MPU6050::getZAccelOffset(2875,116692
+void MPU6050::setZAccelOffset(2879,116848
+int16_t MPU6050::getXGyroOffset(2885,116988
+void MPU6050::setXGyroOffset(2889,117146
+int16_t MPU6050::getYGyroOffset(2895,117287
+void MPU6050::setYGyroOffset(2899,117445
+int16_t MPU6050::getZGyroOffset(2905,117586
+void MPU6050::setZGyroOffset(2909,117744
+bool MPU6050::getIntPLLReadyEnabled(2915,117899
+void MPU6050::setIntPLLReadyEnabled(2919,118059
+bool MPU6050::getIntDMPEnabled(2922,118211
+void MPU6050::setIntDMPEnabled(2926,118362
+bool MPU6050::getDMPInt5Status(2932,118525
+bool MPU6050::getDMPInt4Status(2936,118671
+bool MPU6050::getDMPInt3Status(2940,118817
+bool MPU6050::getDMPInt2Status(2944,118963
+bool MPU6050::getDMPInt1Status(2948,119109
+bool MPU6050::getDMPInt0Status(2952,119255
+bool MPU6050::getIntPLLReadyStatus(2959,119442
+bool MPU6050::getIntDMPStatus(2963,119601
+bool MPU6050::getDMPEnabled(2970,119791
+void MPU6050::setDMPEnabled(2974,119936
+void MPU6050::resetDMP(2977,120073
+void MPU6050::setMemoryBank(2983,120216
+void MPU6050::setMemoryStartAddress(2992,120476
+uint8_t MPU6050::readMemoryByte(2998,120623
+void MPU6050::writeMemoryByte(3002,120742
+void MPU6050::readMemoryBlock(3005,120848
+bool MPU6050::writeMemoryBlock(3036,121982
+bool MPU6050::writeProgMemoryBlock(3112,124988
+bool MPU6050::writeDMPConfigurationSet(3115,125185
+bool MPU6050::writeProgDMPConfigurationSet(3191,128075
+uint8_t MPU6050::getDMPConfig1(3197,128245
+void MPU6050::setDMPConfig1(3201,128365
+uint8_t MPU6050::getDMPConfig2(3207,128499
+void MPU6050::setDMPConfig2(3211,128619
+
+MPU6050/helper_3dmath.h,1357
+#define _HELPER_3DMATH_H_33,1556
+class Quaternion 35,1583
+        Quaternion(Quaternion::Quaternion42,1691
+        Quaternion(Quaternion::Quaternion49,1821
+        Quaternion getProduct(Quaternion::getProduct56,1973
+        Quaternion getConjugate(Quaternion::getConjugate69,2588
+        float getMagnitude(Quaternion::getMagnitude73,2689
+        void normalize(Quaternion::normalize77,2787
+        Quaternion getNormalized(Quaternion::getNormalized85,2951
+class VectorInt16 92,3089
+        VectorInt16(VectorInt16::VectorInt1698,3179
+        VectorInt16(VectorInt16::VectorInt16104,3279
+        float getMagnitude(VectorInt16::getMagnitude110,3408
+        void normalize(VectorInt16::normalize114,3492
+        VectorInt16 getNormalized(VectorInt16::getNormalized121,3636
+        void rotate(VectorInt16::rotate127,3778
+        VectorInt16 getRotated(VectorInt16::getRotated152,4988
+class VectorFloat 159,5133
+        VectorFloat(VectorFloat::VectorFloat165,5217
+        VectorFloat(VectorFloat::VectorFloat171,5317
+        float getMagnitude(VectorFloat::getMagnitude177,5440
+        void normalize(VectorFloat::normalize181,5524
+        VectorFloat getNormalized(VectorFloat::getNormalized188,5668
+        void rotate(VectorFloat::rotate194,5810
+        VectorFloat getRotated(VectorFloat::getRotated209,6238
+
+MPU6050/MPU6050_6Axis_MotionApps20.h,2746
+#define _MPU6050_6AXIS_MOTIONAPPS20_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS2040,1803
+        #define __PGMSPACE_H_ 51,2112
+        #define PROGMEM54,2175
+        #define PGM_P 55,2199
+        #define PSTR(56,2235
+        #define F(57,2267
+        typedef void prog_void;59,2291
+        typedef char prog_char;60,2323
+        typedef unsigned char prog_uchar;61,2355
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(105,4273
+    #define DEBUG_PRINTF(106,4316
+    #define DEBUG_PRINTLN(107,4366
+    #define DEBUG_PRINTLNF(108,4413
+    #define DEBUG_PRINT(110,4473
+    #define DEBUG_PRINTF(111,4500
+    #define DEBUG_PRINTLN(112,4531
+    #define DEBUG_PRINTLNF(113,4560
+#define MPU6050_DMP_CODE_SIZE 116,4601
+#define MPU6050_DMP_CONFIG_SIZE 117,4660
+#define MPU6050_DMP_UPDATES_SIZE 118,4719
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 133,5867
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 273,18270
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21448
+uint8_t MPU6050::dmpInitialize(325,21872
+bool MPU6050::dmpPacketAvailable(546,31048
+uint8_t MPU6050::dmpGetAccel(573,32582
+uint8_t MPU6050::dmpGetAccel(581,33164
+uint8_t MPU6050::dmpGetAccel(589,33524
+uint8_t MPU6050::dmpGetQuaternion(597,33882
+uint8_t MPU6050::dmpGetQuaternion(606,34579
+uint8_t MPU6050::dmpGetQuaternion(615,34992
+uint8_t MPU6050::dmpGetGyro(630,35684
+uint8_t MPU6050::dmpGetGyro(638,36265
+uint8_t MPU6050::dmpGetGyro(646,36624
+uint8_t MPU6050::dmpGetLinearAccel(656,37123
+uint8_t MPU6050::dmpGetLinearAccelInWorld(664,37547
+uint8_t MPU6050::dmpGetGravity(676,38217
+uint8_t MPU6050::dmpGetEuler(687,38787
+uint8_t MPU6050::dmpGetYawPitchRoll(693,39164
+uint8_t MPU6050::dmpProcessFIFOPacket(706,39825
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(716,40160
+uint16_t MPU6050::dmpGetFIFOPacketSize(741,41058
+
+Balancing_Function_v2.cpp,220
+const float offset_a 23,424
+int leftSpeed;26,471
+int rightSpeed;27,486
+float ctrlTurn 28,502
+float ctrlwalk 29,522
+float PID_Balance(39,690
+void PIDSetSpeed(50,918
+void ProcessCommand(63,1267
+void loop(112,2029
+
+TBMotor.cpp,140
+OseppTBMotor::OseppTBMotor(4,43
+void OseppTBMotor::forward(11,206
+void OseppTBMotor::backward(17,343
+void OseppTBMotor::SetSpeed(23,480
+
+I2Cdev/I2Cdev.h,2581
+#define _I2CDEV_H_48,2768
+#define I2CDEV_IMPLEMENTATION 54,3020
+#define I2CDEV_IMPLEMENTATION_WARNINGS60,3294
+#define I2CDEV_ARDUINO_WIRE 65,3536
+#define I2CDEV_BUILTIN_NBWIRE 66,3602
+#define I2CDEV_BUILTIN_FASTWIRE 68,3798
+#define I2CDEV_I2CMASTER_LIBRARY 69,3888
+    #define ARDUINO 92,4648
+#define I2CDEV_DEFAULT_READ_TIMEOUT 97,4756
+class I2Cdev 99,4802
+    #define TW_START 133,7019
+    #define TW_REP_START 134,7060
+    #define TW_MT_SLA_ACK 137,7131
+    #define TW_MT_SLA_NACK 138,7172
+    #define TW_MT_DATA_ACK 139,7213
+    #define TW_MT_DATA_NACK 140,7254
+    #define TW_MT_ARB_LOST 141,7295
+    #define TW_MR_ARB_LOST 144,7363
+    #define TW_MR_SLA_ACK 145,7404
+    #define TW_MR_SLA_NACK 146,7445
+    #define TW_MR_DATA_ACK 147,7486
+    #define TW_MR_DATA_NACK 148,7527
+    #define TW_OK 150,7569
+    #define TW_ERROR 151,7607
+    class Fastwire 153,7646
+    #define NBWIRE_BUFFER_LENGTH 173,8486
+    class TwoWire 175,8523
+    #define TWI_READY 214,9909
+    #define TWI_MRX 215,9935
+    #define TWI_MTX 216,9961
+    #define TWI_SRX 217,9987
+    #define TWI_STX 218,10013
+    #define TW_WRITE 220,10040
+    #define TW_READ 221,10066
+    #define TW_MT_SLA_NACK 223,10093
+    #define TW_MT_DATA_NACK 224,10130
+    #define CPU_FREQ 226,10168
+    #define TWI_FREQ 227,10210
+    #define TWI_BUFFER_LENGTH 228,10250
+    #define TW_STATUS_MASK 232,10351
+    #define TW_STATUS 233,10443
+    #define TW_START 234,10507
+    #define TW_REP_START 235,10552
+    #define TW_MT_SLA_ACK 236,10597
+    #define TW_MT_SLA_NACK 237,10642
+    #define TW_MT_DATA_ACK 238,10687
+    #define TW_MT_DATA_NACK 239,10732
+    #define TW_MT_ARB_LOST 240,10777
+    #define TW_MR_ARB_LOST 241,10822
+    #define TW_MR_SLA_ACK 242,10867
+    #define TW_MR_SLA_NACK 243,10912
+    #define TW_MR_DATA_ACK 244,10957
+    #define TW_MR_DATA_NACK 245,11002
+    #define TW_ST_SLA_ACK 246,11047
+    #define TW_ST_ARB_LOST_SLA_ACK 247,11092
+    #define TW_ST_DATA_ACK 248,11137
+    #define TW_ST_DATA_NACK 249,11182
+    #define TW_ST_LAST_DATA 250,11227
+    #define TW_SR_SLA_ACK 251,11272
+    #define TW_SR_ARB_LOST_SLA_ACK 252,11317
+    #define TW_SR_GCALL_ACK 253,11362
+    #define TW_SR_ARB_LOST_GCALL_ACK 254,11407
+    #define TW_SR_DATA_ACK 255,11452
+    #define TW_SR_DATA_NACK 256,11497
+    #define TW_SR_GCALL_DATA_ACK 257,11542
+    #define TW_SR_GCALL_DATA_NACK 258,11587
+    #define TW_SR_STOP 259,11632
+    #define TW_NO_INFO 260,11677
+    #define TW_BUS_ERROR 261,11722
+        #define sbi(267,11921
+        #define cbi(271,12028
+
+I2Cdev/I2Cdev.cpp,3048
+    TwoWire Wire;86,4764
+I2Cdev::I2Cdev(92,4820
+int8_t I2Cdev::readBit(103,5265
+int8_t I2Cdev::readBitW(118,5925
+int8_t I2Cdev::readBits(134,6718
+int8_t I2Cdev::readBitsW(159,7832
+int8_t I2Cdev::readByte(183,8812
+int8_t I2Cdev::readWord(194,9355
+int8_t I2Cdev::readBytes(206,9938
+int8_t I2Cdev::readWords(326,14864
+bool I2Cdev::writeBit(477,21216
+bool I2Cdev::writeBitW(491,21746
+bool I2Cdev::writeBits(506,22351
+bool I2Cdev::writeBitsW(535,23526
+bool I2Cdev::writeByte(562,24641
+bool I2Cdev::writeWord(572,25000
+bool I2Cdev::writeBytes(583,25416
+bool I2Cdev::writeWords(638,27778
+uint16_t I2Cdev::readTimeout 693,30238
+    boolean Fastwire::waitInt(714,30786
+    void Fastwire::setup(720,30921
+    byte Fastwire::beginTransmission(746,32220
+    byte Fastwire::writeBuf(766,32940
+    byte Fastwire::write(807,34382
+    byte Fastwire::readBuf(818,34689
+    void Fastwire::reset(881,36882
+    byte Fastwire::stop(885,36936
+    uint8_t TwoWire::rxBuffer[TwoWire::rxBuffer930,38979
+    uint8_t TwoWire::rxBufferIndex 931,39032
+    uint8_t TwoWire::rxBufferLength 932,39072
+    uint8_t TwoWire::txAddress 934,39118
+    uint8_t TwoWire::txBuffer[TwoWire::txBuffer935,39154
+    uint8_t TwoWire::txBufferIndex 936,39207
+    uint8_t TwoWire::txBufferLength 937,39247
+    static volatile uint8_t twi_transmitting;943,39424
+    static volatile uint8_t twi_state;944,39470
+    static uint8_t twi_slarw;945,39509
+    static volatile uint8_t twi_error;946,39539
+    static uint8_t twi_masterBuffer[twi_masterBuffer947,39578
+    static volatile uint8_t twi_masterBufferIndex;948,39634
+    static uint8_t twi_masterBufferLength;949,39685
+    static uint8_t twi_rxBuffer[twi_rxBuffer950,39728
+    static volatile uint8_t twi_rxBufferIndex;951,39780
+    static volatile uint8_t twi_Return_Value;953,39889
+    static volatile uint8_t twi_Done;954,39935
+    void twi_init(958,40059
+    } twi_Write_Vars;995,41183
+    twi_Write_Vars *ptwv ptwv997,41206
+    void twi_Finish(1000,41290
+    uint8_t twii_WaitForDone(1010,41510
+    void twii_SetState(1016,41730
+    void twii_SetError(1020,41808
+    void twii_InitBuffer(1024,41887
+    void twii_CopyToBuf(1029,42032
+    void twii_CopyFromBuf(1036,42213
+    void twii_SetSlaRW(1043,42396
+    void twii_SetStart(1047,42474
+    void twi_write01(1051,42584
+    void twi_write00(1067,43186
+    void twi_writeTo(1084,43902
+    void twi_read01(1095,44280
+    void twi_read00(1104,44651
+    void twi_readFrom(1117,45220
+    void twi_reply(1128,45555
+    void twi_stop(1137,45833
+    void twi_releaseBus(1151,46219
+    SIGNAL(1159,46412
+    TwoWire::TwoWire(1331,52932
+    void TwoWire::begin(1333,52964
+    void TwoWire::beginTransmission(1343,53143
+    uint8_t TwoWire::endTransmission(1357,53512
+    void TwoWire::nbendTransmission(1373,53989
+    void TwoWire::send(1379,54184
+    uint8_t TwoWire::receive(1400,54775
+    uint8_t TwoWire::requestFrom(1414,55151
+    void TwoWire::nbrequestFrom(1432,55688
+    uint8_t TwoWire::available(1453,56308
+
+MPU6050_DMP.cpp,411
+MPU6050 mpu;6,80
+bool dmpReady 10,122
+uint8_t mpuIntStatus;11,185
+uint8_t devStatus;12,256
+uint16_t packetSize;13,351
+uint16_t fifoCount;14,425
+uint8_t fifoBuffer[fifoBuffer15,489
+Quaternion q;17,537
+VectorFloat gravity;18,606
+float ypr[ypr19,669
+uint8_t* getMPUBuff(21,762
+int16_t g_dir;70,2920
+float angle;71,2935
+int16_t g_dirOffset=73,2949
+int16_t a_yOffset=74,2972
+bool updateIMU(76,2994
+
+TBMotor.h,24
+class OseppTBMotor2,21
+
+MPU6050/MPU6050_9Axis_MotionApps41.h,2691
+#define _MPU6050_9AXIS_MOTIONAPPS41_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS4140,1801
+        #define __PGMSPACE_H_ 51,2110
+        #define PROGMEM54,2173
+        #define PGM_P 55,2197
+        #define PSTR(56,2233
+        #define F(57,2265
+        typedef void prog_void;59,2289
+        typedef char prog_char;60,2321
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(96,3890
+    #define DEBUG_PRINTF(97,3933
+    #define DEBUG_PRINTLN(98,3983
+    #define DEBUG_PRINTLNF(99,4030
+    #define DEBUG_PRINT(101,4090
+    #define DEBUG_PRINTF(102,4117
+    #define DEBUG_PRINTLN(103,4148
+    #define DEBUG_PRINTLNF(104,4177
+#define MPU6050_DMP_CODE_SIZE 107,4218
+#define MPU6050_DMP_CONFIG_SIZE 108,4277
+#define MPU6050_DMP_UPDATES_SIZE 109,4336
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 124,5484
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 265,18055
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21570
+uint8_t MPU6050::dmpInitialize(337,22680
+bool MPU6050::dmpPacketAvailable(653,38462
+uint8_t MPU6050::dmpGetAccel(680,39996
+uint8_t MPU6050::dmpGetAccel(688,40578
+uint8_t MPU6050::dmpGetAccel(696,40938
+uint8_t MPU6050::dmpGetQuaternion(704,41296
+uint8_t MPU6050::dmpGetQuaternion(713,41993
+uint8_t MPU6050::dmpGetQuaternion(722,42406
+uint8_t MPU6050::dmpGetGyro(737,43098
+uint8_t MPU6050::dmpGetGyro(745,43679
+uint8_t MPU6050::dmpGetMag(753,44038
+uint8_t MPU6050::dmpGetLinearAccel(763,44538
+uint8_t MPU6050::dmpGetLinearAccelInWorld(771,44943
+uint8_t MPU6050::dmpGetGravity(783,45613
+uint8_t MPU6050::dmpGetEuler(794,46183
+uint8_t MPU6050::dmpGetYawPitchRoll(800,46560
+uint8_t MPU6050::dmpProcessFIFOPacket(813,47221
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(823,47556
+uint16_t MPU6050::dmpGetFIFOPacketSize(848,48452
+
+MPU6050/MPU6050.h,14876
+#define _MPU6050_H_38,1810
+#define MPU6050_ADDRESS_AD0_LOW 56,2237
+#define MPU6050_ADDRESS_AD0_HIGH 57,2344
+#define MPU6050_DEFAULT_ADDRESS 58,2411
+#define MPU6050_RA_XG_OFFS_TC 60,2472
+#define MPU6050_RA_YG_OFFS_TC 61,2563
+#define MPU6050_RA_ZG_OFFS_TC 62,2654
+#define MPU6050_RA_X_FINE_GAIN 63,2745
+#define MPU6050_RA_Y_FINE_GAIN 64,2806
+#define MPU6050_RA_Z_FINE_GAIN 65,2867
+#define MPU6050_RA_XA_OFFS_H 66,2928
+#define MPU6050_RA_XA_OFFS_L_TC 67,2986
+#define MPU6050_RA_YA_OFFS_H 68,3027
+#define MPU6050_RA_YA_OFFS_L_TC 69,3085
+#define MPU6050_RA_ZA_OFFS_H 70,3126
+#define MPU6050_RA_ZA_OFFS_L_TC 71,3184
+#define MPU6050_RA_SELF_TEST_X 72,3225
+#define MPU6050_RA_SELF_TEST_Y 73,3307
+#define MPU6050_RA_SELF_TEST_Z 74,3389
+#define MPU6050_RA_SELF_TEST_A 75,3471
+#define MPU6050_RA_XG_OFFS_USRH 76,3573
+#define MPU6050_RA_XG_OFFS_USRL 77,3635
+#define MPU6050_RA_YG_OFFS_USRH 78,3676
+#define MPU6050_RA_YG_OFFS_USRL 79,3738
+#define MPU6050_RA_ZG_OFFS_USRH 80,3779
+#define MPU6050_RA_ZG_OFFS_USRL 81,3841
+#define MPU6050_RA_SMPLRT_DIV 82,3882
+#define MPU6050_RA_CONFIG 83,3923
+#define MPU6050_RA_GYRO_CONFIG 84,3964
+#define MPU6050_RA_ACCEL_CONFIG 85,4005
+#define MPU6050_RA_FF_THR 86,4046
+#define MPU6050_RA_FF_DUR 87,4087
+#define MPU6050_RA_MOT_THR 88,4128
+#define MPU6050_RA_MOT_DUR 89,4169
+#define MPU6050_RA_ZRMOT_THR 90,4210
+#define MPU6050_RA_ZRMOT_DUR 91,4251
+#define MPU6050_RA_FIFO_EN 92,4292
+#define MPU6050_RA_I2C_MST_CTRL 93,4333
+#define MPU6050_RA_I2C_SLV0_ADDR 94,4374
+#define MPU6050_RA_I2C_SLV0_REG 95,4415
+#define MPU6050_RA_I2C_SLV0_CTRL 96,4456
+#define MPU6050_RA_I2C_SLV1_ADDR 97,4497
+#define MPU6050_RA_I2C_SLV1_REG 98,4538
+#define MPU6050_RA_I2C_SLV1_CTRL 99,4579
+#define MPU6050_RA_I2C_SLV2_ADDR 100,4620
+#define MPU6050_RA_I2C_SLV2_REG 101,4661
+#define MPU6050_RA_I2C_SLV2_CTRL 102,4702
+#define MPU6050_RA_I2C_SLV3_ADDR 103,4743
+#define MPU6050_RA_I2C_SLV3_REG 104,4784
+#define MPU6050_RA_I2C_SLV3_CTRL 105,4825
+#define MPU6050_RA_I2C_SLV4_ADDR 106,4866
+#define MPU6050_RA_I2C_SLV4_REG 107,4907
+#define MPU6050_RA_I2C_SLV4_DO 108,4948
+#define MPU6050_RA_I2C_SLV4_CTRL 109,4989
+#define MPU6050_RA_I2C_SLV4_DI 110,5030
+#define MPU6050_RA_I2C_MST_STATUS 111,5071
+#define MPU6050_RA_INT_PIN_CFG 112,5112
+#define MPU6050_RA_INT_ENABLE 113,5153
+#define MPU6050_RA_DMP_INT_STATUS 114,5194
+#define MPU6050_RA_INT_STATUS 115,5235
+#define MPU6050_RA_ACCEL_XOUT_H 116,5276
+#define MPU6050_RA_ACCEL_XOUT_L 117,5317
+#define MPU6050_RA_ACCEL_YOUT_H 118,5358
+#define MPU6050_RA_ACCEL_YOUT_L 119,5399
+#define MPU6050_RA_ACCEL_ZOUT_H 120,5440
+#define MPU6050_RA_ACCEL_ZOUT_L 121,5481
+#define MPU6050_RA_TEMP_OUT_H 122,5522
+#define MPU6050_RA_TEMP_OUT_L 123,5563
+#define MPU6050_RA_GYRO_XOUT_H 124,5604
+#define MPU6050_RA_GYRO_XOUT_L 125,5645
+#define MPU6050_RA_GYRO_YOUT_H 126,5686
+#define MPU6050_RA_GYRO_YOUT_L 127,5727
+#define MPU6050_RA_GYRO_ZOUT_H 128,5768
+#define MPU6050_RA_GYRO_ZOUT_L 129,5809
+#define MPU6050_RA_EXT_SENS_DATA_00 130,5850
+#define MPU6050_RA_EXT_SENS_DATA_01 131,5891
+#define MPU6050_RA_EXT_SENS_DATA_02 132,5932
+#define MPU6050_RA_EXT_SENS_DATA_03 133,5973
+#define MPU6050_RA_EXT_SENS_DATA_04 134,6014
+#define MPU6050_RA_EXT_SENS_DATA_05 135,6055
+#define MPU6050_RA_EXT_SENS_DATA_06 136,6096
+#define MPU6050_RA_EXT_SENS_DATA_07 137,6137
+#define MPU6050_RA_EXT_SENS_DATA_08 138,6178
+#define MPU6050_RA_EXT_SENS_DATA_09 139,6219
+#define MPU6050_RA_EXT_SENS_DATA_10 140,6260
+#define MPU6050_RA_EXT_SENS_DATA_11 141,6301
+#define MPU6050_RA_EXT_SENS_DATA_12 142,6342
+#define MPU6050_RA_EXT_SENS_DATA_13 143,6383
+#define MPU6050_RA_EXT_SENS_DATA_14 144,6424
+#define MPU6050_RA_EXT_SENS_DATA_15 145,6465
+#define MPU6050_RA_EXT_SENS_DATA_16 146,6506
+#define MPU6050_RA_EXT_SENS_DATA_17 147,6547
+#define MPU6050_RA_EXT_SENS_DATA_18 148,6588
+#define MPU6050_RA_EXT_SENS_DATA_19 149,6629
+#define MPU6050_RA_EXT_SENS_DATA_20 150,6670
+#define MPU6050_RA_EXT_SENS_DATA_21 151,6711
+#define MPU6050_RA_EXT_SENS_DATA_22 152,6752
+#define MPU6050_RA_EXT_SENS_DATA_23 153,6793
+#define MPU6050_RA_MOT_DETECT_STATUS 154,6834
+#define MPU6050_RA_I2C_SLV0_DO 155,6879
+#define MPU6050_RA_I2C_SLV1_DO 156,6920
+#define MPU6050_RA_I2C_SLV2_DO 157,6961
+#define MPU6050_RA_I2C_SLV3_DO 158,7002
+#define MPU6050_RA_I2C_MST_DELAY_CTRL 159,7043
+#define MPU6050_RA_SIGNAL_PATH_RESET 160,7088
+#define MPU6050_RA_MOT_DETECT_CTRL 161,7133
+#define MPU6050_RA_USER_CTRL 162,7178
+#define MPU6050_RA_PWR_MGMT_1 163,7219
+#define MPU6050_RA_PWR_MGMT_2 164,7260
+#define MPU6050_RA_BANK_SEL 165,7301
+#define MPU6050_RA_MEM_START_ADDR 166,7342
+#define MPU6050_RA_MEM_R_W 167,7383
+#define MPU6050_RA_DMP_CFG_1 168,7424
+#define MPU6050_RA_DMP_CFG_2 169,7465
+#define MPU6050_RA_FIFO_COUNTH 170,7506
+#define MPU6050_RA_FIFO_COUNTL 171,7547
+#define MPU6050_RA_FIFO_R_W 172,7588
+#define MPU6050_RA_WHO_AM_I 173,7629
+#define MPU6050_SELF_TEST_XA_1_BIT 175,7671
+#define MPU6050_SELF_TEST_XA_1_LENGTH 176,7715
+#define MPU6050_SELF_TEST_XA_2_BIT 177,7759
+#define MPU6050_SELF_TEST_XA_2_LENGTH 178,7803
+#define MPU6050_SELF_TEST_YA_1_BIT 179,7847
+#define MPU6050_SELF_TEST_YA_1_LENGTH 180,7891
+#define MPU6050_SELF_TEST_YA_2_BIT 181,7935
+#define MPU6050_SELF_TEST_YA_2_LENGTH 182,7979
+#define MPU6050_SELF_TEST_ZA_1_BIT 183,8023
+#define MPU6050_SELF_TEST_ZA_1_LENGTH 184,8067
+#define MPU6050_SELF_TEST_ZA_2_BIT 185,8111
+#define MPU6050_SELF_TEST_ZA_2_LENGTH 186,8155
+#define MPU6050_SELF_TEST_XG_1_BIT 188,8200
+#define MPU6050_SELF_TEST_XG_1_LENGTH 189,8244
+#define MPU6050_SELF_TEST_YG_1_BIT 190,8288
+#define MPU6050_SELF_TEST_YG_1_LENGTH 191,8332
+#define MPU6050_SELF_TEST_ZG_1_BIT 192,8376
+#define MPU6050_SELF_TEST_ZG_1_LENGTH 193,8420
+#define MPU6050_TC_PWR_MODE_BIT 195,8465
+#define MPU6050_TC_OFFSET_BIT 196,8503
+#define MPU6050_TC_OFFSET_LENGTH 197,8541
+#define MPU6050_TC_OTP_BNK_VLD_BIT 198,8579
+#define MPU6050_VDDIO_LEVEL_VLOGIC 200,8618
+#define MPU6050_VDDIO_LEVEL_VDD 201,8656
+#define MPU6050_CFG_EXT_SYNC_SET_BIT 203,8695
+#define MPU6050_CFG_EXT_SYNC_SET_LENGTH 204,8737
+#define MPU6050_CFG_DLPF_CFG_BIT 205,8779
+#define MPU6050_CFG_DLPF_CFG_LENGTH 206,8817
+#define MPU6050_EXT_SYNC_DISABLED 208,8856
+#define MPU6050_EXT_SYNC_TEMP_OUT_L 209,8900
+#define MPU6050_EXT_SYNC_GYRO_XOUT_L 210,8944
+#define MPU6050_EXT_SYNC_GYRO_YOUT_L 211,8988
+#define MPU6050_EXT_SYNC_GYRO_ZOUT_L 212,9032
+#define MPU6050_EXT_SYNC_ACCEL_XOUT_L 213,9076
+#define MPU6050_EXT_SYNC_ACCEL_YOUT_L 214,9120
+#define MPU6050_EXT_SYNC_ACCEL_ZOUT_L 215,9164
+#define MPU6050_DLPF_BW_256 217,9209
+#define MPU6050_DLPF_BW_188 218,9250
+#define MPU6050_DLPF_BW_98 219,9291
+#define MPU6050_DLPF_BW_42 220,9332
+#define MPU6050_DLPF_BW_20 221,9373
+#define MPU6050_DLPF_BW_10 222,9414
+#define MPU6050_DLPF_BW_5 223,9455
+#define MPU6050_GCONFIG_FS_SEL_BIT 225,9497
+#define MPU6050_GCONFIG_FS_SEL_LENGTH 226,9539
+#define MPU6050_GYRO_FS_250 228,9582
+#define MPU6050_GYRO_FS_500 229,9623
+#define MPU6050_GYRO_FS_1000 230,9664
+#define MPU6050_GYRO_FS_2000 231,9705
+#define MPU6050_ACONFIG_XA_ST_BIT 233,9747
+#define MPU6050_ACONFIG_YA_ST_BIT 234,9793
+#define MPU6050_ACONFIG_ZA_ST_BIT 235,9839
+#define MPU6050_ACONFIG_AFS_SEL_BIT 236,9885
+#define MPU6050_ACONFIG_AFS_SEL_LENGTH 237,9931
+#define MPU6050_ACONFIG_ACCEL_HPF_BIT 238,9977
+#define MPU6050_ACONFIG_ACCEL_HPF_LENGTH 239,10023
+#define MPU6050_ACCEL_FS_2 241,10070
+#define MPU6050_ACCEL_FS_4 242,10111
+#define MPU6050_ACCEL_FS_8 243,10152
+#define MPU6050_ACCEL_FS_16 244,10193
+#define MPU6050_DHPF_RESET 246,10235
+#define MPU6050_DHPF_5 247,10276
+#define MPU6050_DHPF_2P5 248,10317
+#define MPU6050_DHPF_1P25 249,10358
+#define MPU6050_DHPF_0P63 250,10399
+#define MPU6050_DHPF_HOLD 251,10440
+#define MPU6050_TEMP_FIFO_EN_BIT 253,10482
+#define MPU6050_XG_FIFO_EN_BIT 254,10520
+#define MPU6050_YG_FIFO_EN_BIT 255,10558
+#define MPU6050_ZG_FIFO_EN_BIT 256,10596
+#define MPU6050_ACCEL_FIFO_EN_BIT 257,10634
+#define MPU6050_SLV2_FIFO_EN_BIT 258,10672
+#define MPU6050_SLV1_FIFO_EN_BIT 259,10710
+#define MPU6050_SLV0_FIFO_EN_BIT 260,10748
+#define MPU6050_MULT_MST_EN_BIT 262,10787
+#define MPU6050_WAIT_FOR_ES_BIT 263,10825
+#define MPU6050_SLV_3_FIFO_EN_BIT 264,10863
+#define MPU6050_I2C_MST_P_NSR_BIT 265,10901
+#define MPU6050_I2C_MST_CLK_BIT 266,10939
+#define MPU6050_I2C_MST_CLK_LENGTH 267,10977
+#define MPU6050_CLOCK_DIV_348 269,11016
+#define MPU6050_CLOCK_DIV_333 270,11056
+#define MPU6050_CLOCK_DIV_320 271,11096
+#define MPU6050_CLOCK_DIV_308 272,11136
+#define MPU6050_CLOCK_DIV_296 273,11176
+#define MPU6050_CLOCK_DIV_286 274,11216
+#define MPU6050_CLOCK_DIV_276 275,11256
+#define MPU6050_CLOCK_DIV_267 276,11296
+#define MPU6050_CLOCK_DIV_258 277,11336
+#define MPU6050_CLOCK_DIV_500 278,11376
+#define MPU6050_CLOCK_DIV_471 279,11416
+#define MPU6050_CLOCK_DIV_444 280,11456
+#define MPU6050_CLOCK_DIV_421 281,11496
+#define MPU6050_CLOCK_DIV_400 282,11536
+#define MPU6050_CLOCK_DIV_381 283,11576
+#define MPU6050_CLOCK_DIV_364 284,11616
+#define MPU6050_I2C_SLV_RW_BIT 286,11657
+#define MPU6050_I2C_SLV_ADDR_BIT 287,11695
+#define MPU6050_I2C_SLV_ADDR_LENGTH 288,11733
+#define MPU6050_I2C_SLV_EN_BIT 289,11771
+#define MPU6050_I2C_SLV_BYTE_SW_BIT 290,11809
+#define MPU6050_I2C_SLV_REG_DIS_BIT 291,11847
+#define MPU6050_I2C_SLV_GRP_BIT 292,11885
+#define MPU6050_I2C_SLV_LEN_BIT 293,11923
+#define MPU6050_I2C_SLV_LEN_LENGTH 294,11961
+#define MPU6050_I2C_SLV4_RW_BIT 296,12000
+#define MPU6050_I2C_SLV4_ADDR_BIT 297,12042
+#define MPU6050_I2C_SLV4_ADDR_LENGTH 298,12084
+#define MPU6050_I2C_SLV4_EN_BIT 299,12126
+#define MPU6050_I2C_SLV4_INT_EN_BIT 300,12168
+#define MPU6050_I2C_SLV4_REG_DIS_BIT 301,12210
+#define MPU6050_I2C_SLV4_MST_DLY_BIT 302,12252
+#define MPU6050_I2C_SLV4_MST_DLY_LENGTH 303,12294
+#define MPU6050_MST_PASS_THROUGH_BIT 305,12337
+#define MPU6050_MST_I2C_SLV4_DONE_BIT 306,12379
+#define MPU6050_MST_I2C_LOST_ARB_BIT 307,12421
+#define MPU6050_MST_I2C_SLV4_NACK_BIT 308,12463
+#define MPU6050_MST_I2C_SLV3_NACK_BIT 309,12505
+#define MPU6050_MST_I2C_SLV2_NACK_BIT 310,12547
+#define MPU6050_MST_I2C_SLV1_NACK_BIT 311,12589
+#define MPU6050_MST_I2C_SLV0_NACK_BIT 312,12631
+#define MPU6050_INTCFG_INT_LEVEL_BIT 314,12674
+#define MPU6050_INTCFG_INT_OPEN_BIT 315,12720
+#define MPU6050_INTCFG_LATCH_INT_EN_BIT 316,12766
+#define MPU6050_INTCFG_INT_RD_CLEAR_BIT 317,12812
+#define MPU6050_INTCFG_FSYNC_INT_LEVEL_BIT 318,12858
+#define MPU6050_INTCFG_FSYNC_INT_EN_BIT 319,12904
+#define MPU6050_INTCFG_I2C_BYPASS_EN_BIT 320,12950
+#define MPU6050_INTCFG_CLKOUT_EN_BIT 321,12996
+#define MPU6050_INTMODE_ACTIVEHIGH 323,13043
+#define MPU6050_INTMODE_ACTIVELOW 324,13084
+#define MPU6050_INTDRV_PUSHPULL 326,13126
+#define MPU6050_INTDRV_OPENDRAIN 327,13167
+#define MPU6050_INTLATCH_50USPULSE 329,13209
+#define MPU6050_INTLATCH_WAITCLEAR 330,13250
+#define MPU6050_INTCLEAR_STATUSREAD 332,13292
+#define MPU6050_INTCLEAR_ANYREAD 333,13333
+#define MPU6050_INTERRUPT_FF_BIT 335,13375
+#define MPU6050_INTERRUPT_MOT_BIT 336,13421
+#define MPU6050_INTERRUPT_ZMOT_BIT 337,13467
+#define MPU6050_INTERRUPT_FIFO_OFLOW_BIT 338,13513
+#define MPU6050_INTERRUPT_I2C_MST_INT_BIT 339,13559
+#define MPU6050_INTERRUPT_PLL_RDY_INT_BIT 340,13605
+#define MPU6050_INTERRUPT_DMP_INT_BIT 341,13651
+#define MPU6050_INTERRUPT_DATA_RDY_BIT 342,13697
+#define MPU6050_DMPINT_5_BIT 346,13827
+#define MPU6050_DMPINT_4_BIT 347,13869
+#define MPU6050_DMPINT_3_BIT 348,13911
+#define MPU6050_DMPINT_2_BIT 349,13953
+#define MPU6050_DMPINT_1_BIT 350,13995
+#define MPU6050_DMPINT_0_BIT 351,14037
+#define MPU6050_MOTION_MOT_XNEG_BIT 353,14080
+#define MPU6050_MOTION_MOT_XPOS_BIT 354,14122
+#define MPU6050_MOTION_MOT_YNEG_BIT 355,14164
+#define MPU6050_MOTION_MOT_YPOS_BIT 356,14206
+#define MPU6050_MOTION_MOT_ZNEG_BIT 357,14248
+#define MPU6050_MOTION_MOT_ZPOS_BIT 358,14290
+#define MPU6050_MOTION_MOT_ZRMOT_BIT 359,14332
+#define MPU6050_DELAYCTRL_DELAY_ES_SHADOW_BIT 361,14375
+#define MPU6050_DELAYCTRL_I2C_SLV4_DLY_EN_BIT 362,14425
+#define MPU6050_DELAYCTRL_I2C_SLV3_DLY_EN_BIT 363,14475
+#define MPU6050_DELAYCTRL_I2C_SLV2_DLY_EN_BIT 364,14525
+#define MPU6050_DELAYCTRL_I2C_SLV1_DLY_EN_BIT 365,14575
+#define MPU6050_DELAYCTRL_I2C_SLV0_DLY_EN_BIT 366,14625
+#define MPU6050_PATHRESET_GYRO_RESET_BIT 368,14676
+#define MPU6050_PATHRESET_ACCEL_RESET_BIT 369,14722
+#define MPU6050_PATHRESET_TEMP_RESET_BIT 370,14768
+#define MPU6050_DETECT_ACCEL_ON_DELAY_BIT 372,14815
+#define MPU6050_DETECT_ACCEL_ON_DELAY_LENGTH 373,14865
+#define MPU6050_DETECT_FF_COUNT_BIT 374,14915
+#define MPU6050_DETECT_FF_COUNT_LENGTH 375,14965
+#define MPU6050_DETECT_MOT_COUNT_BIT 376,15015
+#define MPU6050_DETECT_MOT_COUNT_LENGTH 377,15065
+#define MPU6050_DETECT_DECREMENT_RESET 379,15116
+#define MPU6050_DETECT_DECREMENT_1 380,15160
+#define MPU6050_DETECT_DECREMENT_2 381,15204
+#define MPU6050_DETECT_DECREMENT_4 382,15248
+#define MPU6050_USERCTRL_DMP_EN_BIT 384,15293
+#define MPU6050_USERCTRL_FIFO_EN_BIT 385,15343
+#define MPU6050_USERCTRL_I2C_MST_EN_BIT 386,15393
+#define MPU6050_USERCTRL_I2C_IF_DIS_BIT 387,15443
+#define MPU6050_USERCTRL_DMP_RESET_BIT 388,15493
+#define MPU6050_USERCTRL_FIFO_RESET_BIT 389,15543
+#define MPU6050_USERCTRL_I2C_MST_RESET_BIT 390,15593
+#define MPU6050_USERCTRL_SIG_COND_RESET_BIT 391,15643
+#define MPU6050_PWR1_DEVICE_RESET_BIT 393,15694
+#define MPU6050_PWR1_SLEEP_BIT 394,15736
+#define MPU6050_PWR1_CYCLE_BIT 395,15778
+#define MPU6050_PWR1_TEMP_DIS_BIT 396,15820
+#define MPU6050_PWR1_CLKSEL_BIT 397,15862
+#define MPU6050_PWR1_CLKSEL_LENGTH 398,15904
+#define MPU6050_CLOCK_INTERNAL 400,15947
+#define MPU6050_CLOCK_PLL_XGYRO 401,15992
+#define MPU6050_CLOCK_PLL_YGYRO 402,16037
+#define MPU6050_CLOCK_PLL_ZGYRO 403,16082
+#define MPU6050_CLOCK_PLL_EXT32K 404,16127
+#define MPU6050_CLOCK_PLL_EXT19M 405,16172
+#define MPU6050_CLOCK_KEEP_RESET 406,16217
+#define MPU6050_PWR2_LP_WAKE_CTRL_BIT 408,16263
+#define MPU6050_PWR2_LP_WAKE_CTRL_LENGTH 409,16309
+#define MPU6050_PWR2_STBY_XA_BIT 410,16355
+#define MPU6050_PWR2_STBY_YA_BIT 411,16401
+#define MPU6050_PWR2_STBY_ZA_BIT 412,16447
+#define MPU6050_PWR2_STBY_XG_BIT 413,16493
+#define MPU6050_PWR2_STBY_YG_BIT 414,16539
+#define MPU6050_PWR2_STBY_ZG_BIT 415,16585
+#define MPU6050_WAKE_FREQ_1P25 417,16632
+#define MPU6050_WAKE_FREQ_2P5 418,16672
+#define MPU6050_WAKE_FREQ_5 419,16712
+#define MPU6050_WAKE_FREQ_10 420,16752
+#define MPU6050_BANKSEL_PRFTCH_EN_BIT 422,16793
+#define MPU6050_BANKSEL_CFG_USER_BANK_BIT 423,16839
+#define MPU6050_BANKSEL_MEM_SEL_BIT 424,16885
+#define MPU6050_BANKSEL_MEM_SEL_LENGTH 425,16931
+#define MPU6050_WHO_AM_I_BIT 427,16978
+#define MPU6050_WHO_AM_I_LENGTH 428,17016
+#define MPU6050_DMP_MEMORY_BANKS 430,17055
+#define MPU6050_DMP_MEMORY_BANK_SIZE 431,17097
+#define MPU6050_DMP_MEMORY_CHUNK_SIZE 432,17141
+class MPU6050 436,17248
+
+MPU6050/MPU6050.cpp,12422
+MPU6050::MPU6050(42,1899
+MPU6050::MPU6050(52,2127
+void MPU6050::initialize(63,2611
+bool MPU6050::testConnection(74,3018
+uint8_t MPU6050::getAuxVDDIOLevel(86,3476
+void MPU6050::setAuxVDDIOLevel(96,3946
+uint8_t MPU6050::getRate(123,5019
+void MPU6050::setRate(132,5264
+uint8_t MPU6050::getExternalFrameSync(165,6436
+void MPU6050::setExternalFrameSync(174,6767
+uint8_t MPU6050::getDLPFMode(205,8208
+void MPU6050::setDLPFMode(217,8625
+uint8_t MPU6050::getFullScaleGyroRange(240,9285
+void MPU6050::setFullScaleGyroRange(252,9727
+uint8_t MPU6050::getAccelXSelfTestFactoryTrim(262,10067
+uint8_t MPU6050::getAccelYSelfTestFactoryTrim(272,10433
+uint8_t MPU6050::getAccelZSelfTestFactoryTrim(282,10799
+uint8_t MPU6050::getGyroXSelfTestFactoryTrim(291,11087
+uint8_t MPU6050::getGyroYSelfTestFactoryTrim(300,11353
+uint8_t MPU6050::getGyroZSelfTestFactoryTrim(309,11619
+bool MPU6050::getAccelXSelfTest(320,11923
+void MPU6050::setAccelXSelfTest(328,12211
+bool MPU6050::getAccelYSelfTest(335,12482
+void MPU6050::setAccelYSelfTest(343,12768
+bool MPU6050::getAccelZSelfTest(350,13039
+void MPU6050::setAccelZSelfTest(358,13325
+uint8_t MPU6050::getFullScaleAccelRange(378,13911
+void MPU6050::setFullScaleAccelRange(386,14240
+uint8_t MPU6050::getDHPFMode(424,15711
+void MPU6050::setDHPFMode(434,16081
+uint8_t MPU6050::getFreefallDetectionThreshold(455,17081
+void MPU6050::setFreefallDetectionThreshold(464,17407
+uint8_t MPU6050::getFreefallDetectionDuration(487,18357
+void MPU6050::setFreefallDetectionDuration(496,18672
+uint8_t MPU6050::getMotionDetectionThreshold(521,19771
+void MPU6050::setMotionDetectionThreshold(530,20109
+uint8_t MPU6050::getMotionDetectionDuration(551,21039
+void MPU6050::setMotionDetectionDuration(560,21366
+uint8_t MPU6050::getZeroMotionDetectionThreshold(591,22861
+void MPU6050::setZeroMotionDetectionThreshold(600,23221
+uint8_t MPU6050::getZeroMotionDetectionDuration(622,24231
+void MPU6050::setZeroMotionDetectionDuration(631,24580
+bool MPU6050::getTempFIFOEnabled(643,24976
+void MPU6050::setTempFIFOEnabled(652,25274
+bool MPU6050::getXGyroFIFOEnabled(661,25666
+void MPU6050::setXGyroFIFOEnabled(670,25974
+bool MPU6050::getYGyroFIFOEnabled(679,26365
+void MPU6050::setYGyroFIFOEnabled(688,26673
+bool MPU6050::getZGyroFIFOEnabled(697,27064
+void MPU6050::setZGyroFIFOEnabled(706,27372
+bool MPU6050::getAccelFIFOEnabled(716,27818
+void MPU6050::setAccelFIFOEnabled(725,28123
+bool MPU6050::getSlave2FIFOEnabled(734,28518
+void MPU6050::setSlave2FIFOEnabled(743,28812
+bool MPU6050::getSlave1FIFOEnabled(752,29207
+void MPU6050::setSlave1FIFOEnabled(761,29501
+bool MPU6050::getSlave0FIFOEnabled(770,29896
+void MPU6050::setSlave0FIFOEnabled(779,30190
+bool MPU6050::getMultiMasterEnabled(800,31125
+void MPU6050::setMultiMasterEnabled(809,31430
+bool MPU6050::getWaitForExternalSensorEnabled(823,32153
+void MPU6050::setWaitForExternalSensorEnabled(832,32512
+bool MPU6050::getSlave3FIFOEnabled(841,32923
+void MPU6050::setSlave3FIFOEnabled(850,33224
+bool MPU6050::getSlaveReadWriteTransitionEnabled(863,33912
+void MPU6050::setSlaveReadWriteTransitionEnabled(872,34275
+uint8_t MPU6050::getMasterClockSpeed(904,35591
+void MPU6050::setMasterClockSpeed(912,35890
+uint8_t MPU6050::getSlaveAddress(959,38296
+void MPU6050::setSlaveAddress(970,38668
+uint8_t MPU6050::getSlaveRegister(985,39281
+void MPU6050::setSlaveRegister(996,39671
+bool MPU6050::getSlaveEnabled(1007,40159
+void MPU6050::setSlaveEnabled(1018,40560
+bool MPU6050::getSlaveWordByteSwap(1033,41320
+void MPU6050::setSlaveWordByteSwap(1044,41774
+bool MPU6050::getSlaveWriteMode(1058,42499
+void MPU6050::setSlaveWriteMode(1069,42941
+bool MPU6050::getSlaveWordGroupOffset(1084,43710
+void MPU6050::setSlaveWordGroupOffset(1095,44160
+uint8_t MPU6050::getSlaveDataLength(1106,44702
+void MPU6050::setSlaveDataLength(1117,45153
+uint8_t MPU6050::getSlave4Address(1133,45769
+void MPU6050::setSlave4Address(1142,46038
+uint8_t MPU6050::getSlave4Register(1152,46423
+void MPU6050::setSlave4Register(1161,46710
+void MPU6050::setSlave4OutputByte(1170,47074
+bool MPU6050::getSlave4Enabled(1179,47465
+void MPU6050::setSlave4Enabled(1188,47764
+bool MPU6050::getSlave4InterruptEnabled(1200,48369
+void MPU6050::setSlave4InterruptEnabled(1209,48737
+bool MPU6050::getSlave4WriteMode(1221,49362
+void MPU6050::setSlave4WriteMode(1230,49706
+uint8_t MPU6050::getSlave4MasterDelay(1248,50515
+void MPU6050::setSlave4MasterDelay(1257,50860
+uint8_t MPU6050::getSlate4InputByte(1266,51281
+bool MPU6050::getPassthroughStatus(1282,51865
+bool MPU6050::getSlave4IsDone(1294,52416
+bool MPU6050::getLostArbitration(1305,52927
+bool MPU6050::getSlave4Nack(1316,53407
+bool MPU6050::getSlave3Nack(1327,53883
+bool MPU6050::getSlave2Nack(1338,54359
+bool MPU6050::getSlave1Nack(1349,54835
+bool MPU6050::getSlave0Nack(1360,55311
+bool MPU6050::getInterruptMode(1373,55713
+void MPU6050::setInterruptMode(1383,56063
+bool MPU6050::getInterruptDrive(1392,56418
+void MPU6050::setInterruptDrive(1402,56767
+bool MPU6050::getInterruptLatch(1411,57147
+void MPU6050::setInterruptLatch(1421,57508
+bool MPU6050::getInterruptLatchClear(1430,57904
+void MPU6050::setInterruptLatchClear(1440,58287
+bool MPU6050::getFSyncInterruptLevel(1449,58657
+void MPU6050::setFSyncInterruptLevel(1459,59042
+bool MPU6050::getFSyncInterruptEnabled(1468,59404
+void MPU6050::setFSyncInterruptEnabled(1478,59779
+bool MPU6050::getI2CBypassEnabled(1492,60484
+void MPU6050::setI2CBypassEnabled(1507,61196
+bool MPU6050::getClockOutputEnabled(1519,61781
+void MPU6050::setClockOutputEnabled(1532,62375
+uint8_t MPU6050::getIntEnabled(1545,62815
+void MPU6050::setIntEnabled(1557,63240
+bool MPU6050::getIntFreefallEnabled(1566,63555
+void MPU6050::setIntFreefallEnabled(1576,63897
+bool MPU6050::getIntMotionEnabled(1585,64250
+void MPU6050::setIntMotionEnabled(1595,64597
+bool MPU6050::getIntZeroMotionEnabled(1604,64955
+void MPU6050::setIntZeroMotionEnabled(1614,65317
+bool MPU6050::getIntFIFOBufferOverflowEnabled(1623,65685
+void MPU6050::setIntFIFOBufferOverflowEnabled(1633,66074
+bool MPU6050::getIntI2CMasterEnabled(1643,66529
+void MPU6050::setIntI2CMasterEnabled(1653,66892
+bool MPU6050::getIntDataReadyEnabled(1663,67354
+void MPU6050::setIntDataReadyEnabled(1673,67707
+uint8_t MPU6050::getIntStatus(1686,68192
+bool MPU6050::getIntFreefallStatus(1697,68591
+bool MPU6050::getIntMotionStatus(1708,69035
+bool MPU6050::getIntZeroMotionStatus(1719,69489
+bool MPU6050::getIntFIFOBufferOverflowStatus(1730,69941
+bool MPU6050::getIntI2CMasterStatus(1742,70469
+bool MPU6050::getIntDataReadyStatus(1753,70916
+void MPU6050::getMotion9(1776,71978
+void MPU6050::getMotion6(1792,72845
+void MPU6050::getAcceleration(1837,75127
+int16_t MPU6050::getAccelerationX(1848,75585
+int16_t MPU6050::getAccelerationY(1857,75915
+int16_t MPU6050::getAccelerationZ(1866,76245
+int16_t MPU6050::getTemperature(1877,76566
+void MPU6050::getRotation(1916,78369
+int16_t MPU6050::getRotationX(1927,78813
+int16_t MPU6050::getRotationY(1936,79129
+int16_t MPU6050::getRotationZ(1945,79445
+uint8_t MPU6050::getExternalSensorByte(2026,83782
+uint16_t MPU6050::getExternalSensorWord(2035,84116
+uint32_t MPU6050::getExternalSensorDWord(2044,84501
+uint8_t MPU6050::getMotionStatus(2055,84939
+bool MPU6050::getXNegMotionDetected(2064,85240
+bool MPU6050::getXPosMotionDetected(2073,85572
+bool MPU6050::getYNegMotionDetected(2082,85904
+bool MPU6050::getYPosMotionDetected(2091,86236
+bool MPU6050::getZNegMotionDetected(2100,86568
+bool MPU6050::getZPosMotionDetected(2109,86900
+bool MPU6050::getZeroMotionDetected(2118,87222
+void MPU6050::setSlaveOutputByte(2133,87776
+bool MPU6050::getExternalShadowDelayEnabled(2148,88368
+void MPU6050::setExternalShadowDelayEnabled(2158,88792
+bool MPU6050::getSlaveDelayEnabled(2179,89694
+void MPU6050::setSlaveDelayEnabled(2191,90143
+void MPU6050::resetGyroscopePath(2203,90551
+void MPU6050::resetAccelerometerPath(2212,90930
+void MPU6050::resetTemperaturePath(2221,91318
+uint8_t MPU6050::getAccelerometerPowerOnDelay(2241,92326
+void MPU6050::setAccelerometerPowerOnDelay(2251,92753
+uint8_t MPU6050::getFreefallDetectionCounterDecrement(2280,93968
+void MPU6050::setFreefallDetectionCounterDecrement(2290,94415
+uint8_t MPU6050::getMotionDetectionCounterDecrement(2316,95519
+void MPU6050::setMotionDetectionCounterDecrement(2326,95962
+bool MPU6050::getFIFOEnabled(2340,96538
+void MPU6050::setFIFOEnabled(2350,96851
+bool MPU6050::getI2CMasterModeEnabled(2364,97559
+void MPU6050::setI2CMasterModeEnabled(2374,97918
+void MPU6050::switchSPIEnabled(2381,98233
+void MPU6050::resetFIFO(2390,98617
+void MPU6050::resetI2CMaster(2399,98990
+void MPU6050::resetSensors(2414,99624
+void MPU6050::reset(2425,99952
+bool MPU6050::getSleepEnabled(2439,100621
+void MPU6050::setSleepEnabled(2449,100930
+bool MPU6050::getWakeCycleEnabled(2460,101430
+void MPU6050::setWakeCycleEnabled(2470,101755
+bool MPU6050::getTempSensorEnabled(2484,102358
+void MPU6050::setTempSensorEnabled(2498,102983
+uint8_t MPU6050::getClockSource(2508,103333
+void MPU6050::setClockSource(2542,104771
+uint8_t MPU6050::getWakeFrequency(2571,105781
+void MPU6050::setWakeFrequency(2579,106096
+bool MPU6050::getStandbyXAccelEnabled(2589,106524
+void MPU6050::setStandbyXAccelEnabled(2599,106875
+bool MPU6050::getStandbyYAccelEnabled(2608,107262
+void MPU6050::setStandbyYAccelEnabled(2618,107613
+bool MPU6050::getStandbyZAccelEnabled(2627,108000
+void MPU6050::setStandbyZAccelEnabled(2637,108351
+bool MPU6050::getStandbyXGyroEnabled(2646,108734
+void MPU6050::setStandbyXGyroEnabled(2656,109079
+bool MPU6050::getStandbyYGyroEnabled(2665,109461
+void MPU6050::setStandbyYGyroEnabled(2675,109806
+bool MPU6050::getStandbyZGyroEnabled(2684,110188
+void MPU6050::setStandbyZGyroEnabled(2694,110533
+uint16_t MPU6050::getFIFOCount(2707,111088
+uint8_t MPU6050::getFIFOByte(2739,112566
+void MPU6050::getFIFOBytes(2743,112683
+void MPU6050::setFIFOByte(2754,112956
+uint8_t MPU6050::getDeviceID(2767,113325
+void MPU6050::setDeviceID(2780,113758
+uint8_t MPU6050::getOTPBankValid(2788,113986
+void MPU6050::setOTPBankValid(2792,114136
+int8_t MPU6050::getXGyroOffsetTC(2795,114275
+void MPU6050::setXGyroOffsetTC(2799,114447
+int8_t MPU6050::getYGyroOffsetTC(2805,114634
+void MPU6050::setYGyroOffsetTC(2809,114806
+int8_t MPU6050::getZGyroOffsetTC(2815,114993
+void MPU6050::setZGyroOffsetTC(2819,115165
+int8_t MPU6050::getXFineGain(2825,115353
+void MPU6050::setXFineGain(2829,115473
+int8_t MPU6050::getYFineGain(2835,115605
+void MPU6050::setYFineGain(2839,115725
+int8_t MPU6050::getZFineGain(2845,115857
+void MPU6050::setZFineGain(2849,115977
+int16_t MPU6050::getXAccelOffset(2855,116108
+void MPU6050::setXAccelOffset(2859,116264
+int16_t MPU6050::getYAccelOffset(2865,116400
+void MPU6050::setYAccelOffset(2869,116556
+int16_t MPU6050::getZAccelOffset(2875,116692
+void MPU6050::setZAccelOffset(2879,116848
+int16_t MPU6050::getXGyroOffset(2885,116988
+void MPU6050::setXGyroOffset(2889,117146
+int16_t MPU6050::getYGyroOffset(2895,117287
+void MPU6050::setYGyroOffset(2899,117445
+int16_t MPU6050::getZGyroOffset(2905,117586
+void MPU6050::setZGyroOffset(2909,117744
+bool MPU6050::getIntPLLReadyEnabled(2915,117899
+void MPU6050::setIntPLLReadyEnabled(2919,118059
+bool MPU6050::getIntDMPEnabled(2922,118211
+void MPU6050::setIntDMPEnabled(2926,118362
+bool MPU6050::getDMPInt5Status(2932,118525
+bool MPU6050::getDMPInt4Status(2936,118671
+bool MPU6050::getDMPInt3Status(2940,118817
+bool MPU6050::getDMPInt2Status(2944,118963
+bool MPU6050::getDMPInt1Status(2948,119109
+bool MPU6050::getDMPInt0Status(2952,119255
+bool MPU6050::getIntPLLReadyStatus(2959,119442
+bool MPU6050::getIntDMPStatus(2963,119601
+bool MPU6050::getDMPEnabled(2970,119791
+void MPU6050::setDMPEnabled(2974,119936
+void MPU6050::resetDMP(2977,120073
+void MPU6050::setMemoryBank(2983,120216
+void MPU6050::setMemoryStartAddress(2992,120476
+uint8_t MPU6050::readMemoryByte(2998,120623
+void MPU6050::writeMemoryByte(3002,120742
+void MPU6050::readMemoryBlock(3005,120848
+bool MPU6050::writeMemoryBlock(3036,121982
+bool MPU6050::writeProgMemoryBlock(3112,124988
+bool MPU6050::writeDMPConfigurationSet(3115,125185
+bool MPU6050::writeProgDMPConfigurationSet(3191,128075
+uint8_t MPU6050::getDMPConfig1(3197,128245
+void MPU6050::setDMPConfig1(3201,128365
+uint8_t MPU6050::getDMPConfig2(3207,128499
+void MPU6050::setDMPConfig2(3211,128619
+
+MPU6050/helper_3dmath.h,1357
+#define _HELPER_3DMATH_H_33,1556
+class Quaternion 35,1583
+        Quaternion(Quaternion::Quaternion42,1691
+        Quaternion(Quaternion::Quaternion49,1821
+        Quaternion getProduct(Quaternion::getProduct56,1973
+        Quaternion getConjugate(Quaternion::getConjugate69,2588
+        float getMagnitude(Quaternion::getMagnitude73,2689
+        void normalize(Quaternion::normalize77,2787
+        Quaternion getNormalized(Quaternion::getNormalized85,2951
+class VectorInt16 92,3089
+        VectorInt16(VectorInt16::VectorInt1698,3179
+        VectorInt16(VectorInt16::VectorInt16104,3279
+        float getMagnitude(VectorInt16::getMagnitude110,3408
+        void normalize(VectorInt16::normalize114,3492
+        VectorInt16 getNormalized(VectorInt16::getNormalized121,3636
+        void rotate(VectorInt16::rotate127,3778
+        VectorInt16 getRotated(VectorInt16::getRotated152,4988
+class VectorFloat 159,5133
+        VectorFloat(VectorFloat::VectorFloat165,5217
+        VectorFloat(VectorFloat::VectorFloat171,5317
+        float getMagnitude(VectorFloat::getMagnitude177,5440
+        void normalize(VectorFloat::normalize181,5524
+        VectorFloat getNormalized(VectorFloat::getNormalized188,5668
+        void rotate(VectorFloat::rotate194,5810
+        VectorFloat getRotated(VectorFloat::getRotated209,6238
+
+MPU6050/MPU6050_6Axis_MotionApps20.h,2746
+#define _MPU6050_6AXIS_MOTIONAPPS20_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS2040,1803
+        #define __PGMSPACE_H_ 51,2112
+        #define PROGMEM54,2175
+        #define PGM_P 55,2199
+        #define PSTR(56,2235
+        #define F(57,2267
+        typedef void prog_void;59,2291
+        typedef char prog_char;60,2323
+        typedef unsigned char prog_uchar;61,2355
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(105,4273
+    #define DEBUG_PRINTF(106,4316
+    #define DEBUG_PRINTLN(107,4366
+    #define DEBUG_PRINTLNF(108,4413
+    #define DEBUG_PRINT(110,4473
+    #define DEBUG_PRINTF(111,4500
+    #define DEBUG_PRINTLN(112,4531
+    #define DEBUG_PRINTLNF(113,4560
+#define MPU6050_DMP_CODE_SIZE 116,4601
+#define MPU6050_DMP_CONFIG_SIZE 117,4660
+#define MPU6050_DMP_UPDATES_SIZE 118,4719
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 133,5867
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 273,18270
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21448
+uint8_t MPU6050::dmpInitialize(325,21872
+bool MPU6050::dmpPacketAvailable(546,31048
+uint8_t MPU6050::dmpGetAccel(573,32582
+uint8_t MPU6050::dmpGetAccel(581,33164
+uint8_t MPU6050::dmpGetAccel(589,33524
+uint8_t MPU6050::dmpGetQuaternion(597,33882
+uint8_t MPU6050::dmpGetQuaternion(606,34579
+uint8_t MPU6050::dmpGetQuaternion(615,34992
+uint8_t MPU6050::dmpGetGyro(630,35684
+uint8_t MPU6050::dmpGetGyro(638,36265
+uint8_t MPU6050::dmpGetGyro(646,36624
+uint8_t MPU6050::dmpGetLinearAccel(656,37123
+uint8_t MPU6050::dmpGetLinearAccelInWorld(664,37547
+uint8_t MPU6050::dmpGetGravity(676,38217
+uint8_t MPU6050::dmpGetEuler(687,38787
+uint8_t MPU6050::dmpGetYawPitchRoll(693,39164
+uint8_t MPU6050::dmpProcessFIFOPacket(706,39825
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(716,40160
+uint16_t MPU6050::dmpGetFIFOPacketSize(741,41058
+
+Balancing_Function_v2.cpp,220
+const float offset_a 23,424
+int leftSpeed;26,471
+int rightSpeed;27,486
+float ctrlTurn 28,502
+float ctrlwalk 29,522
+float PID_Balance(39,690
+void PIDSetSpeed(50,918
+void ProcessCommand(63,1267
+void loop(112,2029
+
+TBMotor.cpp,140
+OseppTBMotor::OseppTBMotor(4,43
+void OseppTBMotor::forward(11,206
+void OseppTBMotor::backward(17,343
+void OseppTBMotor::SetSpeed(23,480
+
+I2Cdev/I2Cdev.h,2581
+#define _I2CDEV_H_48,2768
+#define I2CDEV_IMPLEMENTATION 54,3020
+#define I2CDEV_IMPLEMENTATION_WARNINGS60,3294
+#define I2CDEV_ARDUINO_WIRE 65,3536
+#define I2CDEV_BUILTIN_NBWIRE 66,3602
+#define I2CDEV_BUILTIN_FASTWIRE 68,3798
+#define I2CDEV_I2CMASTER_LIBRARY 69,3888
+    #define ARDUINO 92,4648
+#define I2CDEV_DEFAULT_READ_TIMEOUT 97,4756
+class I2Cdev 99,4802
+    #define TW_START 133,7019
+    #define TW_REP_START 134,7060
+    #define TW_MT_SLA_ACK 137,7131
+    #define TW_MT_SLA_NACK 138,7172
+    #define TW_MT_DATA_ACK 139,7213
+    #define TW_MT_DATA_NACK 140,7254
+    #define TW_MT_ARB_LOST 141,7295
+    #define TW_MR_ARB_LOST 144,7363
+    #define TW_MR_SLA_ACK 145,7404
+    #define TW_MR_SLA_NACK 146,7445
+    #define TW_MR_DATA_ACK 147,7486
+    #define TW_MR_DATA_NACK 148,7527
+    #define TW_OK 150,7569
+    #define TW_ERROR 151,7607
+    class Fastwire 153,7646
+    #define NBWIRE_BUFFER_LENGTH 173,8486
+    class TwoWire 175,8523
+    #define TWI_READY 214,9909
+    #define TWI_MRX 215,9935
+    #define TWI_MTX 216,9961
+    #define TWI_SRX 217,9987
+    #define TWI_STX 218,10013
+    #define TW_WRITE 220,10040
+    #define TW_READ 221,10066
+    #define TW_MT_SLA_NACK 223,10093
+    #define TW_MT_DATA_NACK 224,10130
+    #define CPU_FREQ 226,10168
+    #define TWI_FREQ 227,10210
+    #define TWI_BUFFER_LENGTH 228,10250
+    #define TW_STATUS_MASK 232,10351
+    #define TW_STATUS 233,10443
+    #define TW_START 234,10507
+    #define TW_REP_START 235,10552
+    #define TW_MT_SLA_ACK 236,10597
+    #define TW_MT_SLA_NACK 237,10642
+    #define TW_MT_DATA_ACK 238,10687
+    #define TW_MT_DATA_NACK 239,10732
+    #define TW_MT_ARB_LOST 240,10777
+    #define TW_MR_ARB_LOST 241,10822
+    #define TW_MR_SLA_ACK 242,10867
+    #define TW_MR_SLA_NACK 243,10912
+    #define TW_MR_DATA_ACK 244,10957
+    #define TW_MR_DATA_NACK 245,11002
+    #define TW_ST_SLA_ACK 246,11047
+    #define TW_ST_ARB_LOST_SLA_ACK 247,11092
+    #define TW_ST_DATA_ACK 248,11137
+    #define TW_ST_DATA_NACK 249,11182
+    #define TW_ST_LAST_DATA 250,11227
+    #define TW_SR_SLA_ACK 251,11272
+    #define TW_SR_ARB_LOST_SLA_ACK 252,11317
+    #define TW_SR_GCALL_ACK 253,11362
+    #define TW_SR_ARB_LOST_GCALL_ACK 254,11407
+    #define TW_SR_DATA_ACK 255,11452
+    #define TW_SR_DATA_NACK 256,11497
+    #define TW_SR_GCALL_DATA_ACK 257,11542
+    #define TW_SR_GCALL_DATA_NACK 258,11587
+    #define TW_SR_STOP 259,11632
+    #define TW_NO_INFO 260,11677
+    #define TW_BUS_ERROR 261,11722
+        #define sbi(267,11921
+        #define cbi(271,12028
+
+I2Cdev/I2Cdev.cpp,3048
+    TwoWire Wire;86,4764
+I2Cdev::I2Cdev(92,4820
+int8_t I2Cdev::readBit(103,5265
+int8_t I2Cdev::readBitW(118,5925
+int8_t I2Cdev::readBits(134,6718
+int8_t I2Cdev::readBitsW(159,7832
+int8_t I2Cdev::readByte(183,8812
+int8_t I2Cdev::readWord(194,9355
+int8_t I2Cdev::readBytes(206,9938
+int8_t I2Cdev::readWords(326,14864
+bool I2Cdev::writeBit(477,21216
+bool I2Cdev::writeBitW(491,21746
+bool I2Cdev::writeBits(506,22351
+bool I2Cdev::writeBitsW(535,23526
+bool I2Cdev::writeByte(562,24641
+bool I2Cdev::writeWord(572,25000
+bool I2Cdev::writeBytes(583,25416
+bool I2Cdev::writeWords(638,27778
+uint16_t I2Cdev::readTimeout 693,30238
+    boolean Fastwire::waitInt(714,30786
+    void Fastwire::setup(720,30921
+    byte Fastwire::beginTransmission(746,32220
+    byte Fastwire::writeBuf(766,32940
+    byte Fastwire::write(807,34382
+    byte Fastwire::readBuf(818,34689
+    void Fastwire::reset(881,36882
+    byte Fastwire::stop(885,36936
+    uint8_t TwoWire::rxBuffer[TwoWire::rxBuffer930,38979
+    uint8_t TwoWire::rxBufferIndex 931,39032
+    uint8_t TwoWire::rxBufferLength 932,39072
+    uint8_t TwoWire::txAddress 934,39118
+    uint8_t TwoWire::txBuffer[TwoWire::txBuffer935,39154
+    uint8_t TwoWire::txBufferIndex 936,39207
+    uint8_t TwoWire::txBufferLength 937,39247
+    static volatile uint8_t twi_transmitting;943,39424
+    static volatile uint8_t twi_state;944,39470
+    static uint8_t twi_slarw;945,39509
+    static volatile uint8_t twi_error;946,39539
+    static uint8_t twi_masterBuffer[twi_masterBuffer947,39578
+    static volatile uint8_t twi_masterBufferIndex;948,39634
+    static uint8_t twi_masterBufferLength;949,39685
+    static uint8_t twi_rxBuffer[twi_rxBuffer950,39728
+    static volatile uint8_t twi_rxBufferIndex;951,39780
+    static volatile uint8_t twi_Return_Value;953,39889
+    static volatile uint8_t twi_Done;954,39935
+    void twi_init(958,40059
+    } twi_Write_Vars;995,41183
+    twi_Write_Vars *ptwv ptwv997,41206
+    void twi_Finish(1000,41290
+    uint8_t twii_WaitForDone(1010,41510
+    void twii_SetState(1016,41730
+    void twii_SetError(1020,41808
+    void twii_InitBuffer(1024,41887
+    void twii_CopyToBuf(1029,42032
+    void twii_CopyFromBuf(1036,42213
+    void twii_SetSlaRW(1043,42396
+    void twii_SetStart(1047,42474
+    void twi_write01(1051,42584
+    void twi_write00(1067,43186
+    void twi_writeTo(1084,43902
+    void twi_read01(1095,44280
+    void twi_read00(1104,44651
+    void twi_readFrom(1117,45220
+    void twi_reply(1128,45555
+    void twi_stop(1137,45833
+    void twi_releaseBus(1151,46219
+    SIGNAL(1159,46412
+    TwoWire::TwoWire(1331,52932
+    void TwoWire::begin(1333,52964
+    void TwoWire::beginTransmission(1343,53143
+    uint8_t TwoWire::endTransmission(1357,53512
+    void TwoWire::nbendTransmission(1373,53989
+    void TwoWire::send(1379,54184
+    uint8_t TwoWire::receive(1400,54775
+    uint8_t TwoWire::requestFrom(1414,55151
+    void TwoWire::nbrequestFrom(1432,55688
+    uint8_t TwoWire::available(1453,56308
+
+MPU6050_DMP.cpp,411
+MPU6050 mpu;6,80
+bool dmpReady 10,122
+uint8_t mpuIntStatus;11,185
+uint8_t devStatus;12,256
+uint16_t packetSize;13,351
+uint16_t fifoCount;14,425
+uint8_t fifoBuffer[fifoBuffer15,489
+Quaternion q;17,537
+VectorFloat gravity;18,606
+float ypr[ypr19,669
+uint8_t* getMPUBuff(21,762
+int16_t g_dir;70,2920
+float angle;71,2935
+int16_t g_dirOffset=73,2949
+int16_t a_yOffset=74,2972
+bool updateIMU(76,2994
+
+TBMotor.h,24
+class OseppTBMotor2,21
+
+MPU6050/MPU6050.h,14876
+#define _MPU6050_H_38,1810
+#define MPU6050_ADDRESS_AD0_LOW 56,2237
+#define MPU6050_ADDRESS_AD0_HIGH 57,2344
+#define MPU6050_DEFAULT_ADDRESS 58,2411
+#define MPU6050_RA_XG_OFFS_TC 60,2472
+#define MPU6050_RA_YG_OFFS_TC 61,2563
+#define MPU6050_RA_ZG_OFFS_TC 62,2654
+#define MPU6050_RA_X_FINE_GAIN 63,2745
+#define MPU6050_RA_Y_FINE_GAIN 64,2806
+#define MPU6050_RA_Z_FINE_GAIN 65,2867
+#define MPU6050_RA_XA_OFFS_H 66,2928
+#define MPU6050_RA_XA_OFFS_L_TC 67,2986
+#define MPU6050_RA_YA_OFFS_H 68,3027
+#define MPU6050_RA_YA_OFFS_L_TC 69,3085
+#define MPU6050_RA_ZA_OFFS_H 70,3126
+#define MPU6050_RA_ZA_OFFS_L_TC 71,3184
+#define MPU6050_RA_SELF_TEST_X 72,3225
+#define MPU6050_RA_SELF_TEST_Y 73,3307
+#define MPU6050_RA_SELF_TEST_Z 74,3389
+#define MPU6050_RA_SELF_TEST_A 75,3471
+#define MPU6050_RA_XG_OFFS_USRH 76,3573
+#define MPU6050_RA_XG_OFFS_USRL 77,3635
+#define MPU6050_RA_YG_OFFS_USRH 78,3676
+#define MPU6050_RA_YG_OFFS_USRL 79,3738
+#define MPU6050_RA_ZG_OFFS_USRH 80,3779
+#define MPU6050_RA_ZG_OFFS_USRL 81,3841
+#define MPU6050_RA_SMPLRT_DIV 82,3882
+#define MPU6050_RA_CONFIG 83,3923
+#define MPU6050_RA_GYRO_CONFIG 84,3964
+#define MPU6050_RA_ACCEL_CONFIG 85,4005
+#define MPU6050_RA_FF_THR 86,4046
+#define MPU6050_RA_FF_DUR 87,4087
+#define MPU6050_RA_MOT_THR 88,4128
+#define MPU6050_RA_MOT_DUR 89,4169
+#define MPU6050_RA_ZRMOT_THR 90,4210
+#define MPU6050_RA_ZRMOT_DUR 91,4251
+#define MPU6050_RA_FIFO_EN 92,4292
+#define MPU6050_RA_I2C_MST_CTRL 93,4333
+#define MPU6050_RA_I2C_SLV0_ADDR 94,4374
+#define MPU6050_RA_I2C_SLV0_REG 95,4415
+#define MPU6050_RA_I2C_SLV0_CTRL 96,4456
+#define MPU6050_RA_I2C_SLV1_ADDR 97,4497
+#define MPU6050_RA_I2C_SLV1_REG 98,4538
+#define MPU6050_RA_I2C_SLV1_CTRL 99,4579
+#define MPU6050_RA_I2C_SLV2_ADDR 100,4620
+#define MPU6050_RA_I2C_SLV2_REG 101,4661
+#define MPU6050_RA_I2C_SLV2_CTRL 102,4702
+#define MPU6050_RA_I2C_SLV3_ADDR 103,4743
+#define MPU6050_RA_I2C_SLV3_REG 104,4784
+#define MPU6050_RA_I2C_SLV3_CTRL 105,4825
+#define MPU6050_RA_I2C_SLV4_ADDR 106,4866
+#define MPU6050_RA_I2C_SLV4_REG 107,4907
+#define MPU6050_RA_I2C_SLV4_DO 108,4948
+#define MPU6050_RA_I2C_SLV4_CTRL 109,4989
+#define MPU6050_RA_I2C_SLV4_DI 110,5030
+#define MPU6050_RA_I2C_MST_STATUS 111,5071
+#define MPU6050_RA_INT_PIN_CFG 112,5112
+#define MPU6050_RA_INT_ENABLE 113,5153
+#define MPU6050_RA_DMP_INT_STATUS 114,5194
+#define MPU6050_RA_INT_STATUS 115,5235
+#define MPU6050_RA_ACCEL_XOUT_H 116,5276
+#define MPU6050_RA_ACCEL_XOUT_L 117,5317
+#define MPU6050_RA_ACCEL_YOUT_H 118,5358
+#define MPU6050_RA_ACCEL_YOUT_L 119,5399
+#define MPU6050_RA_ACCEL_ZOUT_H 120,5440
+#define MPU6050_RA_ACCEL_ZOUT_L 121,5481
+#define MPU6050_RA_TEMP_OUT_H 122,5522
+#define MPU6050_RA_TEMP_OUT_L 123,5563
+#define MPU6050_RA_GYRO_XOUT_H 124,5604
+#define MPU6050_RA_GYRO_XOUT_L 125,5645
+#define MPU6050_RA_GYRO_YOUT_H 126,5686
+#define MPU6050_RA_GYRO_YOUT_L 127,5727
+#define MPU6050_RA_GYRO_ZOUT_H 128,5768
+#define MPU6050_RA_GYRO_ZOUT_L 129,5809
+#define MPU6050_RA_EXT_SENS_DATA_00 130,5850
+#define MPU6050_RA_EXT_SENS_DATA_01 131,5891
+#define MPU6050_RA_EXT_SENS_DATA_02 132,5932
+#define MPU6050_RA_EXT_SENS_DATA_03 133,5973
+#define MPU6050_RA_EXT_SENS_DATA_04 134,6014
+#define MPU6050_RA_EXT_SENS_DATA_05 135,6055
+#define MPU6050_RA_EXT_SENS_DATA_06 136,6096
+#define MPU6050_RA_EXT_SENS_DATA_07 137,6137
+#define MPU6050_RA_EXT_SENS_DATA_08 138,6178
+#define MPU6050_RA_EXT_SENS_DATA_09 139,6219
+#define MPU6050_RA_EXT_SENS_DATA_10 140,6260
+#define MPU6050_RA_EXT_SENS_DATA_11 141,6301
+#define MPU6050_RA_EXT_SENS_DATA_12 142,6342
+#define MPU6050_RA_EXT_SENS_DATA_13 143,6383
+#define MPU6050_RA_EXT_SENS_DATA_14 144,6424
+#define MPU6050_RA_EXT_SENS_DATA_15 145,6465
+#define MPU6050_RA_EXT_SENS_DATA_16 146,6506
+#define MPU6050_RA_EXT_SENS_DATA_17 147,6547
+#define MPU6050_RA_EXT_SENS_DATA_18 148,6588
+#define MPU6050_RA_EXT_SENS_DATA_19 149,6629
+#define MPU6050_RA_EXT_SENS_DATA_20 150,6670
+#define MPU6050_RA_EXT_SENS_DATA_21 151,6711
+#define MPU6050_RA_EXT_SENS_DATA_22 152,6752
+#define MPU6050_RA_EXT_SENS_DATA_23 153,6793
+#define MPU6050_RA_MOT_DETECT_STATUS 154,6834
+#define MPU6050_RA_I2C_SLV0_DO 155,6879
+#define MPU6050_RA_I2C_SLV1_DO 156,6920
+#define MPU6050_RA_I2C_SLV2_DO 157,6961
+#define MPU6050_RA_I2C_SLV3_DO 158,7002
+#define MPU6050_RA_I2C_MST_DELAY_CTRL 159,7043
+#define MPU6050_RA_SIGNAL_PATH_RESET 160,7088
+#define MPU6050_RA_MOT_DETECT_CTRL 161,7133
+#define MPU6050_RA_USER_CTRL 162,7178
+#define MPU6050_RA_PWR_MGMT_1 163,7219
+#define MPU6050_RA_PWR_MGMT_2 164,7260
+#define MPU6050_RA_BANK_SEL 165,7301
+#define MPU6050_RA_MEM_START_ADDR 166,7342
+#define MPU6050_RA_MEM_R_W 167,7383
+#define MPU6050_RA_DMP_CFG_1 168,7424
+#define MPU6050_RA_DMP_CFG_2 169,7465
+#define MPU6050_RA_FIFO_COUNTH 170,7506
+#define MPU6050_RA_FIFO_COUNTL 171,7547
+#define MPU6050_RA_FIFO_R_W 172,7588
+#define MPU6050_RA_WHO_AM_I 173,7629
+#define MPU6050_SELF_TEST_XA_1_BIT 175,7671
+#define MPU6050_SELF_TEST_XA_1_LENGTH 176,7715
+#define MPU6050_SELF_TEST_XA_2_BIT 177,7759
+#define MPU6050_SELF_TEST_XA_2_LENGTH 178,7803
+#define MPU6050_SELF_TEST_YA_1_BIT 179,7847
+#define MPU6050_SELF_TEST_YA_1_LENGTH 180,7891
+#define MPU6050_SELF_TEST_YA_2_BIT 181,7935
+#define MPU6050_SELF_TEST_YA_2_LENGTH 182,7979
+#define MPU6050_SELF_TEST_ZA_1_BIT 183,8023
+#define MPU6050_SELF_TEST_ZA_1_LENGTH 184,8067
+#define MPU6050_SELF_TEST_ZA_2_BIT 185,8111
+#define MPU6050_SELF_TEST_ZA_2_LENGTH 186,8155
+#define MPU6050_SELF_TEST_XG_1_BIT 188,8200
+#define MPU6050_SELF_TEST_XG_1_LENGTH 189,8244
+#define MPU6050_SELF_TEST_YG_1_BIT 190,8288
+#define MPU6050_SELF_TEST_YG_1_LENGTH 191,8332
+#define MPU6050_SELF_TEST_ZG_1_BIT 192,8376
+#define MPU6050_SELF_TEST_ZG_1_LENGTH 193,8420
+#define MPU6050_TC_PWR_MODE_BIT 195,8465
+#define MPU6050_TC_OFFSET_BIT 196,8503
+#define MPU6050_TC_OFFSET_LENGTH 197,8541
+#define MPU6050_TC_OTP_BNK_VLD_BIT 198,8579
+#define MPU6050_VDDIO_LEVEL_VLOGIC 200,8618
+#define MPU6050_VDDIO_LEVEL_VDD 201,8656
+#define MPU6050_CFG_EXT_SYNC_SET_BIT 203,8695
+#define MPU6050_CFG_EXT_SYNC_SET_LENGTH 204,8737
+#define MPU6050_CFG_DLPF_CFG_BIT 205,8779
+#define MPU6050_CFG_DLPF_CFG_LENGTH 206,8817
+#define MPU6050_EXT_SYNC_DISABLED 208,8856
+#define MPU6050_EXT_SYNC_TEMP_OUT_L 209,8900
+#define MPU6050_EXT_SYNC_GYRO_XOUT_L 210,8944
+#define MPU6050_EXT_SYNC_GYRO_YOUT_L 211,8988
+#define MPU6050_EXT_SYNC_GYRO_ZOUT_L 212,9032
+#define MPU6050_EXT_SYNC_ACCEL_XOUT_L 213,9076
+#define MPU6050_EXT_SYNC_ACCEL_YOUT_L 214,9120
+#define MPU6050_EXT_SYNC_ACCEL_ZOUT_L 215,9164
+#define MPU6050_DLPF_BW_256 217,9209
+#define MPU6050_DLPF_BW_188 218,9250
+#define MPU6050_DLPF_BW_98 219,9291
+#define MPU6050_DLPF_BW_42 220,9332
+#define MPU6050_DLPF_BW_20 221,9373
+#define MPU6050_DLPF_BW_10 222,9414
+#define MPU6050_DLPF_BW_5 223,9455
+#define MPU6050_GCONFIG_FS_SEL_BIT 225,9497
+#define MPU6050_GCONFIG_FS_SEL_LENGTH 226,9539
+#define MPU6050_GYRO_FS_250 228,9582
+#define MPU6050_GYRO_FS_500 229,9623
+#define MPU6050_GYRO_FS_1000 230,9664
+#define MPU6050_GYRO_FS_2000 231,9705
+#define MPU6050_ACONFIG_XA_ST_BIT 233,9747
+#define MPU6050_ACONFIG_YA_ST_BIT 234,9793
+#define MPU6050_ACONFIG_ZA_ST_BIT 235,9839
+#define MPU6050_ACONFIG_AFS_SEL_BIT 236,9885
+#define MPU6050_ACONFIG_AFS_SEL_LENGTH 237,9931
+#define MPU6050_ACONFIG_ACCEL_HPF_BIT 238,9977
+#define MPU6050_ACONFIG_ACCEL_HPF_LENGTH 239,10023
+#define MPU6050_ACCEL_FS_2 241,10070
+#define MPU6050_ACCEL_FS_4 242,10111
+#define MPU6050_ACCEL_FS_8 243,10152
+#define MPU6050_ACCEL_FS_16 244,10193
+#define MPU6050_DHPF_RESET 246,10235
+#define MPU6050_DHPF_5 247,10276
+#define MPU6050_DHPF_2P5 248,10317
+#define MPU6050_DHPF_1P25 249,10358
+#define MPU6050_DHPF_0P63 250,10399
+#define MPU6050_DHPF_HOLD 251,10440
+#define MPU6050_TEMP_FIFO_EN_BIT 253,10482
+#define MPU6050_XG_FIFO_EN_BIT 254,10520
+#define MPU6050_YG_FIFO_EN_BIT 255,10558
+#define MPU6050_ZG_FIFO_EN_BIT 256,10596
+#define MPU6050_ACCEL_FIFO_EN_BIT 257,10634
+#define MPU6050_SLV2_FIFO_EN_BIT 258,10672
+#define MPU6050_SLV1_FIFO_EN_BIT 259,10710
+#define MPU6050_SLV0_FIFO_EN_BIT 260,10748
+#define MPU6050_MULT_MST_EN_BIT 262,10787
+#define MPU6050_WAIT_FOR_ES_BIT 263,10825
+#define MPU6050_SLV_3_FIFO_EN_BIT 264,10863
+#define MPU6050_I2C_MST_P_NSR_BIT 265,10901
+#define MPU6050_I2C_MST_CLK_BIT 266,10939
+#define MPU6050_I2C_MST_CLK_LENGTH 267,10977
+#define MPU6050_CLOCK_DIV_348 269,11016
+#define MPU6050_CLOCK_DIV_333 270,11056
+#define MPU6050_CLOCK_DIV_320 271,11096
+#define MPU6050_CLOCK_DIV_308 272,11136
+#define MPU6050_CLOCK_DIV_296 273,11176
+#define MPU6050_CLOCK_DIV_286 274,11216
+#define MPU6050_CLOCK_DIV_276 275,11256
+#define MPU6050_CLOCK_DIV_267 276,11296
+#define MPU6050_CLOCK_DIV_258 277,11336
+#define MPU6050_CLOCK_DIV_500 278,11376
+#define MPU6050_CLOCK_DIV_471 279,11416
+#define MPU6050_CLOCK_DIV_444 280,11456
+#define MPU6050_CLOCK_DIV_421 281,11496
+#define MPU6050_CLOCK_DIV_400 282,11536
+#define MPU6050_CLOCK_DIV_381 283,11576
+#define MPU6050_CLOCK_DIV_364 284,11616
+#define MPU6050_I2C_SLV_RW_BIT 286,11657
+#define MPU6050_I2C_SLV_ADDR_BIT 287,11695
+#define MPU6050_I2C_SLV_ADDR_LENGTH 288,11733
+#define MPU6050_I2C_SLV_EN_BIT 289,11771
+#define MPU6050_I2C_SLV_BYTE_SW_BIT 290,11809
+#define MPU6050_I2C_SLV_REG_DIS_BIT 291,11847
+#define MPU6050_I2C_SLV_GRP_BIT 292,11885
+#define MPU6050_I2C_SLV_LEN_BIT 293,11923
+#define MPU6050_I2C_SLV_LEN_LENGTH 294,11961
+#define MPU6050_I2C_SLV4_RW_BIT 296,12000
+#define MPU6050_I2C_SLV4_ADDR_BIT 297,12042
+#define MPU6050_I2C_SLV4_ADDR_LENGTH 298,12084
+#define MPU6050_I2C_SLV4_EN_BIT 299,12126
+#define MPU6050_I2C_SLV4_INT_EN_BIT 300,12168
+#define MPU6050_I2C_SLV4_REG_DIS_BIT 301,12210
+#define MPU6050_I2C_SLV4_MST_DLY_BIT 302,12252
+#define MPU6050_I2C_SLV4_MST_DLY_LENGTH 303,12294
+#define MPU6050_MST_PASS_THROUGH_BIT 305,12337
+#define MPU6050_MST_I2C_SLV4_DONE_BIT 306,12379
+#define MPU6050_MST_I2C_LOST_ARB_BIT 307,12421
+#define MPU6050_MST_I2C_SLV4_NACK_BIT 308,12463
+#define MPU6050_MST_I2C_SLV3_NACK_BIT 309,12505
+#define MPU6050_MST_I2C_SLV2_NACK_BIT 310,12547
+#define MPU6050_MST_I2C_SLV1_NACK_BIT 311,12589
+#define MPU6050_MST_I2C_SLV0_NACK_BIT 312,12631
+#define MPU6050_INTCFG_INT_LEVEL_BIT 314,12674
+#define MPU6050_INTCFG_INT_OPEN_BIT 315,12720
+#define MPU6050_INTCFG_LATCH_INT_EN_BIT 316,12766
+#define MPU6050_INTCFG_INT_RD_CLEAR_BIT 317,12812
+#define MPU6050_INTCFG_FSYNC_INT_LEVEL_BIT 318,12858
+#define MPU6050_INTCFG_FSYNC_INT_EN_BIT 319,12904
+#define MPU6050_INTCFG_I2C_BYPASS_EN_BIT 320,12950
+#define MPU6050_INTCFG_CLKOUT_EN_BIT 321,12996
+#define MPU6050_INTMODE_ACTIVEHIGH 323,13043
+#define MPU6050_INTMODE_ACTIVELOW 324,13084
+#define MPU6050_INTDRV_PUSHPULL 326,13126
+#define MPU6050_INTDRV_OPENDRAIN 327,13167
+#define MPU6050_INTLATCH_50USPULSE 329,13209
+#define MPU6050_INTLATCH_WAITCLEAR 330,13250
+#define MPU6050_INTCLEAR_STATUSREAD 332,13292
+#define MPU6050_INTCLEAR_ANYREAD 333,13333
+#define MPU6050_INTERRUPT_FF_BIT 335,13375
+#define MPU6050_INTERRUPT_MOT_BIT 336,13421
+#define MPU6050_INTERRUPT_ZMOT_BIT 337,13467
+#define MPU6050_INTERRUPT_FIFO_OFLOW_BIT 338,13513
+#define MPU6050_INTERRUPT_I2C_MST_INT_BIT 339,13559
+#define MPU6050_INTERRUPT_PLL_RDY_INT_BIT 340,13605
+#define MPU6050_INTERRUPT_DMP_INT_BIT 341,13651
+#define MPU6050_INTERRUPT_DATA_RDY_BIT 342,13697
+#define MPU6050_DMPINT_5_BIT 346,13827
+#define MPU6050_DMPINT_4_BIT 347,13869
+#define MPU6050_DMPINT_3_BIT 348,13911
+#define MPU6050_DMPINT_2_BIT 349,13953
+#define MPU6050_DMPINT_1_BIT 350,13995
+#define MPU6050_DMPINT_0_BIT 351,14037
+#define MPU6050_MOTION_MOT_XNEG_BIT 353,14080
+#define MPU6050_MOTION_MOT_XPOS_BIT 354,14122
+#define MPU6050_MOTION_MOT_YNEG_BIT 355,14164
+#define MPU6050_MOTION_MOT_YPOS_BIT 356,14206
+#define MPU6050_MOTION_MOT_ZNEG_BIT 357,14248
+#define MPU6050_MOTION_MOT_ZPOS_BIT 358,14290
+#define MPU6050_MOTION_MOT_ZRMOT_BIT 359,14332
+#define MPU6050_DELAYCTRL_DELAY_ES_SHADOW_BIT 361,14375
+#define MPU6050_DELAYCTRL_I2C_SLV4_DLY_EN_BIT 362,14425
+#define MPU6050_DELAYCTRL_I2C_SLV3_DLY_EN_BIT 363,14475
+#define MPU6050_DELAYCTRL_I2C_SLV2_DLY_EN_BIT 364,14525
+#define MPU6050_DELAYCTRL_I2C_SLV1_DLY_EN_BIT 365,14575
+#define MPU6050_DELAYCTRL_I2C_SLV0_DLY_EN_BIT 366,14625
+#define MPU6050_PATHRESET_GYRO_RESET_BIT 368,14676
+#define MPU6050_PATHRESET_ACCEL_RESET_BIT 369,14722
+#define MPU6050_PATHRESET_TEMP_RESET_BIT 370,14768
+#define MPU6050_DETECT_ACCEL_ON_DELAY_BIT 372,14815
+#define MPU6050_DETECT_ACCEL_ON_DELAY_LENGTH 373,14865
+#define MPU6050_DETECT_FF_COUNT_BIT 374,14915
+#define MPU6050_DETECT_FF_COUNT_LENGTH 375,14965
+#define MPU6050_DETECT_MOT_COUNT_BIT 376,15015
+#define MPU6050_DETECT_MOT_COUNT_LENGTH 377,15065
+#define MPU6050_DETECT_DECREMENT_RESET 379,15116
+#define MPU6050_DETECT_DECREMENT_1 380,15160
+#define MPU6050_DETECT_DECREMENT_2 381,15204
+#define MPU6050_DETECT_DECREMENT_4 382,15248
+#define MPU6050_USERCTRL_DMP_EN_BIT 384,15293
+#define MPU6050_USERCTRL_FIFO_EN_BIT 385,15343
+#define MPU6050_USERCTRL_I2C_MST_EN_BIT 386,15393
+#define MPU6050_USERCTRL_I2C_IF_DIS_BIT 387,15443
+#define MPU6050_USERCTRL_DMP_RESET_BIT 388,15493
+#define MPU6050_USERCTRL_FIFO_RESET_BIT 389,15543
+#define MPU6050_USERCTRL_I2C_MST_RESET_BIT 390,15593
+#define MPU6050_USERCTRL_SIG_COND_RESET_BIT 391,15643
+#define MPU6050_PWR1_DEVICE_RESET_BIT 393,15694
+#define MPU6050_PWR1_SLEEP_BIT 394,15736
+#define MPU6050_PWR1_CYCLE_BIT 395,15778
+#define MPU6050_PWR1_TEMP_DIS_BIT 396,15820
+#define MPU6050_PWR1_CLKSEL_BIT 397,15862
+#define MPU6050_PWR1_CLKSEL_LENGTH 398,15904
+#define MPU6050_CLOCK_INTERNAL 400,15947
+#define MPU6050_CLOCK_PLL_XGYRO 401,15992
+#define MPU6050_CLOCK_PLL_YGYRO 402,16037
+#define MPU6050_CLOCK_PLL_ZGYRO 403,16082
+#define MPU6050_CLOCK_PLL_EXT32K 404,16127
+#define MPU6050_CLOCK_PLL_EXT19M 405,16172
+#define MPU6050_CLOCK_KEEP_RESET 406,16217
+#define MPU6050_PWR2_LP_WAKE_CTRL_BIT 408,16263
+#define MPU6050_PWR2_LP_WAKE_CTRL_LENGTH 409,16309
+#define MPU6050_PWR2_STBY_XA_BIT 410,16355
+#define MPU6050_PWR2_STBY_YA_BIT 411,16401
+#define MPU6050_PWR2_STBY_ZA_BIT 412,16447
+#define MPU6050_PWR2_STBY_XG_BIT 413,16493
+#define MPU6050_PWR2_STBY_YG_BIT 414,16539
+#define MPU6050_PWR2_STBY_ZG_BIT 415,16585
+#define MPU6050_WAKE_FREQ_1P25 417,16632
+#define MPU6050_WAKE_FREQ_2P5 418,16672
+#define MPU6050_WAKE_FREQ_5 419,16712
+#define MPU6050_WAKE_FREQ_10 420,16752
+#define MPU6050_BANKSEL_PRFTCH_EN_BIT 422,16793
+#define MPU6050_BANKSEL_CFG_USER_BANK_BIT 423,16839
+#define MPU6050_BANKSEL_MEM_SEL_BIT 424,16885
+#define MPU6050_BANKSEL_MEM_SEL_LENGTH 425,16931
+#define MPU6050_WHO_AM_I_BIT 427,16978
+#define MPU6050_WHO_AM_I_LENGTH 428,17016
+#define MPU6050_DMP_MEMORY_BANKS 430,17055
+#define MPU6050_DMP_MEMORY_BANK_SIZE 431,17097
+#define MPU6050_DMP_MEMORY_CHUNK_SIZE 432,17141
+class MPU6050 436,17248
+
+MPU6050/MPU6050.cpp,12422
+MPU6050::MPU6050(42,1899
+MPU6050::MPU6050(52,2127
+void MPU6050::initialize(63,2611
+bool MPU6050::testConnection(74,3018
+uint8_t MPU6050::getAuxVDDIOLevel(86,3476
+void MPU6050::setAuxVDDIOLevel(96,3946
+uint8_t MPU6050::getRate(123,5019
+void MPU6050::setRate(132,5264
+uint8_t MPU6050::getExternalFrameSync(165,6436
+void MPU6050::setExternalFrameSync(174,6767
+uint8_t MPU6050::getDLPFMode(205,8208
+void MPU6050::setDLPFMode(217,8625
+uint8_t MPU6050::getFullScaleGyroRange(240,9285
+void MPU6050::setFullScaleGyroRange(252,9727
+uint8_t MPU6050::getAccelXSelfTestFactoryTrim(262,10067
+uint8_t MPU6050::getAccelYSelfTestFactoryTrim(272,10433
+uint8_t MPU6050::getAccelZSelfTestFactoryTrim(282,10799
+uint8_t MPU6050::getGyroXSelfTestFactoryTrim(291,11087
+uint8_t MPU6050::getGyroYSelfTestFactoryTrim(300,11353
+uint8_t MPU6050::getGyroZSelfTestFactoryTrim(309,11619
+bool MPU6050::getAccelXSelfTest(320,11923
+void MPU6050::setAccelXSelfTest(328,12211
+bool MPU6050::getAccelYSelfTest(335,12482
+void MPU6050::setAccelYSelfTest(343,12768
+bool MPU6050::getAccelZSelfTest(350,13039
+void MPU6050::setAccelZSelfTest(358,13325
+uint8_t MPU6050::getFullScaleAccelRange(378,13911
+void MPU6050::setFullScaleAccelRange(386,14240
+uint8_t MPU6050::getDHPFMode(424,15711
+void MPU6050::setDHPFMode(434,16081
+uint8_t MPU6050::getFreefallDetectionThreshold(455,17081
+void MPU6050::setFreefallDetectionThreshold(464,17407
+uint8_t MPU6050::getFreefallDetectionDuration(487,18357
+void MPU6050::setFreefallDetectionDuration(496,18672
+uint8_t MPU6050::getMotionDetectionThreshold(521,19771
+void MPU6050::setMotionDetectionThreshold(530,20109
+uint8_t MPU6050::getMotionDetectionDuration(551,21039
+void MPU6050::setMotionDetectionDuration(560,21366
+uint8_t MPU6050::getZeroMotionDetectionThreshold(591,22861
+void MPU6050::setZeroMotionDetectionThreshold(600,23221
+uint8_t MPU6050::getZeroMotionDetectionDuration(622,24231
+void MPU6050::setZeroMotionDetectionDuration(631,24580
+bool MPU6050::getTempFIFOEnabled(643,24976
+void MPU6050::setTempFIFOEnabled(652,25274
+bool MPU6050::getXGyroFIFOEnabled(661,25666
+void MPU6050::setXGyroFIFOEnabled(670,25974
+bool MPU6050::getYGyroFIFOEnabled(679,26365
+void MPU6050::setYGyroFIFOEnabled(688,26673
+bool MPU6050::getZGyroFIFOEnabled(697,27064
+void MPU6050::setZGyroFIFOEnabled(706,27372
+bool MPU6050::getAccelFIFOEnabled(716,27818
+void MPU6050::setAccelFIFOEnabled(725,28123
+bool MPU6050::getSlave2FIFOEnabled(734,28518
+void MPU6050::setSlave2FIFOEnabled(743,28812
+bool MPU6050::getSlave1FIFOEnabled(752,29207
+void MPU6050::setSlave1FIFOEnabled(761,29501
+bool MPU6050::getSlave0FIFOEnabled(770,29896
+void MPU6050::setSlave0FIFOEnabled(779,30190
+bool MPU6050::getMultiMasterEnabled(800,31125
+void MPU6050::setMultiMasterEnabled(809,31430
+bool MPU6050::getWaitForExternalSensorEnabled(823,32153
+void MPU6050::setWaitForExternalSensorEnabled(832,32512
+bool MPU6050::getSlave3FIFOEnabled(841,32923
+void MPU6050::setSlave3FIFOEnabled(850,33224
+bool MPU6050::getSlaveReadWriteTransitionEnabled(863,33912
+void MPU6050::setSlaveReadWriteTransitionEnabled(872,34275
+uint8_t MPU6050::getMasterClockSpeed(904,35591
+void MPU6050::setMasterClockSpeed(912,35890
+uint8_t MPU6050::getSlaveAddress(959,38296
+void MPU6050::setSlaveAddress(970,38668
+uint8_t MPU6050::getSlaveRegister(985,39281
+void MPU6050::setSlaveRegister(996,39671
+bool MPU6050::getSlaveEnabled(1007,40159
+void MPU6050::setSlaveEnabled(1018,40560
+bool MPU6050::getSlaveWordByteSwap(1033,41320
+void MPU6050::setSlaveWordByteSwap(1044,41774
+bool MPU6050::getSlaveWriteMode(1058,42499
+void MPU6050::setSlaveWriteMode(1069,42941
+bool MPU6050::getSlaveWordGroupOffset(1084,43710
+void MPU6050::setSlaveWordGroupOffset(1095,44160
+uint8_t MPU6050::getSlaveDataLength(1106,44702
+void MPU6050::setSlaveDataLength(1117,45153
+uint8_t MPU6050::getSlave4Address(1133,45769
+void MPU6050::setSlave4Address(1142,46038
+uint8_t MPU6050::getSlave4Register(1152,46423
+void MPU6050::setSlave4Register(1161,46710
+void MPU6050::setSlave4OutputByte(1170,47074
+bool MPU6050::getSlave4Enabled(1179,47465
+void MPU6050::setSlave4Enabled(1188,47764
+bool MPU6050::getSlave4InterruptEnabled(1200,48369
+void MPU6050::setSlave4InterruptEnabled(1209,48737
+bool MPU6050::getSlave4WriteMode(1221,49362
+void MPU6050::setSlave4WriteMode(1230,49706
+uint8_t MPU6050::getSlave4MasterDelay(1248,50515
+void MPU6050::setSlave4MasterDelay(1257,50860
+uint8_t MPU6050::getSlate4InputByte(1266,51281
+bool MPU6050::getPassthroughStatus(1282,51865
+bool MPU6050::getSlave4IsDone(1294,52416
+bool MPU6050::getLostArbitration(1305,52927
+bool MPU6050::getSlave4Nack(1316,53407
+bool MPU6050::getSlave3Nack(1327,53883
+bool MPU6050::getSlave2Nack(1338,54359
+bool MPU6050::getSlave1Nack(1349,54835
+bool MPU6050::getSlave0Nack(1360,55311
+bool MPU6050::getInterruptMode(1373,55713
+void MPU6050::setInterruptMode(1383,56063
+bool MPU6050::getInterruptDrive(1392,56418
+void MPU6050::setInterruptDrive(1402,56767
+bool MPU6050::getInterruptLatch(1411,57147
+void MPU6050::setInterruptLatch(1421,57508
+bool MPU6050::getInterruptLatchClear(1430,57904
+void MPU6050::setInterruptLatchClear(1440,58287
+bool MPU6050::getFSyncInterruptLevel(1449,58657
+void MPU6050::setFSyncInterruptLevel(1459,59042
+bool MPU6050::getFSyncInterruptEnabled(1468,59404
+void MPU6050::setFSyncInterruptEnabled(1478,59779
+bool MPU6050::getI2CBypassEnabled(1492,60484
+void MPU6050::setI2CBypassEnabled(1507,61196
+bool MPU6050::getClockOutputEnabled(1519,61781
+void MPU6050::setClockOutputEnabled(1532,62375
+uint8_t MPU6050::getIntEnabled(1545,62815
+void MPU6050::setIntEnabled(1557,63240
+bool MPU6050::getIntFreefallEnabled(1566,63555
+void MPU6050::setIntFreefallEnabled(1576,63897
+bool MPU6050::getIntMotionEnabled(1585,64250
+void MPU6050::setIntMotionEnabled(1595,64597
+bool MPU6050::getIntZeroMotionEnabled(1604,64955
+void MPU6050::setIntZeroMotionEnabled(1614,65317
+bool MPU6050::getIntFIFOBufferOverflowEnabled(1623,65685
+void MPU6050::setIntFIFOBufferOverflowEnabled(1633,66074
+bool MPU6050::getIntI2CMasterEnabled(1643,66529
+void MPU6050::setIntI2CMasterEnabled(1653,66892
+bool MPU6050::getIntDataReadyEnabled(1663,67354
+void MPU6050::setIntDataReadyEnabled(1673,67707
+uint8_t MPU6050::getIntStatus(1686,68192
+bool MPU6050::getIntFreefallStatus(1697,68591
+bool MPU6050::getIntMotionStatus(1708,69035
+bool MPU6050::getIntZeroMotionStatus(1719,69489
+bool MPU6050::getIntFIFOBufferOverflowStatus(1730,69941
+bool MPU6050::getIntI2CMasterStatus(1742,70469
+bool MPU6050::getIntDataReadyStatus(1753,70916
+void MPU6050::getMotion9(1776,71978
+void MPU6050::getMotion6(1792,72845
+void MPU6050::getAcceleration(1837,75127
+int16_t MPU6050::getAccelerationX(1848,75585
+int16_t MPU6050::getAccelerationY(1857,75915
+int16_t MPU6050::getAccelerationZ(1866,76245
+int16_t MPU6050::getTemperature(1877,76566
+void MPU6050::getRotation(1916,78369
+int16_t MPU6050::getRotationX(1927,78813
+int16_t MPU6050::getRotationY(1936,79129
+int16_t MPU6050::getRotationZ(1945,79445
+uint8_t MPU6050::getExternalSensorByte(2026,83782
+uint16_t MPU6050::getExternalSensorWord(2035,84116
+uint32_t MPU6050::getExternalSensorDWord(2044,84501
+uint8_t MPU6050::getMotionStatus(2055,84939
+bool MPU6050::getXNegMotionDetected(2064,85240
+bool MPU6050::getXPosMotionDetected(2073,85572
+bool MPU6050::getYNegMotionDetected(2082,85904
+bool MPU6050::getYPosMotionDetected(2091,86236
+bool MPU6050::getZNegMotionDetected(2100,86568
+bool MPU6050::getZPosMotionDetected(2109,86900
+bool MPU6050::getZeroMotionDetected(2118,87222
+void MPU6050::setSlaveOutputByte(2133,87776
+bool MPU6050::getExternalShadowDelayEnabled(2148,88368
+void MPU6050::setExternalShadowDelayEnabled(2158,88792
+bool MPU6050::getSlaveDelayEnabled(2179,89694
+void MPU6050::setSlaveDelayEnabled(2191,90143
+void MPU6050::resetGyroscopePath(2203,90551
+void MPU6050::resetAccelerometerPath(2212,90930
+void MPU6050::resetTemperaturePath(2221,91318
+uint8_t MPU6050::getAccelerometerPowerOnDelay(2241,92326
+void MPU6050::setAccelerometerPowerOnDelay(2251,92753
+uint8_t MPU6050::getFreefallDetectionCounterDecrement(2280,93968
+void MPU6050::setFreefallDetectionCounterDecrement(2290,94415
+uint8_t MPU6050::getMotionDetectionCounterDecrement(2316,95519
+void MPU6050::setMotionDetectionCounterDecrement(2326,95962
+bool MPU6050::getFIFOEnabled(2340,96538
+void MPU6050::setFIFOEnabled(2350,96851
+bool MPU6050::getI2CMasterModeEnabled(2364,97559
+void MPU6050::setI2CMasterModeEnabled(2374,97918
+void MPU6050::switchSPIEnabled(2381,98233
+void MPU6050::resetFIFO(2390,98617
+void MPU6050::resetI2CMaster(2399,98990
+void MPU6050::resetSensors(2414,99624
+void MPU6050::reset(2425,99952
+bool MPU6050::getSleepEnabled(2439,100621
+void MPU6050::setSleepEnabled(2449,100930
+bool MPU6050::getWakeCycleEnabled(2460,101430
+void MPU6050::setWakeCycleEnabled(2470,101755
+bool MPU6050::getTempSensorEnabled(2484,102358
+void MPU6050::setTempSensorEnabled(2498,102983
+uint8_t MPU6050::getClockSource(2508,103333
+void MPU6050::setClockSource(2542,104771
+uint8_t MPU6050::getWakeFrequency(2571,105781
+void MPU6050::setWakeFrequency(2579,106096
+bool MPU6050::getStandbyXAccelEnabled(2589,106524
+void MPU6050::setStandbyXAccelEnabled(2599,106875
+bool MPU6050::getStandbyYAccelEnabled(2608,107262
+void MPU6050::setStandbyYAccelEnabled(2618,107613
+bool MPU6050::getStandbyZAccelEnabled(2627,108000
+void MPU6050::setStandbyZAccelEnabled(2637,108351
+bool MPU6050::getStandbyXGyroEnabled(2646,108734
+void MPU6050::setStandbyXGyroEnabled(2656,109079
+bool MPU6050::getStandbyYGyroEnabled(2665,109461
+void MPU6050::setStandbyYGyroEnabled(2675,109806
+bool MPU6050::getStandbyZGyroEnabled(2684,110188
+void MPU6050::setStandbyZGyroEnabled(2694,110533
+uint16_t MPU6050::getFIFOCount(2707,111088
+uint8_t MPU6050::getFIFOByte(2739,112566
+void MPU6050::getFIFOBytes(2743,112683
+void MPU6050::setFIFOByte(2754,112956
+uint8_t MPU6050::getDeviceID(2767,113325
+void MPU6050::setDeviceID(2780,113758
+uint8_t MPU6050::getOTPBankValid(2788,113986
+void MPU6050::setOTPBankValid(2792,114136
+int8_t MPU6050::getXGyroOffsetTC(2795,114275
+void MPU6050::setXGyroOffsetTC(2799,114447
+int8_t MPU6050::getYGyroOffsetTC(2805,114634
+void MPU6050::setYGyroOffsetTC(2809,114806
+int8_t MPU6050::getZGyroOffsetTC(2815,114993
+void MPU6050::setZGyroOffsetTC(2819,115165
+int8_t MPU6050::getXFineGain(2825,115353
+void MPU6050::setXFineGain(2829,115473
+int8_t MPU6050::getYFineGain(2835,115605
+void MPU6050::setYFineGain(2839,115725
+int8_t MPU6050::getZFineGain(2845,115857
+void MPU6050::setZFineGain(2849,115977
+int16_t MPU6050::getXAccelOffset(2855,116108
+void MPU6050::setXAccelOffset(2859,116264
+int16_t MPU6050::getYAccelOffset(2865,116400
+void MPU6050::setYAccelOffset(2869,116556
+int16_t MPU6050::getZAccelOffset(2875,116692
+void MPU6050::setZAccelOffset(2879,116848
+int16_t MPU6050::getXGyroOffset(2885,116988
+void MPU6050::setXGyroOffset(2889,117146
+int16_t MPU6050::getYGyroOffset(2895,117287
+void MPU6050::setYGyroOffset(2899,117445
+int16_t MPU6050::getZGyroOffset(2905,117586
+void MPU6050::setZGyroOffset(2909,117744
+bool MPU6050::getIntPLLReadyEnabled(2915,117899
+void MPU6050::setIntPLLReadyEnabled(2919,118059
+bool MPU6050::getIntDMPEnabled(2922,118211
+void MPU6050::setIntDMPEnabled(2926,118362
+bool MPU6050::getDMPInt5Status(2932,118525
+bool MPU6050::getDMPInt4Status(2936,118671
+bool MPU6050::getDMPInt3Status(2940,118817
+bool MPU6050::getDMPInt2Status(2944,118963
+bool MPU6050::getDMPInt1Status(2948,119109
+bool MPU6050::getDMPInt0Status(2952,119255
+bool MPU6050::getIntPLLReadyStatus(2959,119442
+bool MPU6050::getIntDMPStatus(2963,119601
+bool MPU6050::getDMPEnabled(2970,119791
+void MPU6050::setDMPEnabled(2974,119936
+void MPU6050::resetDMP(2977,120073
+void MPU6050::setMemoryBank(2983,120216
+void MPU6050::setMemoryStartAddress(2992,120476
+uint8_t MPU6050::readMemoryByte(2998,120623
+void MPU6050::writeMemoryByte(3002,120742
+void MPU6050::readMemoryBlock(3005,120848
+bool MPU6050::writeMemoryBlock(3036,121982
+bool MPU6050::writeProgMemoryBlock(3112,124988
+bool MPU6050::writeDMPConfigurationSet(3115,125185
+bool MPU6050::writeProgDMPConfigurationSet(3191,128075
+uint8_t MPU6050::getDMPConfig1(3197,128245
+void MPU6050::setDMPConfig1(3201,128365
+uint8_t MPU6050::getDMPConfig2(3207,128499
+void MPU6050::setDMPConfig2(3211,128619
+
+MPU6050/helper_3dmath.h,1357
+#define _HELPER_3DMATH_H_33,1556
+class Quaternion 35,1583
+        Quaternion(Quaternion::Quaternion42,1691
+        Quaternion(Quaternion::Quaternion49,1821
+        Quaternion getProduct(Quaternion::getProduct56,1973
+        Quaternion getConjugate(Quaternion::getConjugate69,2588
+        float getMagnitude(Quaternion::getMagnitude73,2689
+        void normalize(Quaternion::normalize77,2787
+        Quaternion getNormalized(Quaternion::getNormalized85,2951
+class VectorInt16 92,3089
+        VectorInt16(VectorInt16::VectorInt1698,3179
+        VectorInt16(VectorInt16::VectorInt16104,3279
+        float getMagnitude(VectorInt16::getMagnitude110,3408
+        void normalize(VectorInt16::normalize114,3492
+        VectorInt16 getNormalized(VectorInt16::getNormalized121,3636
+        void rotate(VectorInt16::rotate127,3778
+        VectorInt16 getRotated(VectorInt16::getRotated152,4988
+class VectorFloat 159,5133
+        VectorFloat(VectorFloat::VectorFloat165,5217
+        VectorFloat(VectorFloat::VectorFloat171,5317
+        float getMagnitude(VectorFloat::getMagnitude177,5440
+        void normalize(VectorFloat::normalize181,5524
+        VectorFloat getNormalized(VectorFloat::getNormalized188,5668
+        void rotate(VectorFloat::rotate194,5810
+        VectorFloat getRotated(VectorFloat::getRotated209,6238
+
+MPU6050/MPU6050_6Axis_MotionApps20.h,2746
+#define _MPU6050_6AXIS_MOTIONAPPS20_H_34,1632
+#define MPU6050_INCLUDE_DMP_MOTIONAPPS2040,1803
+        #define __PGMSPACE_H_ 51,2112
+        #define PROGMEM54,2175
+        #define PGM_P 55,2199
+        #define PSTR(56,2235
+        #define F(57,2267
+        typedef void prog_void;59,2291
+        typedef char prog_char;60,2323
+        typedef unsigned char prog_uchar;61,2355
+        typedef int8_t prog_int8_t;62,2397
+        typedef uint8_t prog_uint8_t;63,2433
+        typedef int16_t prog_int16_t;64,2471
+        typedef uint16_t prog_uint16_t;65,2509
+        typedef int32_t prog_int32_t;66,2549
+        typedef uint32_t prog_uint32_t;67,2587
+        #define strcpy_P(69,2636
+        #define strcat_P(70,2694
+        #define strcmp_P(71,2752
+        #define pgm_read_byte(73,2809
+        #define pgm_read_word(74,2878
+        #define pgm_read_dword(75,2948
+        #define pgm_read_float(76,3018
+        #define pgm_read_byte_near(78,3089
+        #define pgm_read_word_near(79,3150
+        #define pgm_read_dword_near(80,3211
+        #define pgm_read_float_near(81,3274
+        #define pgm_read_byte_far(82,3337
+        #define pgm_read_word_far(83,3397
+        #define pgm_read_dword_far(84,3457
+        #define pgm_read_float_far(85,3519
+    #define DEBUG_PRINT(105,4273
+    #define DEBUG_PRINTF(106,4316
+    #define DEBUG_PRINTLN(107,4366
+    #define DEBUG_PRINTLNF(108,4413
+    #define DEBUG_PRINT(110,4473
+    #define DEBUG_PRINTF(111,4500
+    #define DEBUG_PRINTLN(112,4531
+    #define DEBUG_PRINTLNF(113,4560
+#define MPU6050_DMP_CODE_SIZE 116,4601
+#define MPU6050_DMP_CONFIG_SIZE 117,4660
+#define MPU6050_DMP_UPDATES_SIZE 118,4719
+const unsigned char dmpMemory[MPU6050_DMP_CODE_SIZE] PROGMEM 133,5867
+const unsigned char dmpConfig[MPU6050_DMP_CONFIG_SIZE] PROGMEM 273,18270
+const unsigned char dmpUpdates[MPU6050_DMP_UPDATES_SIZE] PROGMEM 315,21448
+uint8_t MPU6050::dmpInitialize(325,21872
+bool MPU6050::dmpPacketAvailable(546,31048
+uint8_t MPU6050::dmpGetAccel(573,32582
+uint8_t MPU6050::dmpGetAccel(581,33164
+uint8_t MPU6050::dmpGetAccel(589,33524
+uint8_t MPU6050::dmpGetQuaternion(597,33882
+uint8_t MPU6050::dmpGetQuaternion(606,34579
+uint8_t MPU6050::dmpGetQuaternion(615,34992
+uint8_t MPU6050::dmpGetGyro(630,35684
+uint8_t MPU6050::dmpGetGyro(638,36265
+uint8_t MPU6050::dmpGetGyro(646,36624
+uint8_t MPU6050::dmpGetLinearAccel(656,37123
+uint8_t MPU6050::dmpGetLinearAccelInWorld(664,37547
+uint8_t MPU6050::dmpGetGravity(676,38217
+uint8_t MPU6050::dmpGetEuler(687,38787
+uint8_t MPU6050::dmpGetYawPitchRoll(693,39164
+uint8_t MPU6050::dmpProcessFIFOPacket(706,39825
+uint8_t MPU6050::dmpReadAndProcessFIFOPacket(716,40160
+uint16_t MPU6050::dmpGetFIFOPacketSize(741,41058
+
+Balancing_Function_v2.cpp,220
+const float offset_a 23,424
+int leftSpeed;26,471
+int rightSpeed;27,486
+float ctrlTurn 28,502
+float ctrlwalk 29,522
+float PID_Balance(39,690
+void PIDSetSpeed(50,918
+void ProcessCommand(63,1267
+void loop(112,2029
+
+TBMotor.cpp,140
+OseppTBMotor::OseppTBMotor(4,43
+void OseppTBMotor::forward(11,206
+void OseppTBMotor::backward(17,343
+void OseppTBMotor::SetSpeed(23,480
+
+I2Cdev/I2Cdev.h,2581
+#define _I2CDEV_H_48,2768
+#define I2CDEV_IMPLEMENTATION 54,3020
+#define I2CDEV_IMPLEMENTATION_WARNINGS60,3294
+#define I2CDEV_ARDUINO_WIRE 65,3536
+#define I2CDEV_BUILTIN_NBWIRE 66,3602
+#define I2CDEV_BUILTIN_FASTWIRE 68,3798
+#define I2CDEV_I2CMASTER_LIBRARY 69,3888
+    #define ARDUINO 92,4648
+#define I2CDEV_DEFAULT_READ_TIMEOUT 97,4756
+class I2Cdev 99,4802
+    #define TW_START 133,7019
+    #define TW_REP_START 134,7060
+    #define TW_MT_SLA_ACK 137,7131
+    #define TW_MT_SLA_NACK 138,7172
+    #define TW_MT_DATA_ACK 139,7213
+    #define TW_MT_DATA_NACK 140,7254
+    #define TW_MT_ARB_LOST 141,7295
+    #define TW_MR_ARB_LOST 144,7363
+    #define TW_MR_SLA_ACK 145,7404
+    #define TW_MR_SLA_NACK 146,7445
+    #define TW_MR_DATA_ACK 147,7486
+    #define TW_MR_DATA_NACK 148,7527
+    #define TW_OK 150,7569
+    #define TW_ERROR 151,7607
+    class Fastwire 153,7646
+    #define NBWIRE_BUFFER_LENGTH 173,8486
+    class TwoWire 175,8523
+    #define TWI_READY 214,9909
+    #define TWI_MRX 215,9935
+    #define TWI_MTX 216,9961
+    #define TWI_SRX 217,9987
+    #define TWI_STX 218,10013
+    #define TW_WRITE 220,10040
+    #define TW_READ 221,10066
+    #define TW_MT_SLA_NACK 223,10093
+    #define TW_MT_DATA_NACK 224,10130
+    #define CPU_FREQ 226,10168
+    #define TWI_FREQ 227,10210
+    #define TWI_BUFFER_LENGTH 228,10250
+    #define TW_STATUS_MASK 232,10351
+    #define TW_STATUS 233,10443
+    #define TW_START 234,10507
+    #define TW_REP_START 235,10552
+    #define TW_MT_SLA_ACK 236,10597
+    #define TW_MT_SLA_NACK 237,10642
+    #define TW_MT_DATA_ACK 238,10687
+    #define TW_MT_DATA_NACK 239,10732
+    #define TW_MT_ARB_LOST 240,10777
+    #define TW_MR_ARB_LOST 241,10822
+    #define TW_MR_SLA_ACK 242,10867
+    #define TW_MR_SLA_NACK 243,10912
+    #define TW_MR_DATA_ACK 244,10957
+    #define TW_MR_DATA_NACK 245,11002
+    #define TW_ST_SLA_ACK 246,11047
+    #define TW_ST_ARB_LOST_SLA_ACK 247,11092
+    #define TW_ST_DATA_ACK 248,11137
+    #define TW_ST_DATA_NACK 249,11182
+    #define TW_ST_LAST_DATA 250,11227
+    #define TW_SR_SLA_ACK 251,11272
+    #define TW_SR_ARB_LOST_SLA_ACK 252,11317
+    #define TW_SR_GCALL_ACK 253,11362
+    #define TW_SR_ARB_LOST_GCALL_ACK 254,11407
+    #define TW_SR_DATA_ACK 255,11452
+    #define TW_SR_DATA_NACK 256,11497
+    #define TW_SR_GCALL_DATA_ACK 257,11542
+    #define TW_SR_GCALL_DATA_NACK 258,11587
+    #define TW_SR_STOP 259,11632
+    #define TW_NO_INFO 260,11677
+    #define TW_BUS_ERROR 261,11722
+        #define sbi(267,11921
+        #define cbi(271,12028
+
+I2Cdev/I2Cdev.cpp,3048
+    TwoWire Wire;86,4764
+I2Cdev::I2Cdev(92,4820
+int8_t I2Cdev::readBit(103,5265
+int8_t I2Cdev::readBitW(118,5925
+int8_t I2Cdev::readBits(134,6718
+int8_t I2Cdev::readBitsW(159,7832
+int8_t I2Cdev::readByte(183,8812
+int8_t I2Cdev::readWord(194,9355
+int8_t I2Cdev::readBytes(206,9938
+int8_t I2Cdev::readWords(326,14864
+bool I2Cdev::writeBit(477,21216
+bool I2Cdev::writeBitW(491,21746
+bool I2Cdev::writeBits(506,22351
+bool I2Cdev::writeBitsW(535,23526
+bool I2Cdev::writeByte(562,24641
+bool I2Cdev::writeWord(572,25000
+bool I2Cdev::writeBytes(583,25416
+bool I2Cdev::writeWords(638,27778
+uint16_t I2Cdev::readTimeout 693,30238
+    boolean Fastwire::waitInt(714,30786
+    void Fastwire::setup(720,30921
+    byte Fastwire::beginTransmission(746,32220
+    byte Fastwire::writeBuf(766,32940
+    byte Fastwire::write(807,34382
+    byte Fastwire::readBuf(818,34689
+    void Fastwire::reset(881,36882
+    byte Fastwire::stop(885,36936
+    uint8_t TwoWire::rxBuffer[TwoWire::rxBuffer930,38979
+    uint8_t TwoWire::rxBufferIndex 931,39032
+    uint8_t TwoWire::rxBufferLength 932,39072
+    uint8_t TwoWire::txAddress 934,39118
+    uint8_t TwoWire::txBuffer[TwoWire::txBuffer935,39154
+    uint8_t TwoWire::txBufferIndex 936,39207
+    uint8_t TwoWire::txBufferLength 937,39247
+    static volatile uint8_t twi_transmitting;943,39424
+    static volatile uint8_t twi_state;944,39470
+    static uint8_t twi_slarw;945,39509
+    static volatile uint8_t twi_error;946,39539
+    static uint8_t twi_masterBuffer[twi_masterBuffer947,39578
+    static volatile uint8_t twi_masterBufferIndex;948,39634
+    static uint8_t twi_masterBufferLength;949,39685
+    static uint8_t twi_rxBuffer[twi_rxBuffer950,39728
+    static volatile uint8_t twi_rxBufferIndex;951,39780
+    static volatile uint8_t twi_Return_Value;953,39889
+    static volatile uint8_t twi_Done;954,39935
+    void twi_init(958,40059
+    } twi_Write_Vars;995,41183
+    twi_Write_Vars *ptwv ptwv997,41206
+    void twi_Finish(1000,41290
+    uint8_t twii_WaitForDone(1010,41510
+    void twii_SetState(1016,41730
+    void twii_SetError(1020,41808
+    void twii_InitBuffer(1024,41887
+    void twii_CopyToBuf(1029,42032
+    void twii_CopyFromBuf(1036,42213
+    void twii_SetSlaRW(1043,42396
+    void twii_SetStart(1047,42474
+    void twi_write01(1051,42584
+    void twi_write00(1067,43186
+    void twi_writeTo(1084,43902
+    void twi_read01(1095,44280
+    void twi_read00(1104,44651
+    void twi_readFrom(1117,45220
+    void twi_reply(1128,45555
+    void twi_stop(1137,45833
+    void twi_releaseBus(1151,46219
+    SIGNAL(1159,46412
+    TwoWire::TwoWire(1331,52932
+    void TwoWire::begin(1333,52964
+    void TwoWire::beginTransmission(1343,53143
+    uint8_t TwoWire::endTransmission(1357,53512
+    void TwoWire::nbendTransmission(1373,53989
+    void TwoWire::send(1379,54184
+    uint8_t TwoWire::receive(1400,54775
+    uint8_t TwoWire::requestFrom(1414,55151
+    void TwoWire::nbrequestFrom(1432,55688
+    uint8_t TwoWire::available(1453,56308
+
+MPU6050_DMP.cpp,411
+MPU6050 mpu;6,80
+bool dmpReady 10,122
+uint8_t mpuIntStatus;11,185
+uint8_t devStatus;12,256
+uint16_t packetSize;13,351
+uint16_t fifoCount;14,425
+uint8_t fifoBuffer[fifoBuffer15,489
+Quaternion q;17,537
+VectorFloat gravity;18,606
+float ypr[ypr19,669
+uint8_t* getMPUBuff(21,762
+int16_t g_dir;70,2920
+float angle;71,2935
+int16_t g_dirOffset=73,2949
+int16_t a_yOffset=74,2972
+bool updateIMU(76,2994
+
+TBMotor.h,24
+class OseppTBMotor2,21

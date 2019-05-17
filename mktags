@@ -1,0 +1,2 @@
+#!/bin/sh
+find -E . -regex ".*\.(h|cpp)" -print | xargs etags -a
