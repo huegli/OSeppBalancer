@@ -13,7 +13,9 @@
  *
  */
 
-//include motor code
+#include <Arduino.h>
+
+#include "MPU6050_DMP.h"
 #include "TBMotor.h"
 
 OseppTBMotor Motor1(12, 11);

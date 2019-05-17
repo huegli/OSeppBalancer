@@ -1,10 +1,9 @@
 #include "I2Cdev.h"
-#include "MPU6050_6Axis_MotionApps20.h"
 #include "Wire.h"
-
+#include "MPU6050_6Axis_MotionApps20.h"
+// #include "MPU6050_DMP.h"
 
 MPU6050 mpu;
-
 
 // MPU control/status vars
 bool dmpReady = false;  // set true if DMP init was successful
@@ -67,8 +66,8 @@ uint8_t* getMPUBuff()
  | [GYRO Z][      ][ACC X ][      ][ACC Y ][      ][ACC Z ][      ][      ]                         |
  |  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41                          |
  * ================================================================================================ */
-int16_t g_dir;
 float angle;
+int16_t g_dir;
 
 int16_t g_dirOffset=0;
 int16_t a_yOffset=0;
